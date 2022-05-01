@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Button } from "szot-ui-experimental";
-  import { link, location, push } from "svelte-spa-router";
+  import { location, push } from "svelte-spa-router";
 
   async function changeRoute() {
     if ($location !== "/") {
@@ -10,7 +10,7 @@
 </script>
 
 <div class="button">
-  <a href="/contact" use:link on:click={() => changeRoute()}>
+  <a href="#contact" on:click={() => changeRoute()}>
     <Button size="large">Entrar em contato</Button>
   </a>
 </div>
