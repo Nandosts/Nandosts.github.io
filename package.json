@@ -10,7 +10,7 @@
     "lint": "npx eslint ./",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test": "jest",
+    "test": "jest --verbose ./src/helpers",
     "test:ui": "npm run test:ui-cli -- --ui --port=6005",
     "test:ui-cli": "creevey --reportDir='.creevey/report' --screenDir='.creevey/images'"
   },
