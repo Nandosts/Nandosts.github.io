@@ -13,8 +13,8 @@
         computação na UnB. <br />
         Procuro oportunidades de aprendizado. <br />
         Comecei aprendendo pela empresa júnior Struct, principalmente em desenvolvimento
-        web, e agora estou me desenvolvendo em sites e aplicativos por meio da empresa
-        VLGI.
+        web, estudei e apliquei to desenvolvimento web e mobile na empresa VLGI e
+        sigo procurando oportunidades para me aprimorar todos os dias.
       </p>
       <ContactButton />
     </div>
