@@ -5,7 +5,8 @@
   type imagesCollection = {
     path: string;
     id: string;
-    shown?: boolean;
+    openedImg?: string;
+    displayed?: boolean;
   };
 
   export let images: imagesCollection[];
@@ -19,33 +20,58 @@
   export let autoplay = false;
   export let autoplaySpeed = 5000;
   export let displayControls = true;
+
   let interval: ReturnType<typeof setInterval>;
-
+  let animationPending = false;
   const rotateLeft = () => {
-    images[images.length - 1].shown = false;
-    images = [images[images.length - 1], ...images.slice(0, images.length - 1)];
-    setTimeout(() => {
-      images[0].shown = true;
-    }, speed);
-  };
-
-  const rotateRight = () => {
-    images[0].shown = false;
-    images = [...images.slice(1, images.length), images[0]];
-    setTimeout(() => {
-      images[images.length - 1].shown = true;
-    }, speed);
-  };
-
-  const startAutoPlay = () => {
-    if (autoplay) {
-      interval = setInterval(rotateLeft, autoplaySpeed);
+    if (animationPending === false) {
+      animationPending = true;
+      images[images.length - 1].displayed = false;
+      images = [
+        images[images.length - 1],
+        ...images.slice(0, images.length - 1),
+      ];
+      setTimeout(() => {
+        images[0].displayed = true;
+        animationPending = false;
+      }, speed);
     }
   };
 
-  const stopAutoPlay = () => {
+  const rotateRight = () => {
+    if (animationPending === false) {
+      animationPending = true;
+      images[0].displayed = false;
+      images = [...images.slice(1, images.length), images[0]];
+      setTimeout(() => {
+        images[images.length - 1].displayed = true;
+        animationPending = false;
+      }, speed);
+    }
+  };
+
+  const startAutoPlay = (index?: number) => {
+    if (autoplay) {
+      interval = setInterval(rotateLeft, autoplaySpeed);
+    }
+    if (index && images[index]) {
+      const oldImg = images[index].path;
+      const newImg = images[index].openedImg;
+      images[index].path = newImg;
+      images[index].openedImg = oldImg;
+    }
+  };
+
+  const stopAutoPlay = (index?: number) => {
     if (interval) {
       clearInterval(interval);
+    }
+
+    if (index && images[index] && images[index].openedImg) {
+      const oldImg = images[index].path;
+      const newImg = images[index].openedImg;
+      images[index].path = newImg;
+      images[index].openedImg = oldImg;
     }
   };
 
@@ -60,15 +86,15 @@
 
 <div id="carousel-container">
   <div id="carousel-images" style={`padding-inline: ${horizontalPadding}`}>
-    {#each images as image (image.id)}
+    {#each images as image, i (image.id)}
       <img
         src={image.path}
         alt={image.id}
         id={image.id}
-        class:hidden={image.shown === false}
+        class:hidden={image.displayed === false}
         style={`min-width:${imageWidth}; height: ${imageHeight}; margin: 0 ${imageSpacing};`}
-        on:mouseenter={stopAutoPlay}
-        on:mouseleave={startAutoPlay}
+        on:mouseenter={() => stopAutoPlay(i)}
+        on:mouseleave={() => startAutoPlay(i)}
         animate:flip={{ duration: speed }}
       />
     {/each}

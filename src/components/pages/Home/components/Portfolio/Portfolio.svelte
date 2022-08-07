@@ -2,15 +2,16 @@
   import Carousel from "../../../../Carousel/Carousel.svelte";
 
   import Notebook from "../../../../../assets/img/notebook-img.svg";
+  import Luna from "../../../../../assets/img/Luna.jpg";
 
   const images = [
-    { path: Notebook, id: "image1" },
-    { path: Notebook, id: "image2" },
-    { path: Notebook, id: "image3" },
-    { path: Notebook, id: "image4" },
-    { path: Notebook, id: "image5" },
-    { path: Notebook, id: "image6" },
-    { path: Notebook, id: "image7" },
+    { path: Notebook, id: "image1", openedImg: Luna },
+    { path: Notebook, id: "image2", openedImg: Luna },
+    { path: Notebook, id: "image3", openedImg: Luna },
+    { path: Notebook, id: "image4", openedImg: Luna },
+    { path: Notebook, id: "image5", openedImg: Luna },
+    { path: Notebook, id: "image6", openedImg: Luna },
+    { path: Notebook, id: "image7", openedImg: Luna },
   ];
 </script>
 
