@@ -1,18 +1,7 @@
 <script lang="ts">
   import Carousel from "../../../../Carousel/Carousel.svelte";
 
-  import Notebook from "../../../../../assets/img/notebook-img.svg";
-  import Luna from "../../../../../assets/img/Luna.jpg";
-
-  const images = [
-    { path: Notebook, id: "image1", openedImg: Luna },
-    { path: Notebook, id: "image2", openedImg: Luna },
-    { path: Notebook, id: "image3", openedImg: Luna },
-    { path: Notebook, id: "image4", openedImg: Luna },
-    { path: Notebook, id: "image5", openedImg: Luna },
-    { path: Notebook, id: "image6", openedImg: Luna },
-    { path: Notebook, id: "image7", openedImg: Luna },
-  ];
+  import { Sites } from "./sites";
 </script>
 
 <section id="portfolio">
@@ -20,10 +9,10 @@
     <span class="title"> Portfólio </span>
     <div class="portfolio-carousel">
       <Carousel
-        {images}
-        imageWidth={"30%"}
-        imageHeight={"300px"}
-        imageSpacing={"2rem"}
+        {Sites}
+        imgWidth={"30%"}
+        imgHeight={"300px"}
+        imgSpacing={"2rem"}
         controlColor={"white"}
         controlScale={0.8}
         displayControls={true}

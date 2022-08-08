@@ -2,18 +2,18 @@
   import { flip } from "svelte/animate";
   import { onDestroy } from "svelte";
 
-  type imagesCollection = {
+  type SitesCollection = {
     path: string;
     id: string;
     openedImg?: string;
     displayed?: boolean;
   };
 
-  export let images: imagesCollection[];
+  export let Sites: SitesCollection[];
   export let horizontalPadding = "100px";
-  export let imageWidth = "300px";
-  export let imageHeight = "100%";
-  export let imageSpacing = "20px";
+  export let imgWidth = "300px";
+  export let imgHeight = "100%";
+  export let imgSpacing = "20px";
   export let speed = 500;
   export let controlColor = "#444";
   export let controlScale = 0.5;
@@ -26,13 +26,13 @@
   const rotateLeft = () => {
     if (animationPending === false) {
       animationPending = true;
-      images[images.length - 1].displayed = false;
-      images = [
-        images[images.length - 1],
-        ...images.slice(0, images.length - 1),
+      Sites[Sites.length - 1].displayed = false;
+      Sites = [
+        Sites[Sites.length - 1],
+        ...Sites.slice(0, Sites.length - 1),
       ];
       setTimeout(() => {
-        images[0].displayed = true;
+        Sites[0].displayed = true;
         animationPending = false;
       }, speed);
     }
@@ -41,10 +41,10 @@
   const rotateRight = () => {
     if (animationPending === false) {
       animationPending = true;
-      images[0].displayed = false;
-      images = [...images.slice(1, images.length), images[0]];
+      Sites[0].displayed = false;
+      Sites = [...Sites.slice(1, Sites.length), Sites[0]];
       setTimeout(() => {
-        images[images.length - 1].displayed = true;
+        Sites[Sites.length - 1].displayed = true;
         animationPending = false;
       }, speed);
     }
@@ -54,11 +54,11 @@
     if (autoplay) {
       interval = setInterval(rotateLeft, autoplaySpeed);
     }
-    if (index && images[index]) {
-      const oldImg = images[index].path;
-      const newImg = images[index].openedImg;
-      images[index].path = newImg;
-      images[index].openedImg = oldImg;
+    if (index && Sites[index]) {
+      const oldImg = Sites[index].path;
+      const newImg = Sites[index].openedImg;
+      Sites[index].path = newImg;
+      Sites[index].openedImg = oldImg;
     }
   };
 
@@ -67,11 +67,11 @@
       clearInterval(interval);
     }
 
-    if (index && images[index] && images[index].openedImg) {
-      const oldImg = images[index].path;
-      const newImg = images[index].openedImg;
-      images[index].path = newImg;
-      images[index].openedImg = oldImg;
+    if (index && Sites[index] && Sites[index].openedImg) {
+      const oldImg = Sites[index].path;
+      const newImg = Sites[index].openedImg;
+      Sites[index].path = newImg;
+      Sites[index].openedImg = oldImg;
     }
   };
 
@@ -85,14 +85,14 @@
 </script>
 
 <div id="carousel-container">
-  <div id="carousel-images" style={`padding-inline: ${horizontalPadding}`}>
-    {#each images as image, i (image.id)}
+  <div id="carousel-sites" style={`padding-inline: ${horizontalPadding}`}>
+    {#each Sites as site, i (site.id)}
       <img
-        src={image.path}
-        alt={image.id}
-        id={image.id}
-        class:hidden={image.displayed === false}
-        style={`min-width:${imageWidth}; height: ${imageHeight}; margin: 0 ${imageSpacing};`}
+        src={site.path}
+        alt={site.id}
+        id={site.id}
+        class:hidden={site.displayed === false}
+        style={`min-width:${imgWidth}; height: ${imgHeight}; margin: 0 ${imgSpacing};`}
         on:mouseenter={() => stopAutoPlay(i)}
         on:mouseleave={() => startAutoPlay(i)}
         animate:flip={{ duration: speed }}
@@ -143,7 +143,7 @@
     flex-direction: column;
     overflow-x: hidden;
   }
-  #carousel-images {
+  #carousel-sites {
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
