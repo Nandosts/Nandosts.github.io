@@ -92,7 +92,7 @@
   <div id="carousel-sites" style={`padding-inline: ${horizontalPadding}`}>
     {#each Sites as site, i (site.id)}
       <img
-        src={site.path}
+        src={site.carouselImage}
         alt={site.id}
         id={site.id}
         class:hidden={site.displayed === false}
