@@ -10,7 +10,7 @@
     displayed?: boolean;
   };
 
-  export let Sites: SitesCollection[];
+  export let sites: SitesCollection[];
   export let horizontalPadding = "100px";
   export let imgWidth = "300px";
   export let imgHeight = "100%";
@@ -27,10 +27,10 @@
   const rotateLeft = () => {
     if (animationPending === false) {
       animationPending = true;
-      Sites[Sites.length - 1].displayed = false;
-      Sites = [Sites[Sites.length - 1], ...Sites.slice(0, Sites.length - 1)];
+      sites[sites.length - 1].displayed = false;
+      sites = [sites[sites.length - 1], ...sites.slice(0, sites.length - 1)];
       setTimeout(() => {
-        Sites[0].displayed = true;
+        sites[0].displayed = true;
         animationPending = false;
       }, speed);
     }
@@ -39,10 +39,10 @@
   const rotateRight = () => {
     if (animationPending === false) {
       animationPending = true;
-      Sites[0].displayed = false;
-      Sites = [...Sites.slice(1, Sites.length), Sites[0]];
+      sites[0].displayed = false;
+      sites = [...sites.slice(1, sites.length), sites[0]];
       setTimeout(() => {
-        Sites[Sites.length - 1].displayed = true;
+        sites[sites.length - 1].displayed = true;
         animationPending = false;
       }, speed);
     }
@@ -52,11 +52,11 @@
     if (autoplay) {
       interval = setInterval(rotateLeft, autoplaySpeed);
     }
-    if (index && Sites[index]) {
-      const oldImg = Sites[index].carouselImage;
-      const newImg = Sites[index].openedNotebook;
-      Sites[index].carouselImage = newImg;
-      Sites[index].openedNotebook = oldImg;
+    if (index && sites[index]) {
+      const oldImg = sites[index].carouselImage;
+      const newImg = sites[index].openedNotebook;
+      sites[index].carouselImage = newImg;
+      sites[index].openedNotebook = oldImg;
     }
   };
 
@@ -65,16 +65,16 @@
       clearInterval(interval);
     }
 
-    if (index && Sites[index] && Sites[index].openedNotebook) {
-      const oldImg = Sites[index].carouselImage;
-      const newImg = Sites[index].openedNotebook;
-      Sites[index].carouselImage = newImg;
-      Sites[index].openedNotebook = oldImg;
+    if (index && sites[index] && sites[index].openedNotebook) {
+      const oldImg = sites[index].carouselImage;
+      const newImg = sites[index].openedNotebook;
+      sites[index].carouselImage = newImg;
+      sites[index].openedNotebook = oldImg;
     }
   };
 
   const redirectToSite = async (id: string) => {
-    await push(`/sites/${id}`);
+    await push(`/Sites/${id}`);
   };
 
   if (autoplay) {
@@ -88,7 +88,7 @@
 
 <div id="carousel-container">
   <div id="carousel-sites" style={`padding-inline: ${horizontalPadding}`}>
-    {#each Sites as site, i (site.id)}
+    {#each sites as site, i (site.id)}
       <img
         src={site.carouselImage}
         alt={site.id}
@@ -171,7 +171,6 @@
         opacity: 0;
       }
     }
-
   }
 
   button {

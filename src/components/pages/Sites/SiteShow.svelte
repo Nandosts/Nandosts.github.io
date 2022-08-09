@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-  import { Sites } from "../Home/components/Portfolio/sites";
+  import { sites } from "../Home/components/Portfolio/sites";
 
   export interface ISiteShowParams {
     siteId?: string;
@@ -23,10 +23,10 @@
 
 <div>
   <img
-    src={Sites[siteId].defaultImg}
-    alt={Sites[siteId].id}
-    id={Sites[siteId].id}
-    class:hidden={Sites[siteId].displayed === false}
+    src={sites[siteId].defaultImg}
+    alt={sites[siteId].id}
+    id={sites[siteId].id}
+    class:hidden={sites[siteId].displayed === false}
     style={"min-width:300px; height: 300px; margin: 0;"}
   />
 </div>

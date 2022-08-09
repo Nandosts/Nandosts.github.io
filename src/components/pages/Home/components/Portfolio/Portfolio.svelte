@@ -1,7 +1,7 @@
 <script lang="ts">
   import Carousel from "../../../../Carousel/Carousel.svelte";
 
-  import { Sites, StructSites } from "./sites";
+  import { sites, structSites } from "./sites";
 </script>
 
 <section id="portfolio">
@@ -9,7 +9,7 @@
     <span class="title"> Portifólio </span>
     <div class="portfolio-carousel">
       <Carousel
-        {Sites}
+        {sites}
         imgWidth={"300px"}
         imgHeight={"300px"}
         imgSpacing={"2rem"}
@@ -28,7 +28,7 @@
     </span>
     <div class="portfolio-carousel">
       <Carousel
-        Sites={StructSites}
+        sites={structSites}
         imgWidth={"30%"}
         imgHeight={"300px"}
         imgSpacing={"2rem"}

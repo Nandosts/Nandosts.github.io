@@ -6,7 +6,7 @@ import SiteShow from "./components/pages/Sites/SiteShow.svelte";
 export default {
   "/": Home,
   "/lorem/:repeat": Lorem,
-  "/sites/:siteId": SiteShow,
+  "/Sites/:siteId": SiteShow,
   // The catch-all route must always be last
   "*": NotFound,
 };

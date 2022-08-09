@@ -30,7 +30,7 @@ type SitesCollection = {
   displayed?: boolean;
 };
 
-export const Sites: SitesCollection[] = [
+export const sites: SitesCollection[] = [
   {
     id: "1",
     name: "React-NLW-letmeask",
@@ -66,7 +66,7 @@ export const Sites: SitesCollection[] = [
   },
 ];
 
-export const StructSites: SitesCollection[] = [
+export const structSites: SitesCollection[] = [
   {
     id: "201",
     name: "CRP",
