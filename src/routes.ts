@@ -1,10 +1,12 @@
 import Home from "./components/pages/Home/Home.svelte";
 import Lorem from "./components/pages/Lorem/Lorem.svelte";
 import NotFound from "./components/pages/NotFound/NotFound.svelte";
+import SiteShow from "./components/pages/Sites/SiteShow.svelte";
 
 export default {
   "/": Home,
   "/lorem/:repeat": Lorem,
+  "/sites/:siteId": SiteShow,
   // The catch-all route must always be last
   "*": NotFound,
 };

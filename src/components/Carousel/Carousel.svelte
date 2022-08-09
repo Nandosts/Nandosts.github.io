@@ -1,11 +1,12 @@
 <script lang="ts">
   import { flip } from "svelte/animate";
   import { onDestroy } from "svelte";
+  import { push } from "svelte-spa-router";
 
   type SitesCollection = {
-    path: string;
+    carouselImage: string;
     id: string;
-    openedImg?: string;
+    defaultImg?: string;
     displayed?: boolean;
   };
 
@@ -27,10 +28,7 @@
     if (animationPending === false) {
       animationPending = true;
       Sites[Sites.length - 1].displayed = false;
-      Sites = [
-        Sites[Sites.length - 1],
-        ...Sites.slice(0, Sites.length - 1),
-      ];
+      Sites = [Sites[Sites.length - 1], ...Sites.slice(0, Sites.length - 1)];
       setTimeout(() => {
         Sites[0].displayed = true;
         animationPending = false;
@@ -55,10 +53,10 @@
       interval = setInterval(rotateLeft, autoplaySpeed);
     }
     if (index && Sites[index]) {
-      const oldImg = Sites[index].path;
-      const newImg = Sites[index].openedImg;
-      Sites[index].path = newImg;
-      Sites[index].openedImg = oldImg;
+      const oldImg = Sites[index].carouselImage;
+      const newImg = Sites[index].defaultImg;
+      Sites[index].carouselImage = newImg;
+      Sites[index].defaultImg = oldImg;
     }
   };
 
@@ -67,11 +65,17 @@
       clearInterval(interval);
     }
 
-    if (index && Sites[index] && Sites[index].openedImg) {
-      const oldImg = Sites[index].path;
-      const newImg = Sites[index].openedImg;
-      Sites[index].path = newImg;
-      Sites[index].openedImg = oldImg;
+    if (index && Sites[index] && Sites[index].defaultImg) {
+      const oldImg = Sites[index].carouselImage;
+      const newImg = Sites[index].defaultImg;
+      Sites[index].carouselImage = newImg;
+      Sites[index].defaultImg = oldImg;
+    }
+  };
+
+  const redirectToSite = async (id: number) => {
+    if (id >= 0) {
+      await push(`/sites/${id}`);
     }
   };
 
@@ -92,9 +96,10 @@
         alt={site.id}
         id={site.id}
         class:hidden={site.displayed === false}
-        style={`min-width:${imgWidth}; height: ${imgHeight}; margin: 0 ${imgSpacing};`}
+        style={`min-width:${imgWidth}; height: ${imgHeight}; margin: 0 ${imgSpacing}; cursor: pointer;`}
         on:mouseenter={() => stopAutoPlay(i)}
         on:mouseleave={() => startAutoPlay(i)}
+        on:click={() => redirectToSite(i)}
         animate:flip={{ duration: speed }}
       />
     {/each}

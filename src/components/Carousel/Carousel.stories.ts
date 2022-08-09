@@ -9,13 +9,13 @@ export default {
 };
 
 const imageExamples = [
-  { path: Notebook, id: "image1" },
-  { path: Luna, id: "image2" },
-  { path: Notebook, id: "image3" },
-  { path: Luna, id: "image4" },
-  { path: Notebook, id: "image5" },
-  { path: Luna, id: "image6" },
-  { path: Notebook, id: "image7" },
+  { carouselImage: Notebook, id: "image1" },
+  { carouselImage: Luna, id: "image2" },
+  { carouselImage: Notebook, id: "image3" },
+  { carouselImage: Luna, id: "image4" },
+  { carouselImage: Notebook, id: "image5" },
+  { carouselImage: Luna, id: "image6" },
+  { carouselImage: Notebook, id: "image7" },
 ];
 
 const Template = (_args: ArgType) => {
