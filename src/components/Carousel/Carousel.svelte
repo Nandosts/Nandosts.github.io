@@ -6,7 +6,7 @@
   type SitesCollection = {
     carouselImage: string;
     id: string;
-    defaultImg?: string;
+    openedNotebook?: string;
     displayed?: boolean;
   };
 
@@ -54,9 +54,9 @@
     }
     if (index && Sites[index]) {
       const oldImg = Sites[index].carouselImage;
-      const newImg = Sites[index].defaultImg;
+      const newImg = Sites[index].openedNotebook;
       Sites[index].carouselImage = newImg;
-      Sites[index].defaultImg = oldImg;
+      Sites[index].openedNotebook = oldImg;
     }
   };
 
@@ -65,18 +65,16 @@
       clearInterval(interval);
     }
 
-    if (index && Sites[index] && Sites[index].defaultImg) {
+    if (index && Sites[index] && Sites[index].openedNotebook) {
       const oldImg = Sites[index].carouselImage;
-      const newImg = Sites[index].defaultImg;
+      const newImg = Sites[index].openedNotebook;
       Sites[index].carouselImage = newImg;
-      Sites[index].defaultImg = oldImg;
+      Sites[index].openedNotebook = oldImg;
     }
   };
 
-  const redirectToSite = async (id: number) => {
-    if (id >= 0) {
-      await push(`/sites/${id}`);
-    }
+  const redirectToSite = async (id: string) => {
+    await push(`/sites/${id}`);
   };
 
   if (autoplay) {
@@ -99,7 +97,7 @@
         style={`min-width:${imgWidth}; height: ${imgHeight}; margin: 0 ${imgSpacing}; cursor: pointer;`}
         on:mouseenter={() => stopAutoPlay(i)}
         on:mouseleave={() => startAutoPlay(i)}
-        on:click={() => redirectToSite(i)}
+        on:click={() => redirectToSite(site.id)}
         animate:flip={{ duration: speed }}
       />
     {/each}
@@ -169,11 +167,11 @@
 
     img {
       opacity: 1;
+      &.hidden {
+        opacity: 0;
+      }
     }
 
-    .hidden {
-      opacity: 0;
-    }
   }
 
   button {

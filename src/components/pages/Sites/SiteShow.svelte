@@ -13,9 +13,9 @@
   $: {
     siteId = 1;
     if (params && params.siteId) {
-      siteId = parseInt(params.siteId, 10);
-      if (siteId < 1) {
-        siteId = 1;
+      siteId = parseInt(params.siteId, 10) - 1;
+      if (siteId < 0) {
+        siteId = 0;
       }
     }
   }

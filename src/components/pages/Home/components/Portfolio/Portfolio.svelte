@@ -1,15 +1,34 @@
 <script lang="ts">
   import Carousel from "../../../../Carousel/Carousel.svelte";
 
-  import { Sites } from "./sites";
+  import { Sites, StructSites } from "./sites";
 </script>
 
 <section id="portfolio">
   <div class="portfolio-container">
-    <span class="title"> Portfólio </span>
+    <span class="title"> Portifólio </span>
     <div class="portfolio-carousel">
       <Carousel
         {Sites}
+        imgWidth={"300px"}
+        imgHeight={"300px"}
+        imgSpacing={"2rem"}
+        controlColor={"white"}
+        controlScale={0.8}
+        displayControls={true}
+        autoplay={true}
+        autoplaySpeed={5000}
+      />
+    </div>
+
+    <span class="title">
+      Participações na <a class="struct-title" href="http://struct.unb.br"
+        >Struct (EJ)</a
+      >
+    </span>
+    <div class="portfolio-carousel">
+      <Carousel
+        Sites={StructSites}
         imgWidth={"30%"}
         imgHeight={"300px"}
         imgSpacing={"2rem"}
@@ -17,7 +36,7 @@
         controlScale={0.8}
         displayControls={true}
         autoplay={true}
-        autoplaySpeed={3000}
+        autoplaySpeed={5000}
       />
     </div>
   </div>
@@ -45,6 +64,10 @@
         display: block;
         background: white;
       }
+    }
+
+    .struct-title {
+      color: #009bf2;
     }
 
     .portfolio-carousel {
