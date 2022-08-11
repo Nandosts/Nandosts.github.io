@@ -1,4 +1,6 @@
 <script>
+  import { link, location } from "svelte-spa-router";
+
   import ContactButton from "../ContactButton/ContactButton.svelte";
   import pageSeparator from "../../assets/img/page-separator.png";
 
@@ -8,11 +10,21 @@
 <div class="nav-container">
   <div class="nav-content">
     <div class="nav-links">
-      <a href="#introduction" class:selected={yPosition < 200}> Início </a>
-      <a href="#portfolio" class:selected={yPosition >= 200 && yPosition < 400}>
+      <a
+        href="#introduction"
+        class:selected={yPosition < 200 && $location === "/"}
+      >
+        Início
+      </a>
+      <a
+        href="#portfolio"
+        class:selected={yPosition >= 200 && $location === "/"}
+      >
         Portfólio
       </a>
-      <a href="#about" class:selected={yPosition >= 400}> Sobre mim </a>
+      <a use:link href="/about" class:selected={$location === "/about"}>
+        Sobre mim
+      </a>
     </div>
 
     <ContactButton />

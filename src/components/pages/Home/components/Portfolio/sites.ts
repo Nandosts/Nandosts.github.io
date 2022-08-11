@@ -45,7 +45,7 @@ export const sites: SitesCollection[] = [
     id: "2",
     name: "LABFAZ",
     description:
-      "Site aprimorado desenvolvido pela TMTecnologies,"
+      "Site aprimorado desenvolvido pela TMTecnologia,"
       + "é uma rede de colaboração e inclusão para profissionais de ramos diversos",
     url: "https://labfaz.com.br/",
     technologies: [
