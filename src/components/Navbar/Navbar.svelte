@@ -10,18 +10,14 @@
 <div class="nav-container">
   <div class="nav-content">
     <div class="nav-links">
-      <a
-        href="#introduction"
-        class:selected={yPosition < 200 && $location === "/"}
-      >
-        Início
-      </a>
-      <a
-        href="#portfolio"
-        class:selected={yPosition >= 200 && $location === "/"}
-      >
-        Portfólio
-      </a>
+      {#if $location === "/"}
+        <a href="#introduction" class:selected={yPosition < 200}> Início </a>
+        <a href="#portfolio" class:selected={yPosition >= 200}> Portfólio </a>
+      {:else}
+        <a href="/" use:link> Início </a>
+        <a href="/" use:link> Portfólio </a>
+      {/if}
+
       <a use:link href="/about" class:selected={$location === "/about"}>
         Sobre mim
       </a>
