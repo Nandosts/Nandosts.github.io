@@ -10,8 +10,8 @@
     <div class="portfolio-carousel">
       <Carousel
         {sites}
-        imgWidth={"300px"}
-        imgHeight={"300px"}
+        imgWidth={"275px"}
+        imgHeight={"275px"}
         imgSpacing={"2rem"}
         controlColor={"white"}
         controlScale={0.8}
@@ -29,8 +29,8 @@
     <div class="portfolio-carousel">
       <Carousel
         sites={structSites}
-        imgWidth={"30%"}
-        imgHeight={"300px"}
+        imgWidth={"275px"}
+        imgHeight={"275px"}
         imgSpacing={"2rem"}
         controlColor={"white"}
         controlScale={0.8}

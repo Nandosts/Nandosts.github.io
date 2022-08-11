@@ -18,6 +18,17 @@ import FestivalCNV from "../../../../../assets/img/festival-cnv/festival-cnv.svg
 import RessacaTraineeNotebook from "../../../../../assets/img/ressaca-trainee/ressaca-trainee-notebook.svg";
 import RessacaTrainee from "../../../../../assets/img/ressaca-trainee/ressaca-trainee.svg";
 
+import VaiDeFeriasNotebook from "../../../../../assets/img/vai-de-ferias/vai-de-ferias-notebook.svg";
+import VaiDeFerias from "../../../../../assets/img/vai-de-ferias/vai-de-ferias.svg";
+
+import VLGIVidaNotebook from "../../../../../assets/img/vlgi-vida/vlgi-vida-notebook.svg";
+import VLGIVida from "../../../../../assets/img/vlgi-vida/vlgi-vida.svg";
+
+import SzotUINotebook from "../../../../../assets/img/szot-ui/szot-ui-notebook.svg";
+import SzotUI from "../../../../../assets/img/szot-ui/szot-ui.svg";
+
+import EmptyNotebook from "../../../../../assets/img/empty-notebook.svg";
+
 type SitesCollection = {
   id: string;
   name: string;
@@ -63,6 +74,61 @@ export const sites: SitesCollection[] = [
     defaultImg: Labfaz,
     carouselImage: Notebook,
     openedNotebook: LabfazNotebook,
+  },
+  {
+    id: "3",
+    name: "VLGI Vida",
+    description:
+      "Site desenvolvido pelo grupo sozo, por meio da equipe de tecnologia da empresa VLGI",
+    url: "https://vlgivida.com.br/#/",
+    technologies: ["Riot JS", "SCSS", "Meiosis JS", "Gitlab CI"],
+    defaultImg: VLGIVida,
+    carouselImage: Notebook,
+    openedNotebook: VLGIVidaNotebook,
+  },
+  {
+    id: "4",
+    name: "Szot-UI",
+    description:
+      "(constantemente em melhorias) Biblioteca para componentes principalmente"
+      + "de formulários, realizada na VLGI, desenvolvida em Svelte. Contém"
+      + "Componentes como Inputs mascarados, Modais, botões e validação de formulário",
+    url: "https://team-tecnologia.gitlab.io/public-pkgs/szot-ui/",
+    technologies: [
+      "Svelte",
+      "ESLint",
+      "SCSS",
+      "Jest",
+      "Creevey",
+      "Storybook",
+      "Typescript",
+      "ionic-core",
+    ],
+    defaultImg: SzotUI,
+    carouselImage: Notebook,
+    openedNotebook: SzotUINotebook,
+  },
+  {
+    id: "5",
+    name: "Outros Projetos",
+    description:
+      "Desenvolvi outros projetos que não convém divulgar imagem aqui, mas dentre eles,"
+      + "há por exemplo um sistema web e mobile de planejador financeiro, pela VLGI,"
+      + "e projetos para estudos de decisão de stack (ionic, react native ou flutter),"
+      + "e estudos com testes para decidir melhor plataforma de emails transacionais.",
+    technologies: [
+      "Svelte",
+      "Ionic",
+      "React Native",
+      "ESLint",
+      "SCSS",
+      "Jest",
+      "Storybook",
+      "Typescript",
+      "Strapi",
+    ],
+    carouselImage: Notebook,
+    openedNotebook: EmptyNotebook,
   },
 ];
 
@@ -127,5 +193,27 @@ export const structSites: SitesCollection[] = [
     defaultImg: RessacaTrainee,
     carouselImage: Notebook,
     openedNotebook: RessacaTraineeNotebook,
+  },
+  {
+    id: "205",
+    name: "Vai de férias",
+    description:
+      "Plataforma web desenvolvida para um cliente a fim de permitir a garantia de "
+      + "um planejamento de férias, com marcação de hotel, online.",
+    url: "https://hotel-frontend-psi.vercel.app/",
+    technologies: [
+      "React JS",
+      "Styled Components",
+      "Jest",
+      "Rails",
+      "PostgreSQL",
+      "Devise",
+      "Mailjet",
+      "Figaro",
+      "Pagarme",
+    ],
+    defaultImg: VaiDeFerias,
+    carouselImage: Notebook,
+    openedNotebook: VaiDeFeriasNotebook,
   },
 ];
