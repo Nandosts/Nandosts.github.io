@@ -1,6 +1,7 @@
 <script lang="ts">
+  import * as emailjs from "@emailjs/browser";
   import {
-    Form, Input, Textarea, Button,
+    Form, Input, Textarea, Button, Dialog,
 } from "szot-ui-experimental";
 
   type TFormValues = {
@@ -23,8 +24,33 @@
     return "Por favor, insira um nome válido";
   }
 
-  function sendEmail(formValues: TFormValues) {
-    console.log(formValues);
+  export async function sendEmail(formValues: TFormValues) {
+    // assuming top-level await for brevity
+
+    try {
+      const message = await emailjs.send(
+        process.env.EMAILJS_SERVICE_ID,
+        process.env.EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formValues.name,
+          from_email: formValues.email,
+          message: formValues.message,
+        },
+        process.env.EMAILJS_PUBLIC_KEY,
+      );
+      Dialog.success({
+        title: "Email enviado!",
+        content:
+          "Seu email foi enviado com sucesso para mim, muito obrigado pelo contato",
+      });
+    } catch (err) {
+      Dialog.error({
+        title: "Email não enviado!",
+        content:
+          "Ocorreu um erro, peço desculpas o inconveniente,"
+        + " tenho outros meios de contato no footer do site caso seja necessário",
+      });
+    }
   }
 </script>
 
@@ -90,7 +116,7 @@
       min-width: 20rem;
       height: 30rem;
       overflow-y: auto;
-      
+
       padding: 2rem;
       background: #fff;
 
