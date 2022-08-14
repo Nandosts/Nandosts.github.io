@@ -24,11 +24,11 @@
     return "Por favor, insira um nome válido";
   }
 
-  export async function sendEmail(formValues: TFormValues) {
+  export async function sendEmail(formValues: TFormValues): Promise<void> {
     // assuming top-level await for brevity
 
     try {
-      const message = await emailjs.send(
+      await emailjs.send(
         process.env.EMAILJS_SERVICE_ID,
         process.env.EMAILJS_TEMPLATE_ID,
         {
