@@ -12,7 +12,6 @@
 
   let openedImage = null;
   let innerWidth = 0;
-  $: console.log(innerWidth);
 
   export let sites: SitesCollection[];
   export let horizontalPadding = "100px";
