@@ -43,6 +43,7 @@
         content:
           "Seu email foi enviado com sucesso para mim, muito obrigado pelo contato",
       });
+      localStorage.removeItem("contact-key");
     } catch (err) {
       Dialog.error({
         title: "Email não enviado!",
@@ -54,7 +55,12 @@
   }
 </script>
 
-<Form saveOnStorage on:submit={() => sendEmail(values)} bind:values>
+<Form
+  saveOnStorage
+  on:submit={() => sendEmail(values)}
+  bind:values
+  storageKey="contact-key"
+>
   <section id="contact-me">
     <div class="contact-me-container">
       <div class="contact-me-card">
