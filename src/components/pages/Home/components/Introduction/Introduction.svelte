@@ -7,7 +7,7 @@
 <section id="introduction">
   <div class="introduction-container">
     <div class="introduction-text">
-      <h3>Muito prazer, <br /> meu nome é <br /> Fernando Jorge</h3>
+      <h1>Muito prazer, <br /> meu nome é <br /> Fernando Jorge</h1>
       <p>
         Desenvolvedor fullstack, 20 anos, estou cursando Engenharia de
         computação na UnB. <br />
@@ -54,7 +54,7 @@
     align-items: flex-start;
     row-gap: 1rem;
 
-    h3 {
+    h1 {
       font-family: "Alfa Slab One";
       font-style: normal;
       font-weight: 800;
