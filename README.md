@@ -8,7 +8,8 @@ Este projeto está sujeito a alterações futuras para melhorias ou atualizaçõ
 
 ## Links importantes:
 
-Site atualmente no ar: https://www.figma.com/file/yCRNH35dGfKcazSBVBUEBV
+Site atualmente no ar: https://portfolio-nando.netlify.app/#/
+
 Figma: https://www.figma.com/file/yCRNH35dGfKcazSBVBUEBV
 
 ## Para utilizar o mesmo template:
