@@ -11,12 +11,15 @@
   };
 
   let openedImage = null;
+  let innerWidth = 0;
+  $: console.log(innerWidth);
 
   export let sites: SitesCollection[];
   export let horizontalPadding = "100px";
   export let imgWidth = "300px";
   export let imgHeight = "100%";
   export let imgSpacing = "20px";
+
   export let speed = 500;
   export let controlColor = "#444";
   export let controlScale = 0.5;
@@ -84,7 +87,9 @@
   <div id="carousel-sites" style={`padding-inline: ${horizontalPadding}`}>
     {#each sites as site, i (site.id)}
       <img
-        src={openedImage === i ? site.openedNotebook : site.carouselImage}
+        src={openedImage === i || innerWidth < 500
+          ? site.openedNotebook
+          : site.carouselImage}
         alt={site.id}
         id={site.id}
         class:hidden={site.displayed === false}
@@ -131,6 +136,7 @@
     </button>
   {/if}
 </div>
+<svelte:window bind:innerWidth />
 
 <style lang="scss">
   #carousel-container {

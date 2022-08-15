@@ -62,9 +62,8 @@
     }
 
     p {
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       margin-bottom: 1rem;
-      text-align: justify;
     }
   }
 

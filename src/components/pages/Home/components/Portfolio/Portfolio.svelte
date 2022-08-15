@@ -6,7 +6,7 @@
 
 <section id="portfolio">
   <div class="portfolio-container">
-    <span class="title"> Portifólio </span>
+    <span class="title"> Portfólio </span>
     <div class="portfolio-carousel">
       <Carousel
         {sites}
@@ -45,6 +45,7 @@
 
 <style lang="scss">
   .portfolio-container {
+    margin-top: 2rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -57,14 +58,6 @@
       font-weight: 700;
       font-size: 2rem;
       color: white;
-
-      &::after {
-        content: "";
-        width: 10rem;
-        height: 2px;
-        display: block;
-        background: white;
-      }
     }
 
     .struct-title {

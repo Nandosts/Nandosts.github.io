@@ -77,10 +77,12 @@
     @media (min-width: 0px) {
       --template-columns: 1fr;
       --font-size: 1rem;
+      --bottom-spacing: 3rem;
     }
     @media (min-width: 750px) {
       --template-columns: 1fr 1fr;
       --font-size: 1.25rem;
+      --bottom-spacing: 0;
     }
 
     min-height: 100vh;
@@ -89,6 +91,7 @@
     font-size: var(--font-size);
 
     padding: 1rem 0;
+    margin-bottom: var(--bottom-spacing);
 
     .container {
       width: 100%;
@@ -99,7 +102,7 @@
 
       .about-text {
         width: 80%;
-        text-align: justify;
+        text-align: start;
 
         .my-history-title {
           width: max-content;
