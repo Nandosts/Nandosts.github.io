@@ -52,7 +52,7 @@
   }
 
   .footer-content {
-    height: 3rem !important;
+    height: 4rem;
     display: flex;
     justify-content: space-between;
     padding-inline: 5%;
