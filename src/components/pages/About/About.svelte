@@ -32,7 +32,7 @@
 </script>
 
 <svelte:window bind:innerWidth />
-<body>
+<section>
   <div class="container">
     <div class="about-text">
       <h3 class="my-history-title">Meu Histórico</h3>
@@ -70,10 +70,10 @@
       </div>
     </div>
   </div>
-</body>
+</section>
 
 <style lang="scss">
-  body {
+  section {
     @media (min-width: 0px) {
       --template-columns: 1fr;
       --font-size: 1rem;
@@ -82,6 +82,8 @@
       --template-columns: 1fr 1fr;
       --font-size: 1.25rem;
     }
+
+    min-height: 100vh;
     color: white;
     font-family: sans-serif, Verdana, Arial;
     font-size: var(--font-size);
