@@ -10,7 +10,7 @@
 </script>
 
 <div class="button">
-  <a href="#contact" on:click={() => changeRoute()}>
+  <a href="#contact-me" on:click={() => changeRoute()}>
     <Button size="large">Entrar em contato</Button>
   </a>
 </div>
