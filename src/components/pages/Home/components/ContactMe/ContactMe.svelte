@@ -2,7 +2,7 @@
   import * as emailjs from "@emailjs/browser";
   import {
     Form, Input, Textarea, Button, Dialog,
-} from "szot-ui-experimental";
+  } from "szot-ui-experimental";
 
   type TFormValues = {
     email: string;
@@ -49,7 +49,7 @@
         title: "Email não enviado!",
         content:
           "Ocorreu um erro, peço desculpas o inconveniente,"
-        + " tenho outros meios de contato no footer do site caso seja necessário",
+          + " tenho outros meios de contato no footer do site caso seja necessário",
       });
     }
   }
@@ -92,7 +92,7 @@
         />
       </div>
       <div class="button">
-        <Button type="submit" size="large">Entrar em contato</Button>
+        <Button type="submit" size="large">Enviar Email</Button>
       </div>
     </div>
   </section>

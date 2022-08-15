@@ -22,9 +22,10 @@
     </div>
 
     <span class="title">
-      Participações na <a class="struct-title" href="http://struct.unb.br"
-        >Struct (EJ)</a
-      >
+      Participações na
+      <a class="struct-title" href="http://struct.unb.br" target="_blank">
+        Struct (EJ)
+      </a>
     </span>
     <div class="portfolio-carousel">
       <Carousel

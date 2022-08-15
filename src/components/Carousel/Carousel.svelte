@@ -10,6 +10,8 @@
     displayed?: boolean;
   };
 
+  let openedImage = null;
+
   export let sites: SitesCollection[];
   export let horizontalPadding = "100px";
   export let imgWidth = "300px";
@@ -48,16 +50,11 @@
     }
   };
 
-  const startAutoPlay = (index?: number) => {
+  const startAutoPlay = () => {
     if (autoplay) {
       interval = setInterval(rotateLeft, autoplaySpeed);
     }
-    if (index && sites[index]) {
-      const oldImg = sites[index].carouselImage;
-      const newImg = sites[index].openedNotebook;
-      sites[index].carouselImage = newImg;
-      sites[index].openedNotebook = oldImg;
-    }
+    openedImage = null;
   };
 
   const stopAutoPlay = (index?: number) => {
@@ -66,10 +63,7 @@
     }
 
     if (index && sites[index] && sites[index].openedNotebook) {
-      const oldImg = sites[index].carouselImage;
-      const newImg = sites[index].openedNotebook;
-      sites[index].carouselImage = newImg;
-      sites[index].openedNotebook = oldImg;
+      openedImage = index;
     }
   };
 
@@ -90,13 +84,13 @@
   <div id="carousel-sites" style={`padding-inline: ${horizontalPadding}`}>
     {#each sites as site, i (site.id)}
       <img
-        src={site.carouselImage}
+        src={openedImage === i ? site.openedNotebook : site.carouselImage}
         alt={site.id}
         id={site.id}
         class:hidden={site.displayed === false}
         style={`min-width:${imgWidth}; height: ${imgHeight}; margin: 0 ${imgSpacing}; cursor: pointer;`}
         on:mouseenter={() => stopAutoPlay(i)}
-        on:mouseleave={() => startAutoPlay(i)}
+        on:mouseleave={() => startAutoPlay()}
         on:click={() => redirectToSite(site.id)}
         animate:flip={{ duration: speed }}
       />

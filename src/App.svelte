@@ -38,9 +38,17 @@
 
 <svelte:window bind:scrollY={yPosition} />
 
-<style>
+<style lang="scss">
+  @use "src/styles/variables/index.scss" as v;
   main {
+    @media only screen and (min-width: v.$mobile-devices) {
+      --app-margin: 0 auto 0;
+    }
+
+    @media only screen and (min-width: v.$tablet-devices) {
+      --app-margin:  5rem auto 0;
+    }
     text-align: center;
-    margin: 5rem auto 0;
+    margin: var(--app-margin);
   }
 </style>
