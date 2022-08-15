@@ -88,15 +88,6 @@
           transition: 500ms;
         }
       }
-
-      .selected::after {
-        font-weight: 700;
-        width: 2.6rem;
-      }
     }
-  }
-
-  .separator-img {
-    width: 100%;
   }
 </style>

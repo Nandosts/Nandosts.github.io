@@ -18,7 +18,7 @@ const Template = (_args: ArgType) => {
 
 export const Default = Template({});
 
-Default.parameters = {
+Default.arguments = {
   creevey: {
     tests: {
       ...viewportsTests,
