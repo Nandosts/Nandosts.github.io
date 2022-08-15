@@ -13,7 +13,7 @@
         computação na UnB. <br />
         Procuro oportunidades de aprendizado. <br />
         Comecei aprendendo pela empresa júnior Struct, principalmente em desenvolvimento
-        web, estudei e apliquei to desenvolvimento web e mobile na empresa VLGI e
+        web, estudei e apliquei o desenvolvimento web e mobile na empresa VLGI e
         sigo procurando oportunidades para me aprimorar todos os dias.
       </p>
       <ContactButton />
@@ -24,17 +24,25 @@
 </section>
 
 <style lang="scss">
+  @use "src/styles/variables/index.scss" as v;
+
   section {
+    @media only screen and (min-width: v.$mobile-devices) {
+      --grid-introduction-columns: auto;
+    }
+
+    @media only screen and (min-width: v.$tablet-devices) {
+      --grid-introduction-columns: 60% 40%;
+    }
     min-height: 100vh;
     width: 100%;
-    padding-top: 5rem;
   }
 
   .introduction-container {
     display: grid;
     place-content: center;
     place-items: center;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: var(--grid-introduction-columns);
   }
 
   .introduction-text {

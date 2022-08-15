@@ -84,9 +84,9 @@
           textareaStyle="dark"
           placeholder="Escreva alguma mensagem"
         />
-        <div class="button">
-          <Button type="submit" size="large">Entrar em contato</Button>
-        </div>
+      </div>
+      <div class="button">
+        <Button type="submit" size="large">Entrar em contato</Button>
       </div>
     </div>
   </section>
@@ -128,8 +128,9 @@
     }
 
     .button {
-      margin: 0 0 0 auto;
-      float: right;
+      margin: 1rem 0 0 auto;
+      white-space: nowrap;
+
       --szot-button-background-color: linear-gradient(90deg, #354b45, #308472);
       --szot-button-color: white;
       --szot-button-border-radius: 15px;
