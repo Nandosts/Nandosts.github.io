@@ -2,6 +2,7 @@
   import Router, { replace } from "svelte-spa-router";
   import routes, { IRouteLoadingDetail } from "./routes";
   import Navbar from "./components/Navbar/Navbar.svelte";
+  import Footer from "./components/Footer/Footer.svelte";
 
   function routeLoading(event: CustomEvent) {
     const detail = event.detail as IRouteLoadingDetail;
@@ -31,6 +32,7 @@
 <main>
   <Navbar {yPosition} />
   <Router {routes} on:routeLoading={routeLoading} />
+  <Footer />
 </main>
 
 <svelte:window bind:scrollY={yPosition} />
