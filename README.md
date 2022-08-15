@@ -1,13 +1,19 @@
-# Svelte Template
+# Nando Portfolio
 
-This is a well featured template for [Svelte](https://svelte.dev/) development.
-It includes a hash based routing solution, sass and css preprocessors and linting.
+![Imagem do portfolio](https://imgur.com/B5rLPfi.png)
 
-## Getting started
+Este projeto foi feito para divulgar um pouco do meu trabalho e histórico de desenvolvimento até agora. Foi prototipado em minha [página do figma](https://www.figma.com/file/yCRNH35dGfKcazSBVBUEBV/Portif%C3%B3lio-Nando?node-id=0%3A1). O projeto foi realizado com svelte, a partir do seguinte template: [Template svelte](https://gitlab.com/team-tecnologia/templates-and-snippets/svelte-template).
 
-### Creating the project
+Este projeto está sujeito a alterações futuras para melhorias ou atualizações.
 
-1. Copy the template with git clone:
+## Links importantes:
+
+Site atualmente no ar: https://www.figma.com/file/yCRNH35dGfKcazSBVBUEBV
+Figma: https://www.figma.com/file/yCRNH35dGfKcazSBVBUEBV
+
+## Para utilizar o mesmo template:
+
+1. Copie o template com git clone:
 
 ```sh
 # clone recent files
@@ -18,22 +24,23 @@ cd project-name
 rm -rf .git
 ```
 
-2. Install the [asdf](https://asdf-vm.com/).
+2. Instale o [asdf](https://asdf-vm.com/).
 
-3. Install the [asdf node plugin](https://github.com/asdf-vm/asdf-nodejs).
+3. Instale o [asdf node plugin](https://github.com/asdf-vm/asdf-nodejs).
 
-4. Install the node with asdf:
+4. Instale o node com asdf:
+
 ```sh
 asdf install
 ```
 
-5. Install the node packages:
+5. Instale os pacotes node:
 
 ```sh
 npm install
 ```
 
-### Running the app
+## Como rodar o projeto:
 
 ```sh
 npm run dev   # live reloading mode
@@ -44,16 +51,3 @@ npm run test:ui # run screenshot test with server to view diffs
 npm run test:ui-cli # run screenshot test without server (docker must be running)
 npm run storybook # run the storybook server (docker must be running)
 ```
-
-## Configuring the linter for Svelte
-
-Learn to configure the linter to work with your code editor in the
-[eslint-plugin-svelte3 integrations page](https://github.com/sveltejs/eslint-plugin-svelte3/blob/master/INTEGRATIONS.md).
-You can add linter configurations on the file `.eslintrc.cjs` but be careful and
-add Typescript related rules only for typescript.
-
-## TODO
-
-* [ ] Improve linter configurations
-* [ ] Add linting for SCSS and CSS
-* [ ] Add JS polyfills
