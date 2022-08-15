@@ -1,10 +1,12 @@
 <script lang="ts">
   import { Button } from "szot-ui-experimental";
-  import { sites } from "../Home/components/Portfolio/sites";
+  import { sites, structSites } from "../Home/components/Portfolio/sites";
 
   type ISiteShowParams = {
     siteId?: string;
   };
+
+  const allSites = [...sites, ...structSites];
 
   export let params: ISiteShowParams = {};
 
@@ -12,7 +14,7 @@
   $: {
     siteId = 1;
     if (params && params.siteId) {
-      siteId = parseInt(params.siteId, 10) - 1;
+      siteId = allSites.findIndex((site) => site.id === params.siteId);
       if (siteId < 0) {
         siteId = 0;
       }
@@ -22,31 +24,33 @@
 
 <section class="site-show-section">
   <h2 class="site-name">
-    {sites[siteId].name}
+    {allSites[siteId].name}
   </h2>
-  <img
-    src={sites[siteId].defaultImg}
-    alt={`Imagem do site ${sites[siteId].name}`}
-    id={sites[siteId].id}
-    class="site-img"
-    class:hidden={sites[siteId].displayed === false}
-  />
+  {#if allSites[siteId].defaultImg}
+    <img
+      src={allSites[siteId].defaultImg}
+      alt={`Imagem do site ${allSites[siteId].name}`}
+      id={allSites[siteId].id}
+      class="site-img"
+      class:hidden={allSites[siteId].displayed === false}
+    />
+  {/if}
   <div class="site-details">
     <div class="site-texts">
       <p class="category-title">Tecnologias:</p>
       <ul>
-        {#each sites[siteId].technologies as technology}
+        {#each allSites[siteId].technologies as technology}
           <li>{technology}</li>
         {/each}
       </ul>
 
       <div class="about-site-text">
         <p class="category-title">Sobre o projeto:</p>
-        <span class="site-description">{sites[siteId].description}</span>
+        <span class="site-description">{allSites[siteId].description}</span>
       </div>
     </div>
-    {#if sites[siteId].url}
-      <a class="site-button" href={sites[siteId].url} target="_blank">
+    {#if allSites[siteId].url}
+      <a class="site-button" href={allSites[siteId].url} target="_blank">
         <Button>Visitar o Site</Button>
       </a>
     {/if}
