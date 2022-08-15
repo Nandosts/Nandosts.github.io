@@ -2,13 +2,13 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
-function setViewportSize(driver, width, height) {
+function setViewportSize(driver, width: number, height: number) {
   driver.manage().window().setRect({ width, height });
 }
 
-function sleep(time) {
+function sleep(time: number) {
   // eslint-disable-next-line no-promise-executor-return
-  return new Promise((r) => setTimeout(r, time as number));
+  return new Promise((r) => setTimeout(r, time));
 }
 
 export const viewportsTests = {
