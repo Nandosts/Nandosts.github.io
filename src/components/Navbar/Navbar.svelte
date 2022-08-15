@@ -1,10 +1,39 @@
 <script>
   import { link, location } from "svelte-spa-router";
+  import { SideMenu } from "szot-ui-experimental";
 
   import ContactButton from "../ContactButton/ContactButton.svelte";
   import pageSeparator from "../../assets/img/page-separator.png";
+  import logoFernando from "../../assets/img/logo.svg";
 
   export let yPosition = 0;
+
+  const menuItems = [
+    {
+      type: "item",
+      icon: "icon-home",
+      text: "Início",
+      path: "/#/",
+    },
+    {
+      type: "item",
+      icon: "icon-folder",
+      text: "Portfolio",
+      path: "#portfolio",
+    },
+    {
+      type: "item",
+      icon: "icon-plus",
+      text: "Sobre mim",
+      path: "/#/about",
+    },
+    {
+      type: "item",
+      icon: "icon-phone",
+      text: "Entrar em contato",
+      path: "#contact-me",
+    },
+  ];
 </script>
 
 <div class="nav-container">
@@ -25,54 +54,81 @@
 
     <ContactButton />
   </div>
+  <div class="sidemenu">
+    <SideMenu
+      items={menuItems}
+      mobileMode={true}
+      collapsedLogoImg={logoFernando}
+      expandedLogoImg={logoFernando}
+    />
+  </div>
   <img class="separator-img" src={pageSeparator} alt="Separador da navbar" />
 </div>
 
 <style lang="scss">
+  @use "src/styles/variables/index.scss" as v;
+
   .nav-container {
+    @media only screen and (min-width: v.$mobile-devices) {
+      --navbar-display: none;
+      --sidemenu-display: flex;
+    }
+
+    @media only screen and (min-width: v.$tablet-devices) {
+      --navbar-display: flex;
+      --sidemenu-display: none;
+      left: 0;
+    }
     position: fixed;
     top: 0;
-    left: 0;
     right: 0;
     z-index: 9999 !important;
-  }
 
-  .nav-content {
-    height: 5rem !important;
-    display: flex;
-    justify-content: space-between;
-    padding-inline: 5%;
-    align-items: center;
-    background: #2b3d41;
+    .nav-content {
+      height: 5rem;
+      display: var(--navbar-display);
+      justify-content: space-between;
+      padding-inline: 5%;
+      align-items: center;
+      background: #2b3d41;
 
-    .nav-links {
-      display: flex;
-      justify-content: space-evenly;
+      .nav-links {
+        display: flex;
+        justify-content: space-evenly;
 
-      a {
-        color: white;
-        text-decoration: none;
-        display: inline-block;
-        padding: 10px;
+        a {
+          color: white;
+          text-decoration: none;
+          display: inline-block;
+          padding: 10px;
 
-        &::after {
-          content: "";
-          width: 0px;
-          height: 2px;
-          display: block;
-          background: white;
-          transition: 500ms;
+          &::after {
+            content: "";
+            width: 0px;
+            height: 2px;
+            display: block;
+            background: white;
+            transition: 500ms;
+          }
+        }
+
+        .selected::after {
+          font-weight: 700;
+          width: 2.6rem;
         }
       }
-
-      .selected::after {
-        font-weight: 700;
-        width: 2.6rem;
-      }
     }
-  }
 
-  .separator-img {
-    width: 100%;
+    .sidemenu {
+      display: var(--sidemenu-display);
+      --szot-nav-background-color: #2b3d41;
+      --szot-nav-txt-color: #fff;
+      --szot-nav-items-hover-color: #4d666b;
+    }
+
+    .separator-img {
+      width: 100%;
+      display: var(--navbar-display);
+    }
   }
 </style>
