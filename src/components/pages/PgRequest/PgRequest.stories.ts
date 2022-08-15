@@ -32,6 +32,7 @@ export const Default = Template({
 });
 
 export const Loading = Template({
+  // eslint-disable-next-line no-promise-executor-return
   userDataPromise: new Promise(() => ""),
 });
 

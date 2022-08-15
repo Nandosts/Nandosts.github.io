@@ -1,6 +1,7 @@
 <script lang="ts">
   import Router, { replace } from "svelte-spa-router";
-  import routes, { IRouteLoadingDetail } from "./routes";
+  import routes from "./routes";
+  import type { IRouteLoadingDetail } from "./routes";
   import Navbar from "./components/Navbar/Navbar.svelte";
   import Footer from "./components/Footer/Footer.svelte";
 

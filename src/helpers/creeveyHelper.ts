@@ -7,7 +7,8 @@ function setViewportSize(driver, width, height) {
 }
 
 function sleep(time) {
-  return new Promise((r) => setTimeout(r, time));
+  // eslint-disable-next-line no-promise-executor-return
+  return new Promise((r) => setTimeout(r, time as number));
 }
 
 export const viewportsTests = {

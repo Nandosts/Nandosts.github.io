@@ -11,6 +11,7 @@
   let disabled = true;
   $: {
     disabled = true;
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     userDataPromise
       ?.catch(() => "")
       .then(() => {

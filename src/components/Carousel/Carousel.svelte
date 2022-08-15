@@ -73,8 +73,8 @@
     }
   };
 
-  const redirectToSite = async (id: string) => {
-    await push(`/Sites/${id}`);
+  const redirectToSite = async (id) => {
+    await push(`/Sites/${id as string}`);
   };
 
   if (autoplay) {
