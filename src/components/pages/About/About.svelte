@@ -122,6 +122,7 @@
 
     #shape {
       position: relative;
+      top: 1.5rem;
       margin: 0 auto;
       transform-style: preserve-3d;
     }
