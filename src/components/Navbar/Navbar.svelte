@@ -3,7 +3,6 @@
   import { SideMenu } from "szot-ui-experimental";
 
   import ContactButton from "../ContactButton/ContactButton.svelte";
-  import pageSeparator from "../../assets/img/page-separator.png";
   import logoFernando from "../../assets/img/logo.svg";
 
   export let yPosition = 0;
@@ -62,7 +61,6 @@
       expandedLogoImg={logoFernando}
     />
   </div>
-  <img class="separator-img" src={pageSeparator} alt="Separador da navbar" />
 </div>
 
 <style lang="scss">
@@ -83,6 +81,7 @@
     top: 0;
     right: 0;
     z-index: 9999 !important;
+    border-bottom: 4px solid white;
 
     .nav-content {
       height: 5rem;
@@ -124,11 +123,6 @@
       --szot-nav-background-color: #2b3d41;
       --szot-nav-txt-color: #fff;
       --szot-nav-items-hover-color: #4d666b;
-    }
-
-    .separator-img {
-      width: 100%;
-      display: var(--navbar-display);
     }
   }
 </style>
