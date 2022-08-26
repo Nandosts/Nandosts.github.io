@@ -10,7 +10,11 @@
     message: string;
   };
 
-  let values: TFormValues;
+  let values: TFormValues = {
+    email: "",
+    name: "",
+    message: "",
+  };
 
   function emailValidation(value: string | undefined): string | boolean {
     if (!value || value.length === 0) return true;
@@ -44,6 +48,11 @@
           "Seu email foi enviado com sucesso para mim, muito obrigado pelo contato",
       });
       localStorage.removeItem("contact-key");
+      values = {
+        email: "",
+        name: "",
+        message: "",
+      };
     } catch (err) {
       Dialog.error({
         title: "Email não enviado!",
@@ -70,6 +79,7 @@
           label="Email"
           inputStyle="dark"
           type="email"
+          value={values.email}
           validationFn={emailValidation}
           required={true}
           border="outline"
@@ -78,6 +88,7 @@
           label="Nome / Nome fantasia"
           name="name"
           type="text"
+          value={values.name}
           inputStyle="dark"
           validationFn={nameValidation}
           required={true}
@@ -87,6 +98,7 @@
         <Textarea
           name="message"
           label="Mensagem"
+          value={values.message}
           textareaStyle="dark"
           placeholder="Escreva alguma mensagem"
         />
