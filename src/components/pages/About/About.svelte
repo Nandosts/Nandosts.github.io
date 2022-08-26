@@ -91,9 +91,10 @@
     padding: 1rem 0;
     .container {
       width: 100%;
+      height: 100%;
       display: grid;
       grid-template-columns: var(--template-columns);
-      justify-content: center;
+      justify-content: plac;
       place-items: center;
 
       .about-text {
@@ -122,8 +123,7 @@
 
     #shape {
       position: relative;
-      top: 1.5rem;
-      margin: 0 auto;
+      margin: 1.5rem auto;
       transform-style: preserve-3d;
     }
 
