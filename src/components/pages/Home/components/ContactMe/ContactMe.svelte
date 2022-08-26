@@ -78,11 +78,9 @@
   }
 
   function doRecaptcha() {
-    // eslint-disable-next-line max-len
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, no-undef
+    // eslint-disable-next-line no-undef
     grecaptcha.ready(() => {
-      // eslint-disable-next-line max-len
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, no-undef
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises, no-undef
       grecaptcha.execute(key, { action: "submit" }).then((t: string) => {
         token = t;
         state = State.success;
@@ -94,8 +92,8 @@
         Dialog.error({
           title: "Email não enviado!",
           content:
-          "Ocorreu um erro, peço desculpas o inconveniente,"
-          + " tenho outros meios de contato no footer do site caso seja necessário",
+            "Ocorreu um erro, peço desculpas o inconveniente,"
+            + " tenho outros meios de contato no footer do site caso seja necessário",
         });
       });
     }, 1000);
