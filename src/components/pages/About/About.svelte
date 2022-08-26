@@ -77,12 +77,10 @@
     @media (min-width: 0px) {
       --template-columns: 1fr;
       --font-size: 1rem;
-      --bottom-spacing: 3rem;
     }
     @media (min-width: 750px) {
       --template-columns: 1fr 1fr;
       --font-size: 1.25rem;
-      --bottom-spacing: 0;
     }
 
     min-height: 100vh;
@@ -91,8 +89,6 @@
     font-size: var(--font-size);
 
     padding: 1rem 0;
-    margin-bottom: var(--bottom-spacing);
-
     .container {
       width: 100%;
       display: grid;
@@ -118,11 +114,14 @@
       perspective-origin: 50% 100px;
       transition: transform 2s;
       transform-style: preserve-3d;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     #shape {
       position: relative;
-      top: 9.375rem;
       margin: 0 auto;
       transform-style: preserve-3d;
     }
