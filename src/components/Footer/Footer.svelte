@@ -4,19 +4,9 @@
 
 <footer class="footer-container">
   <div class="footer-content">
-    <div class="whatsapp-contact">
-      <p>Contato:</p>
-      <a
-        class="whatsapp-number"
-        target="_blank"
-        href={"https://web.whatsapp.com"
-          + "/send?phone=55061998223699&text=Ol%C3%A1%2C+Fernando%21"
-          + "+Vi+o+seu+portf%C3%B3lio%2C+tudo+bem+com+voc%C3%AA%3F"}
-        >+55 61 99822-3699</a
-      >
-    </div>
-
-    <p class="copyrights">© 2022 Fernando Jorge • All Rights Reserved</p>
+    <p class="copyrights">
+      © 2022 Fernando Jorge • Todos os direitos reservados
+    </p>
     <div class="footer-links">
       <a href="https://www.linkedin.com/in/fernando-sm/" target="_blank">
         <Button
@@ -58,16 +48,6 @@
     padding-inline: 5%;
     align-items: center;
     background: #2b3d41;
-
-    .whatsapp-contact {
-      text-align: start;
-
-      .whatsapp-number {
-        text-decoration: none;
-        color: inherit;
-        font-weight: 600;
-      }
-    }
 
     .footer-links {
       display: flex;
