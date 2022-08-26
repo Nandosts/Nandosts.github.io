@@ -16,6 +16,17 @@
     message: "",
   };
 
+  let isAllValid = false;
+
+  const key = process.env.RECAPTCHA_SITE_KEY;
+  const State = {
+    idle: "idle",
+    requesting: "requesting",
+    success: "success",
+  };
+  let token = "";
+  let state = State.idle;
+
   function emailValidation(value: string | undefined): string | boolean {
     if (!value || value.length === 0) return true;
     if (/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(value)) return true;
@@ -32,21 +43,23 @@
     // assuming top-level await for brevity
 
     try {
-      await emailjs.send(
-        process.env.EMAILJS_SERVICE_ID,
-        process.env.EMAILJS_TEMPLATE_ID,
-        {
-          from_name: formValues.name,
-          from_email: formValues.email,
-          message: formValues.message,
-        },
-        process.env.EMAILJS_PUBLIC_KEY,
-      );
-      Dialog.success({
-        title: "Email enviado!",
-        content:
-          "Seu email foi enviado com sucesso para mim, muito obrigado pelo contato",
-      });
+      if (isAllValid && state === State.success) {
+        await emailjs.send(
+          process.env.EMAILJS_SERVICE_ID,
+          process.env.EMAILJS_TEMPLATE_ID,
+          {
+            from_name: formValues.name,
+            from_email: formValues.email,
+            message: formValues.message,
+          },
+          process.env.EMAILJS_PUBLIC_KEY,
+        );
+        Dialog.success({
+          title: "Email enviado!",
+          content:
+            "Seu email foi enviado com sucesso para mim, muito obrigado pelo contato",
+        });
+      }
       localStorage.removeItem("contact-key");
       values = {
         email: "",
@@ -61,13 +74,51 @@
           + " tenho outros meios de contato no footer do site caso seja necessário",
       });
     }
+    token = "";
+  }
+
+  function doRecaptcha() {
+    // eslint-disable-next-line max-len
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, no-undef
+    grecaptcha.ready(() => {
+      // eslint-disable-next-line max-len
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access, no-undef
+      grecaptcha.execute(key, { action: "submit" }).then((t: string) => {
+        token = t;
+        state = State.success;
+      });
+    });
+
+    setTimeout(() => {
+      sendEmail(values).catch(() => {
+        Dialog.error({
+          title: "Email não enviado!",
+          content:
+          "Ocorreu um erro, peço desculpas o inconveniente,"
+          + " tenho outros meios de contato no footer do site caso seja necessário",
+        });
+      });
+    }, 1000);
+  }
+
+  function onSubmit() {
+    state = State.requesting;
+    doRecaptcha();
   }
 </script>
 
+<svelte:head>
+  <script
+    src="https://www.google.com/recaptcha/api.js?render={key}"
+    async
+    defer></script>
+</svelte:head>
+
 <Form
   saveOnStorage
-  on:submit={() => sendEmail(values)}
+  on:submit={() => onSubmit()}
   bind:values
+  bind:isAllValid
   storageKey="contact-key"
 >
   <section id="contact-me">
