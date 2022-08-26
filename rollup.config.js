@@ -64,7 +64,7 @@ const config = {
             ...(production ? ["src/service-worker.js"] : []),
             "src/manifest.json",
             "src/index.html",
-            "src/favicon.png",
+            "src/SiteImg.png",
           ],
           dest: "public/",
         },
