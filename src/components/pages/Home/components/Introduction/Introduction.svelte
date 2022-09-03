@@ -34,41 +34,48 @@
     @media only screen and (min-width: v.$tablet-devices) {
       --grid-introduction-columns: 60% 40%;
     }
+    display: flex;
+    align-items: center;
     min-height: 100vh;
     width: 100%;
-  }
 
-  .introduction-container {
-    display: grid;
-    place-content: center;
-    place-items: center;
-    grid-template-columns: var(--grid-introduction-columns);
-  }
+    .introduction-container {
+      height: 100% !important;
 
-  .introduction-text {
-    color: white;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    align-items: flex-start;
-    row-gap: 1rem;
-
-    h1 {
-      font-family: "Alfa Slab One";
-      font-style: normal;
-      font-weight: 800;
-      font-size: 3.2rem;
+      display: grid;
+      place-content: center;
+      justify-items: center;
+      grid-template-columns: var(--grid-introduction-columns);
     }
 
-    p {
-      font-size: 1.25rem;
-      margin-bottom: 1rem;
-    }
-  }
+    .introduction-text {
+      color: white;
+      width: 80%;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      text-align: left;
+      align-items: flex-start;
+      row-gap: 1rem;
 
-  .img {
-    max-width: 100%;
-    overflow: hidden;
+      h1 {
+        font-family: "Alfa Slab One";
+        font-style: normal;
+        font-weight: 800;
+        font-size: 3.2rem;
+      }
+
+      p {
+        font-size: 1.25rem;
+        font-size: max(1.4vw, 2.2vh);
+        line-height: 120%;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .img {
+      width: 100%;
+      overflow: hidden;
+    }
   }
 </style>

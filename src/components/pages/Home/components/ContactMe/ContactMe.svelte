@@ -160,10 +160,11 @@
 </Form>
 
 <style lang="scss">
-  section {
+  #contact-me {
     min-height: 100vh;
     width: 100vw;
     padding-top: 5rem;
+    display: grid;
   }
 
   .contact-me-container {
@@ -179,9 +180,10 @@
       justify-content: space-between;
       text-align: start;
 
-      width: 35vw;
+      width: 50vw;
       min-width: 20rem;
-      height: 30rem;
+      height: 50vh;
+      min-height: 25rem;
       overflow-y: auto;
 
       padding: 2rem;

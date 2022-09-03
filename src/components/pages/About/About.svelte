@@ -21,7 +21,7 @@
   let shapeSize = 0;
   let shapeTranslate = 0;
   $: if (innerWidth > 750) {
-    shapeSize = innerWidth * 0.1;
+    shapeSize = innerWidth * 0.08;
   } else {
     shapeSize = 75;
   }
@@ -32,7 +32,7 @@
 </script>
 
 <svelte:window bind:innerWidth />
-<section>
+<section id="about">
   <div class="container">
     <div class="about-text">
       <h3 class="my-history-title">Meu Histórico</h3>
@@ -73,7 +73,7 @@
 </section>
 
 <style lang="scss">
-  section {
+  #about {
     @media (min-width: 0px) {
       --template-columns: 1fr;
       --font-size: 1rem;
@@ -83,7 +83,7 @@
       --font-size: 1.25rem;
     }
 
-    min-height: 100vh;
+    height: calc(100vh - 5rem);
     color: white;
     font-family: sans-serif, Verdana, Arial;
     font-size: var(--font-size);
@@ -94,16 +94,25 @@
       height: 100%;
       display: grid;
       grid-template-columns: var(--template-columns);
-      justify-content: plac;
+      justify-content: space-between;
       place-items: center;
 
       .about-text {
         width: 80%;
+        height: 100%;
         text-align: start;
+        display: grid;
+        grid-template-rows: auto auto;
+        place-content: center;
 
         .my-history-title {
           width: max-content;
           margin: 0.5rem auto;
+          font-size: max(1.7vw, 2.5vh);
+        }
+        .my-history-text {
+          font-size: max(1.3vw, 2.1vh);
+          line-height: 120%;
         }
       }
     }
@@ -112,7 +121,7 @@
       width: 100%;
       height: 100%;
       perspective: 800px;
-      perspective-origin: 50% 100px;
+      perspective-origin: 50% 40%;
       transition: transform 2s;
       transform-style: preserve-3d;
 
