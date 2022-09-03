@@ -13,7 +13,8 @@
     "test": "jest --verbose ./src/helpers",
     "test:ui": "npm run test:ui-cli -- --ui --port=6005",
     "test:ui-cli": "creevey --reportDir='.creevey/report' --screenDir='.creevey/images'",
-    "deploy": "npx gh-pages -d public"
+    "deploy": "npx gh-pages -d public",
+    "prettier": "prettier src --write"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
@@ -76,6 +77,7 @@
     "@rollup/plugin-url": "^7.0.0",
     "@types/grecaptcha": "^3.0.4",
     "gh-pages": "^4.0.0",
+    "prettier": "^2.7.1",
     "sirv-cli": "^2.0.2",
     "svelte-spa-router": "^3.3.0",
     "szot-ui-experimental": "^1.7.2"
