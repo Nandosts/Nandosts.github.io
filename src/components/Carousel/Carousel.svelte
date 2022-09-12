@@ -3,12 +3,7 @@
   import { onDestroy } from "svelte";
   import { push } from "svelte-spa-router";
 
-  type SitesCollection = {
-    carouselImage: string;
-    id: string;
-    openedNotebook?: string;
-    displayed?: boolean;
-  };
+  import type { SitesCollection } from "../pages/Home/components/Portfolio/sites";
 
   let openedImage = null;
   let innerWidth = 0;
@@ -89,7 +84,7 @@
         src={openedImage === i || innerWidth < 500
           ? site.openedNotebook
           : site.carouselImage}
-        alt={site.id}
+        alt={site.name}
         id={site.id}
         class:hidden={site.displayed === false}
         style={`min-width:${imgWidth}; height: ${imgHeight}; margin: 0 ${imgSpacing}; cursor: pointer;`}
