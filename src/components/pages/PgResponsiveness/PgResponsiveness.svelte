@@ -16,11 +16,11 @@
 </div>
 
 <style lang="scss">
-  @use '../../../styles/variables/sizes.scss' as v;
+  @use 'src/styles/variables/sizes.scss' as v;
 
   :root {
     @media only screen and (min-width: v.$mobile-devices) {
-      --grid: 
+      --grid:
         'i1' 3.75rem
         'i2' 12rem
         'i3' 12rem
@@ -32,7 +32,7 @@
       --font-size: 2rem;
     }
     @media only screen and (min-width: v.$tablet-devices) {
-      --grid: 
+      --grid:
         'i1     i1' 6.25rem
         'i2     i3' 12rem
         'i2     i4' minmax(50vh, 1fr)
@@ -43,7 +43,7 @@
       --font-size: 2rem;
     }
     @media only screen and (min-width: v.$md-desktop-devices) {
-      --grid: 
+      --grid:
         'i1     i1      i1' 6.25rem
         'i2     i3      i5' 12rem
         'i2     i4      i5' minmax(100vh, 1fr)
@@ -53,7 +53,7 @@
       --font-size: 2rem;
     }
     @media only screen and (min-width: v.$hd-desktop-devices) {
-      --grid: 
+      --grid:
         'i1     i1      i1' 6.25rem
         'i2     i3      i5' 18rem
         'i2     i4      i5' minmax(100vh, 1fr)
