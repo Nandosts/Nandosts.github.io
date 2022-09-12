@@ -29,7 +29,7 @@ import SzotUI from "../../../../../assets/img/szot-ui/szot-ui.svg";
 
 import EmptyNotebook from "../../../../../assets/img/empty-notebook.svg";
 
-type SitesCollection = {
+export type SitesCollection = {
   id: string;
   name: string;
   description?: string;
