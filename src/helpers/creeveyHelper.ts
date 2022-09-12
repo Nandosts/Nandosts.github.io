@@ -35,11 +35,15 @@ export const viewportsTests = {
   async desktopFullHD(): Promise<void> {
     setViewportSize(this.browser, 1920, 1080);
     await sleep(500);
-    await this.expect(await this.takeScreenshot()).to.matchImage("desktopFullHD");
+    await this.expect(await this.takeScreenshot()).to.matchImage(
+      "desktopFullHD",
+    );
   },
   async desktopUltra(): Promise<void> {
     setViewportSize(this.browser, 2100, 900);
     await sleep(500);
-    await this.expect(await this.takeScreenshot()).to.matchImage("desktopUltra");
+    await this.expect(await this.takeScreenshot()).to.matchImage(
+      "desktopUltra",
+    );
   },
 };
