@@ -108,11 +108,7 @@
         margin: auto 0 0 auto;
         white-space: nowrap;
 
-        --szot-button-background-color: linear-gradient(
-          90deg,
-          #354b45,
-          #308472
-        );
+        --szot-button-background-color: #354b45;
         --szot-button-color: white;
         --szot-button-border-radius: 15px;
         padding: 1rem 0;
