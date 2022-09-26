@@ -1,11 +1,12 @@
 <script>
+  import { _ } from "svelte-i18n";
   import { Button } from "szot-ui-experimental";
 </script>
 
 <footer class="footer-container">
   <div class="footer-content">
     <p class="copyrights">
-      © 2022 Fernando Jorge • Todos os direitos reservados
+      {$_("footer_copy_rights")}
     </p>
     <div class="footer-links">
       <a href="https://www.linkedin.com/in/fernando-sm/" target="_blank">

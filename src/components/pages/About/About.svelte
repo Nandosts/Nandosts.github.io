@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { _ } from "svelte-i18n";
+
   const knownLanguages = [
     "Svelte Js",
     "React Js",
@@ -35,18 +37,11 @@
 <section id="about">
   <div class="container">
     <div class="about-text">
-      <h3 class="my-history-title">Meu Histórico</h3>
+      <h3 class="my-history-title">{$_("about_history_title")}</h3>
       <p class="my-history-text">
-        Entrei na UnB para o curso de engenharia de computação em 2020, onde
-        devido à pausa pela pandemia, comecei a aprender desenvolvimento web
-        junto com a empresa Júnior Struct. Desenvolvi principalmente em Ruby on
-        rails e em React, pegando diversos projetos e até algumas lideranças.
-        Estudei com cursos diversos, mas aprendi mais com a prática, e enfim
-        entrei no estágio pela empresa VLGI, na área de “desenvolvimento
-        mobile”, porém atuando também no desenvolvimento web com stack principal
-        de svelte (front-end), jest (testes) e strapi (back-end). <br /> Hoje me
-        encontro liderando o front-end de um projeto pela empresa TMTecnologia, em
-        periodo parcial junto a um time, no projeto "Labfaz"
+        {$_("about_history_text")}
+         <br />
+        {$_("about_history_text_2")}
       </p>
     </div>
     <div class="stage">

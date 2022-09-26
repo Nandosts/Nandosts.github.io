@@ -1,0 +1,33 @@
+{
+  "nav_home": "Início",
+  "nav_portfolio": "Portfólio",
+  "nav_about": "Sobre mim",
+  "contact_button": "Entrar em contato",
+
+  "introduction_title_1": "Muito prazer,",
+  "introduction_title_2": "meu nome é",
+  "introduction_title_3": "Fernando Jorge",
+  "introduction_text_1": "Desenvolvedor fullstack, 20 anos, estou cursando Engenharia de computação na UnB.",
+  "introduction_text_2": "Procuro oportunidades de aprendizado.",
+  "introduction_text_3": "Comecei aprendendo pela empresa júnior Struct, principalmente em desenvolvimento web, estudei e apliquei o desenvolvimento web e mobile na empresa VLGI e sigo procurando oportunidades para me aprimorar todos os dias.",
+
+  "portfolio_title_2": "Participações na",
+
+  "form_title": "Formulário de contato",
+  "form_field_2": "Nome / Nome fantasia",
+  "form_field_3_title": "Mensagem",
+  "form_field_3_placeholder": "Escreva alguma mensagem",
+  "form_email_validation": "Por favor, insira um email válido",
+  "form_name_validation": "Por favor, insira um nome válido",
+  "form_success_title": "Email enviado!",
+  "form_success_text": "Seu email foi enviado com sucesso para mim, muito obrigado pelo contato",
+  "form_error_title": "Email não enviado!",
+  "form_error_text": "Ocorreu um erro, peço desculpas o inconveniente. Tenho outros meios de contato no footer do site caso seja necessário",
+  "form_submit": "Enviar Email",
+
+  "footer_copy_rights": "© 2022 Fernando Jorge • Todos os direitos reservados",
+
+  "about_history_title": "Meu Histórico",
+  "about_history_text": "Entrei na UnB para o curso de engenharia de computação em 2020, onde devido à pausa pela pandemia, comecei a aprender desenvolvimento web junto com a empresa Júnior Struct. Desenvolvi principalmente em Ruby on rails e em React, pegando diversos projetos e até algumas lideranças. Estudei com cursos diversos, mas aprendi mais com a prática, e enfim entrei no estágio pela empresa VLGI, na área de desenvolvimento mobile, porém atuando também no desenvolvimento web com stack principal de svelte (front-end), jest (testes) e strapi (back-end).",
+  "about_history_text_2": "Minha última experiência foi uma liderança do front-end de um projeto pela empresa TMTecnologia, em período parcial junto a um time, no projeto 'Labfaz'"
+}

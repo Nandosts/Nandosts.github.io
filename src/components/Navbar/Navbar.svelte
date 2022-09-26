@@ -1,4 +1,6 @@
 <script>
+  import { _ } from "svelte-i18n";
+
   import { link, location } from "svelte-spa-router";
   import { SideMenu } from "szot-ui-experimental";
 
@@ -11,57 +13,61 @@
     {
       type: "item",
       icon: "icon-home",
-      text: "Início",
+      text: $_("nav_home"),
       path: "/#/",
     },
     {
       type: "item",
       icon: "icon-folder",
-      text: "Portfolio",
+      text: $_("nav_portfolio"),
       path: "#portfolio",
     },
     {
       type: "item",
       icon: "icon-plus",
-      text: "Sobre mim",
+      text: $_("nav_about"),
       path: "/#/about",
     },
     {
       type: "item",
       icon: "icon-phone",
-      text: "Entrar em contato",
+      text: $_("contact_button"),
       path: "#contact-me",
     },
   ];
 </script>
 
-<div class="nav-container">
-  <div class="nav-content">
-    <div class="nav-links">
-      {#if $location === "/"}
-        <a href="#introduction" class:selected={yPosition < 200}> Início </a>
-        <a href="#portfolio" class:selected={yPosition >= 200}> Portfólio </a>
-      {:else}
-        <a href="/" use:link> Início </a>
-        <a href="/" use:link> Portfólio </a>
-      {/if}
+  <div class="nav-container">
+    <div class="nav-content">
+      <div class="nav-links">
+        {#if $location === "/"}
+          <a href="#introduction" class:selected={yPosition < 200}>
+            {$_("nav_home")}
+          </a>
+          <a href="#portfolio" class:selected={yPosition >= 200}>
+            {$_("nav_portfolio")}
+          </a>
+        {:else}
+          <a href="/" use:link>{$_("nav_home")}</a>
+          <a href="/" use:link>{$_("nav_portfolio")}</a>
+        {/if}
 
-      <a use:link href="/about" class:selected={$location === "/about"}>
-        Sobre mim
-      </a>
+        <a use:link href="/about" class:selected={$location === "/about"}>
+          {$_("nav_about")}
+        </a>
+      </div>
+
+      <ContactButton />
     </div>
-
-    <ContactButton />
+    <div class="sidemenu">
+      <SideMenu
+        items={menuItems}
+        mobileMode={true}
+        collapsedLogoImg={logoFernando}
+        expandedLogoImg={logoFernando}
+      />
+    </div>
   </div>
-  <div class="sidemenu">
-    <SideMenu
-      items={menuItems}
-      mobileMode={true}
-      collapsedLogoImg={logoFernando}
-      expandedLogoImg={logoFernando}
-    />
-  </div>
-</div>
 
 <style lang="scss">
   @use "src/styles/variables/index.scss" as v;

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from "svelte-i18n";
   import Carousel from "../../../../Carousel/Carousel.svelte";
 
   import { sites, structSites } from "./sites";
@@ -6,7 +7,7 @@
 
 <section id="portfolio">
   <div class="portfolio-container">
-    <span class="title"> Portfólio </span>
+    <span class="title">{$_("nav_portfolio")}</span>
     <div class="portfolio-carousel">
       <Carousel
         {sites}
@@ -22,7 +23,7 @@
     </div>
 
     <span class="title">
-      Participações na
+      {$_("portfolio_title_2")}
       <a class="struct-title" href="http://struct.unb.br" target="_blank">
         Struct (EJ)
       </a>

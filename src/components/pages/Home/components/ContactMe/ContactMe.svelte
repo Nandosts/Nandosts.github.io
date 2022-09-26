@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { _ } from "svelte-i18n";
+
   import * as emailjs from "@emailjs/browser";
   import {
     Form, Input, Textarea, Button, Dialog,
@@ -30,13 +32,13 @@
   function emailValidation(value: string | undefined): string | boolean {
     if (!value || value.length === 0) return true;
     if (/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(value)) return true;
-    return "Por favor, insira um email válido";
+    return $_("form_email_validation");
   }
 
   function nameValidation(value: string | undefined): string | boolean {
     if (!value || value.length === 0) return true;
     if (/[a-zA-Z\u00C0-\u00FF ]+/i.test(value)) return true;
-    return "Por favor, insira um nome válido";
+    return $_("form_name_validation");
   }
 
   export async function sendEmail(formValues: TFormValues): Promise<void> {
@@ -55,9 +57,8 @@
           process.env.EMAILJS_PUBLIC_KEY,
         );
         Dialog.success({
-          title: "Email enviado!",
-          content:
-            "Seu email foi enviado com sucesso para mim, muito obrigado pelo contato",
+          title: $_("form_success_title"),
+          content: $_("form_success_text"),
         });
       }
       localStorage.removeItem("contact-key");
@@ -68,10 +69,8 @@
       };
     } catch (err) {
       Dialog.error({
-        title: "Email não enviado!",
-        content:
-          "Ocorreu um erro, peço desculpas o inconveniente,"
-          + " tenho outros meios de contato no footer do site caso seja necessário",
+        title: $_("form_error_title"),
+        content: $_("form_error_text"),
       });
     }
     token = "";
@@ -90,10 +89,8 @@
     setTimeout(() => {
       sendEmail(values).catch(() => {
         Dialog.error({
-          title: "Email não enviado!",
-          content:
-            "Ocorreu um erro, peço desculpas o inconveniente,"
-            + " tenho outros meios de contato no footer do site caso seja necessário",
+          title: $_("form_error_title"),
+          content: $_("form_error_text"),
         });
       });
     }, 1000);
@@ -122,7 +119,7 @@
   <section id="contact-me">
     <div class="contact-me-container">
       <div class="contact-me-card">
-        <h3 class="contact-title">Formulário de contato</h3>
+        <h3 class="contact-title">{$_("form_title")}</h3>
         <Input
           name="email"
           label="Email"
@@ -134,7 +131,7 @@
           border="outline"
         />
         <Input
-          label="Nome / Nome fantasia"
+          label={$_("form_field_2")}
           name="name"
           type="text"
           value={values.name}
@@ -146,14 +143,14 @@
 
         <Textarea
           name="message"
-          label="Mensagem"
+          label={$_("form_field_3_title")}
           value={values.message}
           textareaStyle="dark"
-          placeholder="Escreva alguma mensagem"
+          placeholder={$_("form_field_3_placeholder")}
         />
       </div>
       <div class="button">
-        <Button type="submit" size="large">Enviar Email</Button>
+        <Button type="submit" size="large">{$_("form_submit")}</Button>
       </div>
     </div>
   </section>

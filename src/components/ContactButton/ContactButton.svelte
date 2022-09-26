@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from "svelte-i18n";
   import { Button } from "szot-ui-experimental";
   import { location, push } from "svelte-spa-router";
 
@@ -11,7 +12,7 @@
 
 <div class="button">
   <a href="#contact-me" on:click={() => changeRoute()}>
-    <Button size="large">Entrar em contato</Button>
+    <Button size="large">{$_("contact_button")}</Button>
   </a>
 </div>
 
