@@ -29,5 +29,20 @@
 
   "about_history_title": "Meu Histórico",
   "about_history_text": "Entrei na UnB para o curso de engenharia de computação em 2020, onde devido à pausa pela pandemia, comecei a aprender desenvolvimento web junto com a empresa Júnior Struct. Desenvolvi principalmente em Ruby on rails e em React, pegando diversos projetos e até algumas lideranças. Estudei com cursos diversos, mas aprendi mais com a prática, e enfim entrei no estágio pela empresa VLGI, na área de desenvolvimento mobile, porém atuando também no desenvolvimento web com stack principal de svelte (front-end), jest (testes) e strapi (back-end).",
-  "about_history_text_2": "Minha última experiência foi uma liderança do front-end de um projeto pela empresa TMTecnologia, em período parcial junto a um time, no projeto 'Labfaz'"
+  "about_history_text_2": "Minha última experiência foi uma liderança do front-end de um projeto pela empresa TMTecnologia, em período parcial junto a um time, no projeto 'Labfaz'",
+
+  "site_technologies": "Tecnologias:",
+  "site_about": "Sobre o projeto:",
+  "site_button": "Visitar o site",
+
+  "letmeask": "Site feito junto com o curso Next Level Week",
+  "labfaz": "Site aprimorado desenvolvido pela TMTecnologia, é uma rede de colaboração e inclusão para profissionais de ramos diversos",
+  "vlgi-vida": "Site desenvolvido pelo grupo sozo, por meio da equipe de tecnologia da empresa VLGI",
+  "szot-ui": "(constantemente em melhorias) Biblioteca para componentes principalmente de formulários, realizada na VLGI, desenvolvida em Svelte. Contém Componentes como Inputs mascarados, Modais, botões e validação de formulário",
+  "others": "Desenvolvi outros projetos que não convém divulgar imagem aqui, mas dentre eles, há por exemplo um sistema web e mobile de planejador financeiro, pela VLGI, e projetos para estudos de decisão de stack (ionic, react native ou flutter), e estudos com testes para decidir melhor plataforma de emails transacionais.",
+  "crp": "Blog personalizado do CRP/DF (Conselho regional de psicologia do DF)",
+  "mentoring": "Site de Projeto de Mentoria Estudantil em Enfermagem UnB, com fins de criar um ambiente de colaboração para os estudantes de enfermagem da UnB",
+  "festival-brasil-cnv": "Site para o primeiro festival brasileiro de comunicação não violenta",
+  "ressaca-trainee": "Site realizado como projeto final do meu trainee no semestre 2020/1",
+  "vai-de-férias": "Plataforma web desenvolvida para um cliente a fim de permitir a garantia de  um planejamento de férias, com marcação de hotel, online."
 }

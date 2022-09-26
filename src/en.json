@@ -14,7 +14,7 @@
   "portfolio_title_2": "Participation's in",
 
   "form_title": "Contact Form",
-  "form_field_2": "Name / Fancy Name",
+  "form_field_2": "Name / Alternative Name",
   "form_field_3_title": "Message",
   "form_field_3_placeholder": "Write some message",
   "form_email_validation": "Please enter a valid email address",
@@ -29,5 +29,20 @@
 
   "about_history_title": "My History",
   "about_history_text": "I joined UnB for the computer engineering course in 2020, where, due to the pause due to the pandemic, I started to learn web development together with the company Júnior Struct. I developed mainly in Ruby on rails and in React, taking on several projects and even some leaders. I studied with different courses, but I learned more with practice, and finally I entered the internship at the company VLGI, in the area of ​​mobile development, but also working in web development with the main stack of svelte (front-end), jest (tests) and strapi (back-end).",
-  "about_history_text_2": "My last experience was leading the front-end of a project by the company TMTecnologia, on a part-time basis with a team, in the 'Labfaz' project"
+  "about_history_text_2": "My last experience was leading the front-end of a project by the company TMTecnologia, on a part-time basis with a team, in the 'Labfaz' project",
+
+  "site_technologies": "Technologies:",
+  "site_about": "About the project:",
+  "site_button": "Go to site",
+
+  "letmeask": "Site made in conjunction with the Next Level Week course",
+  "labfaz": "Improved website developed by TMTecnologia, it is a collaboration and inclusion network for professionals from different fields",
+  "vlgi-vida": "Site developed by the sozo group, through the technology team of the company VLGI",
+  "szot-ui": "(constantly improving) Library for components mainly for forms, made in VLGI, developed in Svelte. Contains components such as masked inputs, modals, buttons and form validation",
+  "others": "I have developed other projects that should not be published here, but among them, there is, for example, a web and mobile financial planner system, by VLGI, and projects for stack decision studies (ionic, react native or flutter) , and studies with tests to decide the best transactional email platform.",
+  "crp": "Custom blog of the CRP/DF (Regional Council of Psychology of the DF)",
+  "mentoring": "Student Mentoring Project Site in Nursing UnB, in order to create a collaborative environment for nursing students at UnB",
+  "festival-brasil-cnv": "Site for the first Brazilian festival of non-violent communication",
+  "ressaca-trainee": "Site created as my trainee's final project in semester 2020/1",
+  "vai-de-ferias": "Web platform developed for a client in order to guarantee a vacation planning, with hotel booking, online."
 }
