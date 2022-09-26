@@ -11,15 +11,18 @@
   import Navbar from "./components/Navbar/Navbar.svelte";
   import Footer from "./components/Footer/Footer.svelte";
 
+  import LoadSites from "./components/pages/Home/components/Portfolio/sites.svelte";
+
   let loading = true;
   $: loading = $isLoading;
   register("en", () => import("./en.json"));
   register("en-US", () => import("./en.json"));
   register("pt", () => import("./pt-BR.json"));
+  register("pt-BR", () => import("./pt-BR.json"));
 
   // eslint-disable-next-line @typescript-eslint/no-floating-promises
   init({
-    fallbackLocale: "pt",
+    fallbackLocale: "pt-BR",
     initialLocale: getLocaleFromNavigator(),
   });
 
@@ -52,6 +55,7 @@
   Please wait...
 {:else}
   <main>
+    <LoadSites />
     <Navbar {yPosition} />
     <Router {routes} on:routeLoading={routeLoading} />
     <Footer />

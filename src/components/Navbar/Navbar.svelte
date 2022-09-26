@@ -1,9 +1,10 @@
 <script>
-  import { _ } from "svelte-i18n";
+  import { _, locale } from "svelte-i18n";
+  import { Button, SideMenu } from "szot-ui-experimental";
 
   import { link, location } from "svelte-spa-router";
-  import { SideMenu } from "szot-ui-experimental";
-
+  import * as Icon from "svelte-flag-icons";
+  import { setSites } from "../pages/Home/components/Portfolio/sites.svelte";
   import ContactButton from "../ContactButton/ContactButton.svelte";
   import logoFernando from "../../assets/img/logo.svg";
 
@@ -35,39 +36,67 @@
       path: "#contact-me",
     },
   ];
+
+  function resetLocale() {
+    if ($locale === "en-US" || $locale === "en") {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+      $locale = "pt-BR";
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+      setSites();
+    } else {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+      $locale = "en-US";
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+      setSites();
+    }
+  }
 </script>
 
-  <div class="nav-container">
-    <div class="nav-content">
-      <div class="nav-links">
-        {#if $location === "/"}
-          <a href="#introduction" class:selected={yPosition < 200}>
-            {$_("nav_home")}
-          </a>
-          <a href="#portfolio" class:selected={yPosition >= 200}>
-            {$_("nav_portfolio")}
-          </a>
-        {:else}
-          <a href="/" use:link>{$_("nav_home")}</a>
-          <a href="/" use:link>{$_("nav_portfolio")}</a>
-        {/if}
-
-        <a use:link href="/about" class:selected={$location === "/about"}>
-          {$_("nav_about")}
+<div class="nav-container">
+  <div class="nav-content">
+    <div class="nav-links">
+      {#if $location === "/"}
+        <a href="#introduction" class:selected={yPosition < 200}>
+          {$_("nav_home")}
         </a>
-      </div>
+        <a href="#portfolio" class:selected={yPosition >= 200}>
+          {$_("nav_portfolio")}
+        </a>
+      {:else}
+        <a href="/" use:link>{$_("nav_home")}</a>
+        <a href="/" use:link>{$_("nav_portfolio")}</a>
+      {/if}
 
-      <ContactButton />
+      <a use:link href="/about" class:selected={$location === "/about"}>
+        {$_("nav_about")}
+      </a>
     </div>
-    <div class="sidemenu">
-      <SideMenu
-        items={menuItems}
-        mobileMode={true}
-        collapsedLogoImg={logoFernando}
-        expandedLogoImg={logoFernando}
-      />
+
+    <div class="end-buttons">
+      <ContactButton />
+
+      <Button
+        size="small"
+        buttonStyleType="not-filled"
+        on:click={() => resetLocale()}
+      >
+        {#if $locale === "en-US" || $locale === "en"}
+          <Icon.Us size="35" />
+        {:else}
+          <Icon.Br size="35" />
+        {/if}
+      </Button>
     </div>
   </div>
+  <div class="sidemenu">
+    <SideMenu
+      items={menuItems}
+      mobileMode={true}
+      collapsedLogoImg={logoFernando}
+      expandedLogoImg={logoFernando}
+    />
+  </div>
+</div>
 
 <style lang="scss">
   @use "src/styles/variables/index.scss" as v;
@@ -121,6 +150,12 @@
           font-weight: 700;
           width: 2.6rem;
         }
+      }
+
+      .end-buttons {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
       }
     }
 

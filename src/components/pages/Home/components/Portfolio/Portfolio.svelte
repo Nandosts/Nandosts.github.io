@@ -2,7 +2,7 @@
   import { _ } from "svelte-i18n";
   import Carousel from "../../../../Carousel/Carousel.svelte";
 
-  import { sites, structSites } from "./sites";
+  import { sites, structSites } from "./sites.svelte";
 </script>
 
 <section id="portfolio">
@@ -10,7 +10,7 @@
     <span class="title">{$_("nav_portfolio")}</span>
     <div class="portfolio-carousel">
       <Carousel
-        {sites}
+        sites={$sites}
         imgWidth={"275px"}
         imgHeight={"275px"}
         imgSpacing={"2rem"}
@@ -30,7 +30,7 @@
     </span>
     <div class="portfolio-carousel">
       <Carousel
-        sites={structSites}
+        sites={$structSites}
         imgWidth={"275px"}
         imgHeight={"275px"}
         imgSpacing={"2rem"}

@@ -1,13 +1,20 @@
 <script lang="ts">
+  import { _ } from "svelte-i18n";
+
+  /** eslint-disable @typescript-eslint/no-unsafe-member-access */
   import { Button } from "szot-ui-experimental";
-  import { sites, structSites } from "../Home/components/Portfolio/sites";
+  import {
+    sites,
+    structSites,
+  } from "../Home/components/Portfolio/sites.svelte";
 
   type ISiteShowParams = {
     siteId?: string;
   };
 
-  const allSites = [...sites, ...structSites];
+  let allSites = [...$sites, ...$structSites];
 
+  $: allSites = [...$sites, ...$structSites];
   export let params: ISiteShowParams = {};
 
   let siteId = 1;
@@ -29,7 +36,7 @@
   {#if allSites[siteId].defaultImg}
     <img
       src={allSites[siteId].defaultImg}
-      alt={`Imagem do site ${allSites[siteId].name}`}
+      alt={"Imagem do site"}
       id={allSites[siteId].id}
       class="site-img"
       class:hidden={allSites[siteId].displayed === false}
@@ -37,7 +44,7 @@
   {/if}
   <div class="site-details">
     <div class="site-texts">
-      <p class="category-title">Tecnologias:</p>
+      <p class="category-title">{$_("site_technologies")}</p>
       <ul>
         {#each allSites[siteId].technologies as technology}
           <li>{technology}</li>
@@ -45,13 +52,13 @@
       </ul>
 
       <div class="about-site-text">
-        <p class="category-title">Sobre o projeto:</p>
+        <p class="category-title">{$_("site_about")}</p>
         <span class="site-description">{allSites[siteId].description}</span>
       </div>
     </div>
     {#if allSites[siteId].url}
       <a class="site-button" href={allSites[siteId].url} target="_blank">
-        <Button>Visitar o Site</Button>
+        <Button>{$_("site_button")}</Button>
       </a>
     {/if}
   </div>

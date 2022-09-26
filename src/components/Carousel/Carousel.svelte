@@ -3,7 +3,17 @@
   import { onDestroy } from "svelte";
   import { push } from "svelte-spa-router";
 
-  import type { SitesCollection } from "../pages/Home/components/Portfolio/sites";
+  type SitesCollection = {
+    id: string;
+    name: string;
+    description?: string;
+    technologies?: string[];
+    url?: string;
+    carouselImage: string;
+    defaultImg?: string;
+    openedNotebook?: string;
+    displayed?: boolean;
+  };
 
   let openedImage = null;
   let innerWidth = 0;
