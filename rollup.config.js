@@ -1,5 +1,6 @@
 /* eslint-disable global-require */
 import svelte from "rollup-plugin-svelte";
+import json from "@rollup/plugin-json";
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import livereload from "rollup-plugin-livereload";
@@ -31,10 +32,14 @@ function serve() {
   return {
     writeBundle() {
       if (server) return;
-      server = require("child_process").spawn("npm", ["run", "start", "--", "--dev", ...process.argv.slice(4)], {
-        stdio: ["ignore", "inherit", "inherit"],
-        shell: true,
-      });
+      server = require("child_process").spawn(
+        "npm",
+        ["run", "start", "--", "--dev", ...process.argv.slice(4)],
+        {
+          stdio: ["ignore", "inherit", "inherit"],
+          shell: true,
+        },
+      );
 
       process.on("SIGTERM", toExit);
       process.on("exit", toExit);
@@ -53,6 +58,7 @@ const config = {
     name: "app",
     file: "public/build/bundle.js",
     assetFileNames: "[name][extname]",
+    inlineDynamicImports: true,
   },
   plugins: [
     production && del({ targets: "public" }),
@@ -114,6 +120,7 @@ const config = {
       dedupe: ["svelte"],
     }),
     commonjs(),
+    json(),
 
     typescript({
       sourceMap: !production,

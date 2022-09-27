@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from "svelte-i18n";
   import ContactButton from "../../../../ContactButton/ContactButton.svelte";
 
   import introductionImage from "../../../../../assets/img/introduction-image.svg";
@@ -7,14 +8,15 @@
 <section id="introduction">
   <div class="introduction-container">
     <div class="introduction-text">
-      <h1>Muito prazer, <br /> meu nome é <br /> Fernando Jorge</h1>
+      <h1>
+        {$_("introduction_title_1")}<br />
+        {$_("introduction_title_2")}<br />
+        {$_("introduction_title_3")}
+      </h1>
       <p>
-        Desenvolvedor fullstack, 20 anos, estou cursando Engenharia de
-        computação na UnB. <br />
-        Procuro oportunidades de aprendizado. <br />
-        Comecei aprendendo pela empresa júnior Struct, principalmente em desenvolvimento
-        web, estudei e apliquei o desenvolvimento web e mobile na empresa VLGI e
-        sigo procurando oportunidades para me aprimorar todos os dias.
+        {$_("introduction_text_1")} <br />
+        {$_("introduction_text_2")} <br />
+        {$_("introduction_text_3")}
       </p>
       <ContactButton />
     </div>
