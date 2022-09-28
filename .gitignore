@@ -13,3 +13,6 @@ public/
 /coverage/
 .creevey/report/
 .env
+
+# Local Netlify folder
+.netlify
