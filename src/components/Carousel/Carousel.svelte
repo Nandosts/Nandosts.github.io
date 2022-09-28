@@ -87,6 +87,13 @@
   });
 </script>
 
+<svelte:head>
+  {#each sites as site}
+    <link rel="preload" as="image" href={site.openedNotebook} />
+    <link rel="preload" as="image" href={site.carouselImage} />
+  {/each}
+</svelte:head>
+
 <div id="carousel-container">
   <div id="carousel-sites" style={`padding-inline: ${horizontalPadding}`}>
     {#each sites as site, i (site.id)}

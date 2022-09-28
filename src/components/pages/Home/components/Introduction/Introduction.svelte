@@ -5,6 +5,10 @@
   import introductionImage from "../../../../../assets/img/introduction-image.svg";
 </script>
 
+<svelte:head>
+  <link rel="preload" as="image" href={introductionImage} />
+</svelte:head>
+
 <section id="introduction">
   <div class="introduction-container">
     <div class="introduction-text">

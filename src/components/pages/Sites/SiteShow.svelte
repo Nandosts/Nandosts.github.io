@@ -29,6 +29,12 @@
   }
 </script>
 
+<svelte:head>
+  {#each allSites as site}
+    <link rel="preload" as="image" href={site.defaultImg} />
+  {/each}
+</svelte:head>
+
 <section class="site-show-section">
   <h2 class="site-name">
     {allSites[siteId].name}
