@@ -154,11 +154,11 @@
 
         button {
           background: none !important;
-					border: none;
+          border: none;
         }
         .flag-button {
           background: none;
-					border: none;
+          border: none;
         }
       }
     }

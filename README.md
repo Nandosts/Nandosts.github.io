@@ -12,8 +12,6 @@ Site atualmente no ar: https://fernando-melo.social/
 
 Figma: https://www.figma.com/file/yCRNH35dGfKcazSBVBUEBV
 
-
-
 1. Instale os pacotes node por meio do pnpm:
 
 ```sh

@@ -2,42 +2,26 @@
   import { _ } from "svelte-i18n";
 
   /** eslint-disable @typescript-eslint/no-unsafe-member-access */
-  // import { Button } from "szot-ui-experimental";
   import { sites, structSites } from "$lib/modules/translation/sites.svelte";
 
-  type ISiteShowParams = {
-    params?: {
-      siteId?: string;
-    };
+  type TSiteShowParams = {
+    id?: string;
   };
 
+  export let data: TSiteShowParams;
   let allSites = [...$sites, ...$structSites];
 
   $: allSites = [...$sites, ...$structSites];
-  // export let params: ISiteShowParams = {};
-  // console.log(params);
 
-  let siteId = 1;
-  let pageParams: ISiteShowParams = {};
-  export function load({ params }: ISiteShowParams) {
-    if (allSites.length > 1) {
-      pageParams = {
-        params,
-      };
-      siteId = 1;
-      if (params && params.siteId) {
-        siteId = allSites.findIndex((site) => {
-          site.id === params.siteId;
-        });
-        if (siteId < 0) {
-          siteId = 0;
-        }
+  let siteId = Number(data.id) || 1;
+  $: {
+    siteId = 1;
+    if (data && data.id) {
+      siteId = allSites.findIndex((site) => site.id === data.id);
+      if (siteId < 0) {
+        siteId = 0;
       }
     }
-  }
-
-  $: if (allSites) {
-    load(pageParams);
   }
 </script>
 
