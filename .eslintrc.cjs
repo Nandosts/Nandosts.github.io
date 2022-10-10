@@ -1,5 +1,4 @@
 /* eslint-disable global-require */
-/* eslint-disable import/no-extraneous-dependencies */
 module.exports = {
   root: true,
   env: {
@@ -8,10 +7,6 @@ module.exports = {
     node: true,
   },
   parser: "@typescript-eslint/parser",
-  extends: [
-    "eslint:recommended",
-    "airbnb-base",
-  ],
   plugins: ["svelte3", "@typescript-eslint"],
   overrides: [
     {
@@ -47,10 +42,7 @@ module.exports = {
         "@typescript-eslint/no-extra-semi": ["error"],
         "@typescript-eslint/require-await": ["error"],
         "@typescript-eslint/object-curly-spacing": ["error", "always"],
-        "@typescript-eslint/type-annotation-spacing": [
-          "error",
-          { before: false, after: true },
-        ],
+        "@typescript-eslint/type-annotation-spacing": ["error", { before: false, after: true }],
       },
     },
     {
