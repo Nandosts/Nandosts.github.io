@@ -10,6 +10,7 @@
   import type { IRouteLoadingDetail } from "./routes";
   import Navbar from "./components/Navbar/Navbar.svelte";
   import Footer from "./components/Footer/Footer.svelte";
+  import Loading from "./components/Loading/loading.svelte";
 
   import LoadSites from "./components/pages/Home/components/Portfolio/sites.svelte";
 
@@ -51,16 +52,16 @@
   let yPosition = 0;
 </script>
 
-{#if $isLoading}
-  Please wait...
-{:else}
-  <main>
+<main>
+  {#if $isLoading}
+    <Loading />
+  {:else}
     <LoadSites />
     <Navbar {yPosition} />
     <Router {routes} on:routeLoading={routeLoading} />
     <Footer />
-  </main>
-{/if}
+  {/if}
+</main>
 
 <svelte:window bind:scrollY={yPosition} />
 
