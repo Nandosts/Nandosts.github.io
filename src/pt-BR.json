@@ -35,10 +35,12 @@
   "site_about": "Sobre o projeto:",
   "site_button": "Visitar o site",
 
+  "e-sports": "Este projeto foi feito durante o NLW eSports (09/2022), na trilha ignite, para desenvolver um site, um app e um servidor backend.",
   "letmeask": "Site feito junto com o curso Next Level Week",
   "labfaz": "Site aprimorado desenvolvido pela TMTecnologia, é uma rede de colaboração e inclusão para profissionais de ramos diversos",
   "vlgi-vida": "Site desenvolvido pelo grupo sozo, por meio da equipe de tecnologia da empresa VLGI",
   "szot-ui": "(constantemente em melhorias) Biblioteca para componentes principalmente de formulários, realizada na VLGI, desenvolvida em Svelte. Contém Componentes como Inputs mascarados, Modais, botões e validação de formulário",
+  "space-tour": "Solução de desafio do front-end mentors, para desenvolver um site que possa lhe proporcionar uma experiência fora do mundo",
   "others": "Desenvolvi outros projetos que não convém divulgar imagem aqui, mas dentre eles, há por exemplo um sistema web e mobile de planejador financeiro, pela VLGI, e projetos para estudos de decisão de stack (ionic, react native ou flutter), e estudos com testes para decidir melhor plataforma de emails transacionais.",
   "crp": "Blog personalizado do CRP/DF (Conselho regional de psicologia do DF)",
   "mentoring": "Site de Projeto de Mentoria Estudantil em Enfermagem UnB, com fins de criar um ambiente de colaboração para os estudantes de enfermagem da UnB",

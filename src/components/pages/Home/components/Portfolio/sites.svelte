@@ -5,6 +5,9 @@
   import { _ } from "svelte-i18n";
   import Notebook from "../../../../../assets/img/notebook-img.svg";
 
+  import NlwESportsNotebook from "../../../../../assets/img/nlw-eSports/nlw-eSports-notebook.svg";
+  import NlwESports from "../../../../../assets/img/nlw-eSports/nlw-eSports.svg";
+
   import LetmeaskNotebook from "../../../../../assets/img/letmeask/letmeask-notebook.svg";
   import Letmeask from "../../../../../assets/img/letmeask/letmeask.svg";
 
@@ -32,6 +35,9 @@
   import SzotUINotebook from "../../../../../assets/img/szot-ui/szot-ui-notebook.svg";
   import SzotUI from "../../../../../assets/img/szot-ui/szot-ui.svg";
 
+  import SpaceTourNotebook from "../../../../../assets/img/space-tour/space-tour-notebook.svg";
+  import SpaceTour from "../../../../../assets/img/space-tour/space-tour.svg";
+
   import EmptyNotebook from "../../../../../assets/img/empty-notebook.svg";
 
   export type SitesCollection = {
@@ -56,13 +62,20 @@
     sites.set([
       {
         id: "1",
-        name: "React-NLW-letmeask",
-        description: $_("letmeask"),
-        url: "https://letmeask-cbfae.web.app/",
-        technologies: ["React.js", "Firebase", "Scss", "Typescript"],
-        defaultImg: Letmeask,
+        name: "nlw-eSports-ignite",
+        description: $_("e-sports"),
+        technologies: [
+          "React.js",
+          "Tailwindcss",
+          "React Native",
+          "Node.JS",
+          "Express",
+          "Prisma",
+          "Typescript",
+        ],
+        defaultImg: NlwESports,
         carouselImage: Notebook,
-        openedNotebook: LetmeaskNotebook,
+        openedNotebook: NlwESportsNotebook,
       },
       {
         id: "2",
@@ -116,6 +129,25 @@
       },
       {
         id: "5",
+        name: "React-NLW-letmeask",
+        description: $_("letmeask"),
+        url: "https://letmeask-cbfae.web.app/",
+        technologies: ["React.js", "Firebase", "Scss", "Typescript"],
+        defaultImg: Letmeask,
+        carouselImage: Notebook,
+        openedNotebook: LetmeaskNotebook,
+      },
+      {
+        id: "6",
+        name: "Space Tour",
+        description: $_("space-tour"),
+        technologies: ["Svelte-kit", "Typescript", "Eslint"],
+        defaultImg: SpaceTour,
+        carouselImage: Notebook,
+        openedNotebook: SpaceTourNotebook,
+      },
+      {
+        id: "7",
         name: "Outros Projetos",
         description: $_("others"),
         technologies: [
