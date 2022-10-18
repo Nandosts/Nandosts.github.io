@@ -3,7 +3,9 @@
  * https://jestjs.io/docs/configuration
  */
 
-export default {
+import type { Config } from "jest";
+
+const config: Config = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 
@@ -71,18 +73,14 @@ export default {
   // ],
 
   // An array of file extensions your modules use
-  moduleFileExtensions: [
-    "json",
-    "js",
-    "ts",
-    "svelte"
-  ],
+  moduleFileExtensions: ["json", "js", "ts", "svelte"],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+    "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$":
+      "<rootDir>/__mocks__/fileMock.js",
     "\\.(css|scss|stylesheet)$": "<rootDir>/__mocks__/styleMock.js",
-    "\\.mdx?$": "<rootDir>/__mocks__/styleMock.js"
+    "\\.mdx?$": "<rootDir>/__mocks__/styleMock.js",
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -150,9 +148,7 @@ export default {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  testMatch: [
-    "**/*.test.[jt]s",
-  ],
+  testMatch: ["**/*.test.[jt]s"],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: [
@@ -179,8 +175,8 @@ export default {
     "^.+\\.svelte$": [
       "svelte-jester",
       {
-        "preprocess": true
-      }
+        preprocess: true,
+      },
     ],
     "^.+\\.[jt]s$": "ts-jest",
     "^.+\\.stories\\.[jt]sx?$": "@storybook/addon-storyshots/injectFileName",
@@ -201,3 +197,5 @@ export default {
   // Whether to use watchman for file crawling
   // watchman: true,
 };
+
+export default config;
