@@ -9,7 +9,7 @@
       {$_("footer_copy_rights")}
     </p>
     <div class="footer-links">
-      <a href="https://www.linkedin.com/in/fernando-sm/" target="_blank">
+      <a href="https://www.linkedin.com/in/fernando-sm/" target="_blank" rel="noreferrer">
         <Button
           size="round"
           icon="linkedin"
@@ -17,7 +17,7 @@
           buttonStyleType="outline"
         />
       </a>
-      <a href="https://www.instagram.com/fernando.jsts/" target="_blank">
+      <a href="https://www.instagram.com/fernando.jsts/" target="_blank" rel="noreferrer">
         <Button
           size="round"
           icon="instagram"
@@ -25,7 +25,7 @@
           buttonStyleType="outline"
         />
       </a>
-      <a href="https://github.com/Nandosts" target="_blank">
+      <a href="https://github.com/Nandosts" target="_blank" rel="noreferrer">
         <Button
           size="round"
           icon="github"

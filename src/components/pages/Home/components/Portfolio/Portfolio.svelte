@@ -24,7 +24,7 @@
 
     <span class="title">
       {$_("portfolio_title_2")}
-      <a class="struct-title" href="http://struct.unb.br" target="_blank">
+      <a class="struct-title" href="http://struct.unb.br" target="_blank" rel="noreferrer">
         Struct (EJ)
       </a>
     </span>

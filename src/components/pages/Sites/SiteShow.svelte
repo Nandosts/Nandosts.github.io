@@ -63,7 +63,7 @@
       </div>
     </div>
     {#if allSites[siteId].url}
-      <a class="site-button" href={allSites[siteId].url} target="_blank">
+      <a class="site-button" href={allSites[siteId].url} target="_blank" rel="noreferrer">
         <Button>{$_("site_button")}</Button>
       </a>
     {/if}
