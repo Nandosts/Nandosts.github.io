@@ -6,6 +6,7 @@ import "../src/styles/global.scss";
 
 import customViewports from "./viewports";
 import Wrapper from "./Wrapper.svelte";
+import { themes } from "@storybook/theming";
 
 export const decorators = [() => Wrapper];
 
@@ -22,5 +23,8 @@ export const parameters = {
   },
   creevey: {
     skip: { kinds: /^((?![Pp]ages).)*$/ },
+  },
+  docs: {
+    theme: themes.dark,
   },
 };
