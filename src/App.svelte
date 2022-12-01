@@ -56,10 +56,7 @@
   {#if $isLoading}
     <Loading />
   {:else}
-    <LoadSites />
-    <Navbar {yPosition} />
     <Router {routes} on:routeLoading={routeLoading} />
-    <Footer />
   {/if}
 </main>
 
