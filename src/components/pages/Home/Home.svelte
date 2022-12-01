@@ -4,7 +4,7 @@
   let count = 0;
 
   function adiciona1() {
-    count += 3;
+    count += 1;
   }
 
   function adiciona3() {
