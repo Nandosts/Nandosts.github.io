@@ -65,7 +65,7 @@
 
   }
   h1 {
-    font-size: 4rem;
+    font-size: 7rem;
   }
 
   .buttons {
@@ -73,5 +73,7 @@
     --szot-button-color: black;
     --szot-button-background-color: white;
     gap: 1rem;
+    --szot-font-size: 6rem;
+    width: 70%;
   }
 </style>
