@@ -1,30 +1,41 @@
 <script lang="ts">
   import { Button } from "szot-ui-experimental";
 
-  let count = 0;
+  // eslint-disable-next-line radix
+  let count = parseInt(localStorage.getItem("numero")) || 0;
+
+  function setCount() {
+    localStorage.setItem("numero", count.toString());
+  }
 
   function adiciona1() {
     count += 1;
+    setCount();
   }
 
   function adiciona3() {
     count += 3;
+    setCount();
   }
 
   function adiciona5() {
     count += 5;
+    setCount();
   }
 
   function adiciona10() {
     count += 10;
+    setCount();
   }
 
   function adiciona15() {
     count += 15;
+    setCount();
   }
 
   function zerarPontos() {
     count = 0;
+    setCount();
   }
 </script>
 
@@ -73,6 +84,7 @@
     display: grid;
     --szot-button-color: black;
     --szot-button-background-color: white;
+    --szot-button-width: 100%;
     gap: 1rem;
     width: 70%;
   }
