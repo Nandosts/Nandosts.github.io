@@ -49,6 +49,7 @@
 
 <style>
   .page-wrapper {
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -73,7 +74,6 @@
     --szot-button-color: black;
     --szot-button-background-color: white;
     gap: 1rem;
-    --szot-font-size: 6rem;
     width: 70%;
   }
 </style>
