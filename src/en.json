@@ -7,9 +7,9 @@
   "introduction_title_1": "Nice to meet you,",
   "introduction_title_2": "my name is",
   "introduction_title_3": "Fernando Jorge",
-  "introduction_text_1": "Fullstack developer, 20 years old, I'm studying Computer Engineering at UnB.",
+  "introduction_text_1": "Systems Analyst and Developer, 21 years old, currently studying ADS at Unisinos.",
   "introduction_text_2": "I am looking for learning opportunities.",
-  "introduction_text_3": "I started learning at the junior company Struct, mainly in web development, I studied and applied web and mobile development at the VLGI company and I keep looking for opportunities to improve myself every day.",
+  "introduction_text_3": "I started my learning journey at the junior company Struct and currently work at Connectere, specializing in Ruby on Rails.",
 
   "portfolio_title_2": "Participation's in",
 
@@ -28,8 +28,8 @@
   "footer_copy_rights": "© 2022 Fernando Jorge • All rights reserved",
 
   "about_history_title": "My History",
-  "about_history_text": "I joined UnB for the computer engineering course in 2020, where, due to the pause due to the pandemic, I started to learn web development together with the company Júnior Struct. I developed mainly in Ruby on rails and in React, taking on several projects and even some leaders. I studied with different courses, but I learned more with practice, and finally I entered the internship at the company VLGI, in the area of ​​mobile development, but also working in web development with the main stack of svelte (front-end), jest (tests) and strapi (back-end).",
-  "about_history_text_2": "My last experience was leading the front-end of a project by the company TMTecnologia, on a part-time basis with a team, in the 'Labfaz' project",
+  "about_history_text": "I joined UnB in 2020 for the computer engineering course. During that time, I had the opportunity to learn web development through the junior company Struct. I primarily focused on Ruby on Rails and React, taking on various projects and even leading some of them. In addition to the courses I took, I gained a lot of practical experience. Following that, I secured an internship position at VLGI, where I worked in the mobile development field, using technologies such as Svelte (front-end), Jest (testing), and Strapi (back-end) for web development projects as well.",
+  "about_history_text_2": "Due to financial reasons, I had to interrupt my journey at UnB, but I continued to specialize and expand my skills. Currently, I am studying at Unisinos and working at Connectere with Ruby on Rails. I am constantly seeking knowledge and certifications to enhance my abilities and further my professional growth.",
 
   "site_technologies": "Technologies:",
   "site_about": "About the project:",
