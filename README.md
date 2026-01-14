@@ -84,4 +84,4 @@ Como este projeto é um app Rails hospedado no GitHub Pages (que só aceita site
     git push origin `git subtree split --prefix public_static main`:refs/heads/gh-pages --force
     ```
 
-O workflow de deploy do projeto legado foi mantido e pode ser encontrado em `.github/workflows/deploy-docs.yml`.
+O workflow de deploy do projeto legado foi mantido e pode ser encontrado em `/legacy_frontend/.github/workflows/old-deploy-docs.yml`.
