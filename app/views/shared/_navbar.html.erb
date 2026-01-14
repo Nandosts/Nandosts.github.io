@@ -1,0 +1,37 @@
+<div class="nav-container">
+  <div class="nav-content">
+    <div class="nav-links">
+      <%# Logic for active class could be added here %>
+      <%= link_to t(:nav_home), root_path %>
+      <%= link_to t(:nav_portfolio), root_path(anchor: "portfolio") %>
+      <%= link_to t(:nav_about), about_path %>
+    </div>
+
+    <div class="end-buttons">
+      <%= link_to t(:contact_button), root_path(anchor: "contact-me"), class: "contact-btn" %>
+      
+      <%# Locale Switcher %>
+      <% current_locale = I18n.locale.to_s == "en" ? "pt-BR" : "en" %>
+      <%= link_to url_for(locale: current_locale), class: "locale-btn" do %>
+        <% if I18n.locale.to_s == "en" %>
+          <%= image_tag "us.svg", width: 35, alt: "English" %>
+        <% else %>
+          <%= image_tag "br.svg", width: 35, alt: "Português" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  
+  <div class="sidemenu">
+    <%# Mobile menu placeholder %>
+    <details>
+      <summary><i class="icon-menu"></i></summary>
+      <ul>
+        <li><%= link_to t(:nav_home), root_path %></li>
+        <li><%= link_to t(:nav_portfolio), root_path(anchor: "portfolio") %></li>
+        <li><%= link_to t(:nav_about), about_path %></li>
+        <li><%= link_to t(:contact_button), root_path(anchor: "contact-me") %></li>
+      </ul>
+    </details>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fernando Portfolio</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="sites, web, desenvolvimento, HTML, CSS, SCSS, JavaScript, Ruby on Rails" />
+    <meta name="author" content="Fernando Jorge Santos Melo" />
+    <meta name="theme-color" content="#2B3D41" />
+    <meta name="description" content="Site criado pelo desenvolvedor web e mobile Fernando Jorge, para representar trabalhos e estudos em carreira e vida acadêmica." />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Fernando Melo Portfolio" />
+    <meta property="og:site_name" content="Fernando Melo Social" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Portfolio de carreira Dev - Desenvolvedor Web e Mobile - Fernando Melo" />
+    <meta property="og:url" content="https://fernando-melo.social/" />
+    <meta property="og:image" content="https://i.imgur.com/SqX0Vw4.png" />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="https://fernando-melo.social/" />
+    <meta name="twitter:title" content="Fernando Melo Portfolio" />
+    <meta name="twitter:description" content="Portfolio de carreira Dev - Desenvolvedor Web e Mobile - Fernando Melo" />
+    <meta name="twitter:image" content="https://i.imgur.com/SqX0Vw4.png" />
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="icon" type="image/png" href="<%= image_path('icon.png') rescue '/icon.png' %>" />
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <main>
+      <%= render "shared/navbar" %>
+      <%= yield %>
+      <%= render "shared/footer" %>
+    </main>
+  </body>
+</html>

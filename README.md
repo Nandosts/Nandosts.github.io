@@ -1,54 +1,24 @@
-# Nando Portfolio
+# README
 
-![image](https://github.com/Nandosts/Nandosts.github.io/assets/65089035/def3a6eb-8b0d-42b9-bbcd-3728b2637f95)
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-Este projeto foi feito para divulgar um pouco do meu trabalho e histórico de desenvolvimento até agora. Foi prototipado em minha [página do figma](https://www.figma.com/file/yCRNH35dGfKcazSBVBUEBV/Portif%C3%B3lio-Nando?node-id=0%3A1). O projeto foi realizado com svelte, a partir do seguinte template: [Template svelte](https://gitlab.com/team-tecnologia/templates-and-snippets/svelte-template).
+Things you may want to cover:
 
-Este projeto está sujeito a alterações futuras para melhorias ou atualizações.
+* Ruby version
 
-## Links importantes:
+* System dependencies
 
-Site atualmente no ar: https://portfolio-nando.netlify.app/#/
+* Configuration
 
-Figma: https://www.figma.com/file/yCRNH35dGfKcazSBVBUEBV
+* Database creation
 
-## Para utilizar o mesmo template:
+* Database initialization
 
-1. Copie o template com git clone:
+* How to run the test suite
 
-```sh
-# clone recent files
-git clone --depth 1 https://gitlab.com/team-tecnologia/templates-and-snippets/svelte-template project-name
-# enter the project
-cd project-name
-# remove git repository
-rm -rf .git
-```
+* Services (job queues, cache servers, search engines, etc.)
 
-2. Instale o [asdf](https://asdf-vm.com/).
+* Deployment instructions
 
-3. Instale o [asdf node plugin](https://github.com/asdf-vm/asdf-nodejs).
-
-4. Instale o node com asdf:
-
-```sh
-asdf install
-```
-
-5. Instale os pacotes node:
-
-```sh
-npm install
-```
-
-## Como rodar o projeto:
-
-```sh
-npm run dev   # live reloading mode
-npm run build # generate production build
-npm run start # serve the production build
-npm run test  # run jest tests and snapshot tests
-npm run test:ui # run screenshot test with server to view diffs
-npm run test:ui-cli # run screenshot test without server (docker must be running)
-npm run storybook # run the storybook server (docker must be running)
-```
+* ...

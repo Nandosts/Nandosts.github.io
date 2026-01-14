@@ -1,0 +1,24 @@
+<div id="carousel-container" data-controller="carousel">
+  <div id="carousel-sites" data-carousel-target="container">
+    <% projects.each do |site| %>
+      <div class="carousel-item">
+        <%= link_to site_path(site.id), class: "carousel-link" do %>
+          <%= image_tag site.notebook_image_path, class: "opened", alt: site.name %>
+          <%= image_tag "notebook-img.svg", class: "closed", alt: site.name %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  
+  <button class="carousel-control left" data-action="click->carousel#rotateLeft">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+  
+  <button class="carousel-control right" data-action="click->carousel#rotateRight">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
+</div>

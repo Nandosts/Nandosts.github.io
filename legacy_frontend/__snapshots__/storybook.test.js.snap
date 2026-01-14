@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Button Inaccessible 1`] = `
+<section
+  class="storybook-snapshot-container"
+>
+  <button
+    class="storybook-button storybook-button--medium storybook-button--primary svelte-wtisvu"
+    data-testid="btn-visible"
+    style="background-color: white"
+    type="button"
+  >
+    Button
+  </button>
+   
+  <button
+    class="svelte-wtisvu"
+    data-testid="btn-hidden"
+    id="btn-hidden"
+  >
+    hi
+  </button>
+</section>
+`;
+
+exports[`Storyshots Components/Button Large 1`] = `
+<section
+  class="storybook-snapshot-container"
+>
+  <button
+    class="storybook-button storybook-button--large storybook-button--secondary svelte-wtisvu"
+    data-testid="btn-visible"
+    style=""
+    type="button"
+  >
+    Button
+  </button>
+   
+  <button
+    class="svelte-wtisvu"
+    data-testid="btn-hidden"
+    id="btn-hidden"
+  >
+    hi
+  </button>
+</section>
+`;
+
+exports[`Storyshots Components/Button Primary 1`] = `
+<section
+  class="storybook-snapshot-container"
+>
+  <button
+    class="storybook-button storybook-button--medium storybook-button--primary svelte-wtisvu"
+    data-testid="btn-visible"
+    style=""
+    type="button"
+  >
+    Button
+  </button>
+   
+  <button
+    class="svelte-wtisvu"
+    data-testid="btn-hidden"
+    id="btn-hidden"
+  >
+    hi
+  </button>
+</section>
+`;
+
+exports[`Storyshots Components/Button Secondary 1`] = `
+<section
+  class="storybook-snapshot-container"
+>
+  <button
+    class="storybook-button storybook-button--medium storybook-button--secondary svelte-wtisvu"
+    data-testid="btn-visible"
+    style=""
+    type="button"
+  >
+    Button
+  </button>
+   
+  <button
+    class="svelte-wtisvu"
+    data-testid="btn-hidden"
+    id="btn-hidden"
+  >
+    hi
+  </button>
+</section>
+`;
+
+exports[`Storyshots Components/Button Small 1`] = `
+<section
+  class="storybook-snapshot-container"
+>
+  <button
+    class="storybook-button storybook-button--small storybook-button--secondary svelte-wtisvu"
+    data-testid="btn-visible"
+    style=""
+    type="button"
+  >
+    Button
+  </button>
+   
+  <button
+    class="svelte-wtisvu"
+    data-testid="btn-hidden"
+    id="btn-hidden"
+  >
+    hi
+  </button>
+</section>
+`;

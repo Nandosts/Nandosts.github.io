@@ -1,0 +1,47 @@
+en:
+  nav_home: Home
+  nav_portfolio: Portfolio
+  nav_about: About me
+  contact_button: Contact me
+  introduction_title_1: Nice to meet you,
+  introduction_title_2: my name is
+  introduction_title_3: Fernando Jorge
+  introduction_text_1: Full Stack Developer | Software Engineer. Graduated in Analysis and Systems Development (2025).
+  introduction_text_2: Always looking for new knowledges.
+  introduction_text_3: Software Developer with over 5 years of experience building scalable web systems and high-performance applications.
+  portfolio_title_2: Participation's in
+  form_title: Contact Form
+  form_field_2: Name / Alternative Name
+  form_field_3_title: Message
+  form_field_3_placeholder: Write some message
+  form_email_validation: Please enter a valid email address
+  form_name_validation: Please enter a valid name
+  form_success_title: Email sent!
+  form_success_text: Your email has been successfully sent to me, thank you very much for contacting me
+  form_error_title: Email not sent!
+  form_error_text: An error occurred, I apologize for the inconvenience. I have other means of contact in the footer of the site if necessary
+  form_submit: Send Email
+  footer_copy_rights: "© 2025 Fernando Jorge • All rights reserved"
+  about_history_title: Professional Experience
+  about_history_text: "Software Developer with over 5 years of experience building scalable web systems and high-performance applications. Strong expertise in Ruby on Rails, MySQL, and background jobs, with hands-on experience in API integrations (Stripe, Twilio, AWS). Proven track record in software architecture, performance optimization, and process automation, reducing operational workloads from days to minutes."
+  about_history_text_2: "I currently work at Connectere Agrogestão as a Software Developer and Analyst, taking end-to-end ownership of feature development in a Ruby on Rails monolith. Previously, I worked as a Front-End Manager at TM Tecnologia and as a Web and Mobile Developer at VLGI. I started my journey at Struct (Junior Enterprise UnB). I graduated in Analysis and Systems Development in Dec 2025. I hold a CS50x certification from Harvard University and an EF SET English Certificate (C2 - Proficient)."
+  site_technologies: 'Technologies:'
+  site_about: 'About the project:'
+  site_button: Go to site
+  e-sports: This project was made during NLW eSports (09/2022), on the ignite trail, to develop a website, an app and a backend server.
+  letmeask: Site made in conjunction with the Next Level Week course
+  labfaz: Improved website developed by TMTecnologia, it is a collaboration and inclusion network for professionals from different fields
+  vlgi-vida: Site developed by the sozo group, through the technology team of the company VLGI
+  szot-ui: "(constantly improving) Library for components mainly for forms, made in VLGI, developed in Svelte. Contains components such as masked inputs, modals, buttons and form validation"
+  space-tour: Front-end mentors challenge solution, to develop a website who might gives you an out of world experience
+  others: I have developed other projects that should not be published here, but among them, there is, for example, a web and mobile financial planner system, by VLGI, and projects for stack decision studies (ionic, react native or flutter) , and studies with tests to decide the best transactional email platform.
+  crp: Custom blog of the CRP/DF (Regional Council of Psychology of the DF)
+  mentoring: Student Mentoring Project Site in Nursing UnB, in order to create a collaborative environment for nursing students at UnB
+  festival-brasil-cnv: Site for the first Brazilian festival of non-violent communication
+  ressaca-trainee: Site created as my trainee's final project in semester 2020/1
+  vai-de-ferias: Web platform developed for a client in order to guarantee a vacation planning, with hotel booking, online.
+  chat_ai: "Ruby on Rails application integrating OpenAI APIs (GPT and DALL-E) for intelligent chat and image generation."
+  portfolio_new: "Frontend portfolio built with Svelte, featuring multilingual support and a showcase of 10+ projects."
+  tictacruby_ai: "Tic-Tac-Toe game in Ruby with an AI opponent using the Minimax algorithm."
+  next_project: "Next Project"
+  previous_project: "Previous Project"
