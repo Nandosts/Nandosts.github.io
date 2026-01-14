@@ -68,20 +68,12 @@ O projeto utiliza Minitest para testes.
 
 ## Deploy (GitHub Pages)
 
-Como este projeto é um app Rails hospedado no GitHub Pages (que só aceita sites estáticos), utilizamos um script de exportação.
+O deploy para o GitHub Pages é automatizado via GitHub Actions. O workflow `deploy.yml` (localizado em `.github/workflows/deploy.yml`) é acionado em cada `push` para a branch `main`.
 
-1.  **Gerar a build estática:**
+Este workflow executa os seguintes passos:
+1.  Faz o checkout do código.
+2.  Configura o ambiente Ruby e instala as dependências.
+3.  Executa o script `script/export_static.rb` para gerar a versão estática do site na pasta `public_static`.
+4.  Realiza o deploy do conteúdo da pasta `public_static` para a branch `gh-pages` do repositório.
 
-    ```bash
-    bin/rails runner script/export_static.rb
-    ```
-
-    Isso criará/atualizará a pasta `public_static` com todos os arquivos HTML e assets.
-
-2.  **Deploy para a branch gh-pages:**
-    ```bash
-    git add public_static && git commit -m "Build: Atualização do site estático"
-    git push origin `git subtree split --prefix public_static main`:refs/heads/gh-pages --force
-    ```
-
-O workflow de deploy do projeto legado foi mantido e pode ser encontrado em `.github/workflows/deploy-docs.yml`.
+Você pode acompanhar o status do deploy na aba "Actions" do seu repositório GitHub.
