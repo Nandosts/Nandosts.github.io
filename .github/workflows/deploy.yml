@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write # For peaceiris/actions-gh-pages to deploy to gh-pages branch
+    env:
+      SECRET_KEY_BASE: "dummy"
+      RAILS_ENV: "production"
 
     steps:
       - name: Checkout code
@@ -23,13 +26,9 @@ jobs:
 
       - name: Precompile assets
         run: bundle exec rails assets:precompile
-        env:
-          RAILS_ENV: production
 
       - name: Run static export script
         run: bundle exec rails runner script/export_static.rb
-        env:
-          RAILS_ENV: production
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
