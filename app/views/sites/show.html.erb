@@ -4,7 +4,7 @@
   </h2>
 
   <div class="site-header-container">
-    <%= link_to site_path(@project.previous.id), class: "nav-button prev", title: t(:previous_project) do %>
+    <%= link_to site_path(id: @project.previous.id), class: "nav-button prev", title: t(:previous_project) do %>
       &#10094;
     <% end %>
 
@@ -14,7 +14,7 @@
       <% end %>
     </div>
 
-    <%= link_to site_path(@project.next.id), class: "nav-button next", title: t(:next_project) do %>
+    <%= link_to site_path(id: @project.next.id), class: "nav-button next", title: t(:next_project) do %>
       &#10095;
     <% end %>
   </div>
