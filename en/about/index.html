@@ -1,5 +1,4 @@
-<!-- BEGIN app/views/layouts/application.html.erb
---><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Fernando Portfolio</title>
@@ -28,12 +27,12 @@
     <meta name="twitter:image" content="https://i.imgur.com/SqX0Vw4.png" />
 
     <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="9wFtdOyaCnkoxnXn2fNKH_NjQtOIfqe3AzV7YJTfkOt-1AYq0S5NRorNlroer5xwLyv7RtGH9xONZxHNxo203w" />
+<meta name="csrf-token" content="9SEYXn_FaUNyRWKfBrpqO9CPNe61yu23DTTHluuzPa9iHJJboGzGkad0G1iW3UvRFD-j_89kvKVcN4aEqa_8Rg" />
     
 
     <link rel="icon" type="image/png" href="/icon.png" />
 
-    <link rel="stylesheet" href="/assets/application-8b441ae0.css" data-turbo-track="reload" />
+    <link rel="stylesheet" href="/assets/application-53d6eeac.css" data-turbo-track="reload" />
     <script type="importmap" data-turbo-track="reload">{
   "imports": {
     "application": "/assets/application-bfcdf840.js",
@@ -61,17 +60,16 @@
 
   <body>
     <main>
-      <!-- BEGIN app/views/shared/_navbar.html.erb
---><div class="nav-container">
+      <div class="nav-container">
   <div class="nav-content">
     <div class="nav-links">
-      <a href="/">Home</a>
-      <a href="/#portfolio">Portfolio</a>
-      <a href="/about">About me</a>
+      <a href="/en">Home</a>
+      <a href="/en#portfolio">Portfolio</a>
+      <a href="/en/about">About me</a>
     </div>
 
     <div class="end-buttons">
-      <a class="contact-btn" href="/#contact-me">Contact me</a>
+      <a class="contact-btn" href="/en#contact-me">Contact me</a>
       
       <a class="locale-btn" href="/pt-BR/about">
           <img width="35" alt="English" src="/assets/us-e7f7a35a.svg" />
@@ -82,16 +80,15 @@
     <details>
       <summary><i class="icon-menu"></i></summary>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/#portfolio">Portfolio</a></li>
-        <li><a href="/about">About me</a></li>
-        <li><a href="/#contact-me">Contact me</a></li>
+        <li><a href="/en">Home</a></li>
+        <li><a href="/en#portfolio">Portfolio</a></li>
+        <li><a href="/en/about">About me</a></li>
+        <li><a href="/en#contact-me">Contact me</a></li>
       </ul>
     </details>
   </div>
-</div><!-- END app/views/shared/_navbar.html.erb -->
-      <!-- BEGIN app/views/pages/about.html.erb
---><section id="about">
+</div>
+      <section id="about">
   <div class="container">
     <div class="about-text">
       <h3 class="my-history-title">Professional Experience</h3>
@@ -156,9 +153,8 @@
       </div>
     </div>
   </div>
-</section><!-- END app/views/pages/about.html.erb -->
-      <!-- BEGIN app/views/shared/_footer.html.erb
---><footer class="footer-container">
+</section>
+      <footer class="footer-container">
   <div class="footer-content">
     <p class="copyrights">
       © 2025 Fernando Jorge • All rights reserved
@@ -176,7 +172,7 @@
     </div>
   </div>
 </footer>
-<!-- END app/views/shared/_footer.html.erb -->
+
     </main>
   </body>
-</html><!-- END app/views/layouts/application.html.erb -->
+</html>

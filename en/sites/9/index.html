@@ -1,5 +1,4 @@
-<!-- BEGIN app/views/layouts/application.html.erb
---><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Fernando Portfolio</title>
@@ -28,12 +27,12 @@
     <meta name="twitter:image" content="https://i.imgur.com/SqX0Vw4.png" />
 
     <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="RULLDRjWmFR56A1Ilkg60QMAscLrJoj_-8KMxWFTpyrMl6BTJWLfa9vj7hVRFOy-30gIV7Lf2Ft1kOZoMwGDHg" />
+<meta name="csrf-token" content="9A2_mYjaG8mUgGBybqXDPvXDVsruuLpTjYRDpyvMAs1jMDWcV3O0G0GxGbX-wuLUMXPA25QW60HchwK1adDDJA" />
     
 
     <link rel="icon" type="image/png" href="/icon.png" />
 
-    <link rel="stylesheet" href="/assets/application-8b441ae0.css" data-turbo-track="reload" />
+    <link rel="stylesheet" href="/assets/application-53d6eeac.css" data-turbo-track="reload" />
     <script type="importmap" data-turbo-track="reload">{
   "imports": {
     "application": "/assets/application-bfcdf840.js",
@@ -61,17 +60,16 @@
 
   <body>
     <main>
-      <!-- BEGIN app/views/shared/_navbar.html.erb
---><div class="nav-container">
+      <div class="nav-container">
   <div class="nav-content">
     <div class="nav-links">
-      <a href="/">Home</a>
-      <a href="/#portfolio">Portfolio</a>
-      <a href="/about">About me</a>
+      <a href="/en">Home</a>
+      <a href="/en#portfolio">Portfolio</a>
+      <a href="/en/about">About me</a>
     </div>
 
     <div class="end-buttons">
-      <a class="contact-btn" href="/#contact-me">Contact me</a>
+      <a class="contact-btn" href="/en#contact-me">Contact me</a>
       
       <a class="locale-btn" href="/pt-BR/sites/9">
           <img width="35" alt="English" src="/assets/us-e7f7a35a.svg" />
@@ -82,29 +80,28 @@
     <details>
       <summary><i class="icon-menu"></i></summary>
       <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/#portfolio">Portfolio</a></li>
-        <li><a href="/about">About me</a></li>
-        <li><a href="/#contact-me">Contact me</a></li>
+        <li><a href="/en">Home</a></li>
+        <li><a href="/en#portfolio">Portfolio</a></li>
+        <li><a href="/en/about">About me</a></li>
+        <li><a href="/en#contact-me">Contact me</a></li>
       </ul>
     </details>
   </div>
-</div><!-- END app/views/shared/_navbar.html.erb -->
-      <!-- BEGIN app/views/sites/show.html.erb
---><section class="site-show-section">
+</div>
+      <section class="site-show-section">
   <h2 class="site-name">
     TicTacRuby AI
   </h2>
 
   <div class="site-header-container">
-    <a class="nav-button prev" title="Previous Project" href="/sites/8">
+    <a class="nav-button prev" title="Previous Project" href="/en/sites/8">
       &#10094;
 </a>
     <div class="site-img-wrapper">
         <img alt="Imagem do site" class="site-img" src="/assets/empty-notebook-c5ec275e.svg" />
     </div>
 
-    <a class="nav-button next" title="Next Project" href="/sites/201">
+    <a class="nav-button next" title="Next Project" href="/en/sites/201">
       &#10095;
 </a>  </div>
   
@@ -126,9 +123,8 @@
         <button class="szot-button">Go to site</button>
       </a>
   </div>
-</section><!-- END app/views/sites/show.html.erb -->
-      <!-- BEGIN app/views/shared/_footer.html.erb
---><footer class="footer-container">
+</section>
+      <footer class="footer-container">
   <div class="footer-content">
     <p class="copyrights">
       © 2025 Fernando Jorge • All rights reserved
@@ -146,7 +142,7 @@
     </div>
   </div>
 </footer>
-<!-- END app/views/shared/_footer.html.erb -->
+
     </main>
   </body>
-</html><!-- END app/views/layouts/application.html.erb -->
+</html>
