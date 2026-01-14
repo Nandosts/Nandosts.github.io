@@ -1,14 +1,16 @@
 <div class="nav-container">
   <div class="nav-content">
+    <a href="<%= root_path %>" class="logo">
+      <%= image_tag "logo.svg", alt: "logo", width: "30" %>
+    </a>
     <div class="nav-links">
-      <%# Logic for active class could be added here %>
-      <%= link_to t(:nav_home), root_path %>
-      <%= link_to t(:nav_portfolio), root_path(anchor: "portfolio") %>
-      <%= link_to t(:nav_about), about_path %>
+      <%= link_to t(:nav_home), root_path, class: "#{'selected' if current_page?(root_path) && request.original_fullpath.exclude?('about')}" %>
+      <%= link_to t(:nav_portfolio), "#{root_path}#portfolio" %>
+      <%= link_to t(:nav_about), about_path, class: "#{'selected' if current_page?(about_path)}" %>
     </div>
 
     <div class="end-buttons">
-      <%= link_to t(:contact_button), root_path(anchor: "contact-me"), class: "contact-btn" %>
+      <%= link_to t(:contact_button), "#{root_path}#contact-me", class: "contact-btn" %>
       
       <%# Locale Switcher - Modified for Static Export Support %>
       <% is_en = I18n.locale.to_s == "en" %>
@@ -17,13 +19,13 @@
         if Rails.env.production?
           # For static export, we link to /en/path or /pt-BR/path
           path_prefix = request.path == "/" ? "" : request.path
-          target_path = "/#{target_locale}#{path_prefix}"
+          target_path = "/#{target_locale}#{path_prefix.gsub(%r{^/(en|pt-BR)}, '')}"
         else
           # In development, use query parameter for locale
           target_path = url_for(locale: target_locale)
         end
       %>
-      <%= link_to target_path, class: "locale-btn" do %>
+      <%= link_to target_path, class: "locale-btn", "data-turbo": false do %>
         <% if is_en %>
           <%= image_tag "us.svg", width: 35, alt: "English" %>
         <% else %>
@@ -33,16 +35,42 @@
     </div>
   </div>
   
-  <div class="sidemenu">
-    <%# Mobile menu placeholder %>
-    <details>
-      <summary><i class="icon-menu"></i></summary>
-      <ul>
-        <li><%= link_to t(:nav_home), root_path %></li>
-        <li><%= link_to t(:nav_portfolio), root_path(anchor: "portfolio") %></li>
-        <li><%= link_to t(:nav_about), about_path %></li>
-        <li><%= link_to t(:contact_button), root_path(anchor: "contact-me") %></li>
+  <div class="sidemenu" data-controller="sidemenu">
+    <a href="<%= root_path %>" class="logo">
+      <%= image_tag "logo.svg", alt: "logo", width: "30" %>
+    </a>
+    <button class="hamburger-button" data-action="click->sidemenu#toggle">
+      <i class="icon-menu"></i>
+    </button>
+    <div class="sidemenu-overlay" data-sidemenu-target="menu">
+      <button class="close-button" data-action="click->sidemenu#close">
+        &times;
+      </button>
+      <ul class="szot-menu-items">
+        <li><%= link_to t(:nav_home), root_path, data: { action: "click->sidemenu#close" } %></li>
+        <li><%= link_to t(:nav_portfolio), "#{root_path}#portfolio", data: { action: "click->sidemenu#close" } %></li>
+        <li><%= link_to t(:nav_about), about_path, data: { action: "click->sidemenu#close" } %></li>
+        <li><%= link_to t(:contact_button), "#{root_path}#contact-me", class: "contact-btn", data: { action: "click->sidemenu#close" } %></li>
+        <li>
+          <% is_en = I18n.locale.to_s == "en" %>
+          <% target_locale = is_en ? "pt-BR" : "en" %>
+          <%
+            if Rails.env.production?
+              path_prefix = request.path == "/" ? "" : request.path
+              target_path = "/#{target_locale}#{path_prefix.gsub(%r{^/(en|pt-BR)}, '')}"
+            else
+              target_path = url_for(locale: target_locale)
+            end
+          %>
+          <%= link_to(target_path, class: "locale-btn", "data-turbo": false, data: { action: "click->sidemenu#close" }) do %>
+            <% if is_en %>
+              <%= image_tag "us.svg", width: 35, alt: "English" %>
+            <% else %>
+              <%= image_tag "br.svg", width: 35, alt: "Português" %>
+            <% end %>
+          <% end %>
+        </li>
       </ul>
-    </details>
+    </div>
   </div>
 </div>
