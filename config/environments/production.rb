@@ -11,6 +11,7 @@ Rails.application.configure do
 
   # Full error reports are disabled.
   config.consider_all_requests_local = false
+  config.public_file_server.enabled = true
 
   # Turn on fragment caching in view templates.
   config.action_controller.perform_caching = true

@@ -21,8 +21,15 @@ jobs:
           ruby-version: '3.4.6' # Use the version from .ruby-version file
           bundler-cache: true # Install dependencies with bundler
 
+      - name: Precompile assets
+        run: bundle exec rails assets:precompile
+        env:
+          RAILS_ENV: production
+
       - name: Run static export script
-        run: ruby script/export_static.rb
+        run: bundle exec rails runner script/export_static.rb
+        env:
+          RAILS_ENV: production
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

@@ -38,9 +38,6 @@ locales.each do |locale|
   end
 end
 
-puts "Compiling assets..."
-system("bin/rails assets:precompile RAILS_ENV=production")
-
 puts "Copying assets..."
 FileUtils.cp_r("public/assets", export_dir) if Dir.exist?("public/assets")
 Dir.glob("public/*").each do |file|
