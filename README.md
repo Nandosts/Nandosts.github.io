@@ -32,7 +32,8 @@ Things you may want to cover:
   2.  **Deploy para a branch gh-pages:**
       ```bash
       git add public_static && git commit -m "Build: Atualização do site estático"
-      git push origin `git subtree split --prefix public_static rails-rewrite`:gh-pages --force
+      git push origin `git subtree split --prefix public_static main`:refs/heads/gh-pages --force
+
       ```
 
 * ...
