@@ -7,7 +7,7 @@ pt-BR:
   introduction_title_2: meu nome é
   introduction_title_3: Fernando Jorge
   introduction_text_1: Desenvolvedor Full Stack | Engenheiro de Software. Graduado em Análise e Desenvolvimento de Sistemas (2025).
-  introduction_text_2: Buscando sempre novos conhecimentos.
+  introduction_text_2: Transformando requisitos complexos em soluções robustas e de alto impacto.
   introduction_text_3: Desenvolvedor de Software com mais de 5 anos de experiência no desenvolvimento de sistemas web escaláveis e aplicações de alta performance.
   portfolio_title_2: Participações na
   form_title: Formulário de contato
@@ -23,8 +23,8 @@ pt-BR:
   form_submit: Enviar Email
   footer_copy_rights: "© 2025 Fernando Jorge • Todos os direitos reservados"
   about_history_title: Experiência Profissional
-  about_history_text: "Desenvolvedor de Software com mais de 5 anos de experiência no desenvolvimento de sistemas web escaláveis e aplicações de alta performance. Especialista em Ruby on Rails, MySQL e background jobs, com forte atuação em integrações via APIs (Stripe, Twilio, AWS). Experiência comprovada em otimização de performance, arquitetura de software e automação de processos, reduzindo cargas operacionais de dias para minutos e gerando impacto direto no negócio."
-  about_history_text_2: "Atualmente trabalho na Connectere Agrogestão como Desenvolvedor de Software, atuando no desenvolvimento end-to-end de funcionalidades em um monólito Ruby on Rails. Anteriormente, atuei como Gerente Front-End na TM Tecnologia e Desenvolvedor Web e Mobile na VLGI. Iniciei minha trajetória na Struct (Empresa Júnior UnB). Sou graduado em Análise e Desenvolvimento de Sistemas (Dez 2025). Possuo certificação CS50x pela Harvard University e Certificado de Inglês EF SET (C2 - Proficiente)."
+  about_history_text: "Com mais de 5 anos de experiência, atuo na construção de sistemas críticos e de alta disponibilidade. Minha expertise cobre todo o ciclo de vida do desenvolvimento, desde a arquitetura de banco de dados (MySQL/PostgreSQL) até a otimização de background jobs e integração de APIs complexas (Stripe, AWS). Meu foco é reduzir complexidade técnica enquanto maximizo valor para o negócio."
+  about_history_text_2: "Atualmente na Connectere Agrogestão, faço o desenvolvimento de features end-to-end em um monólito Rails de grande escala. Minha trajetória inclui passagens como Tech Lead Front-End na TM Tecnologia e Desenvolvedor Full Stack na VLGI. Formado em Análise e Desenvolvimento de Sistemas, mantenho-me atualizado com certificações internacionais (CS50x Harvard) e proficiência em inglês (C2)."
   site_technologies: 'Tecnologias:'
   site_about: 'Sobre o projeto:'
   site_button: Visitar o site
