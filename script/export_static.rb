@@ -1,3 +1,4 @@
+require_relative '../config/environment'
 require "fileutils"
 
 export_dir = "public_static"
