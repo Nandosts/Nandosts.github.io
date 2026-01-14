@@ -1,0 +1,149 @@
+#about {
+  box-sizing: border-box;
+  overflow-x: hidden;
+
+  --shape-size: clamp(64px, 6vw, 110px);
+  --translate-z: calc(var(--shape-size) * 2.7);
+
+  color: white;
+  font-family: sans-serif, Verdana, Arial;
+  font-size: 1rem;
+
+  padding: 4rem 0;
+  min-height: auto;
+
+  @media (min-width: 1024px) {
+    min-height: calc(100vh - 5rem);
+    padding: 2rem 0;
+    font-size: 1.15rem;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+
+    gap: 3rem;
+    padding: 0 1.25rem;
+
+    @media (min-width: 768px) {
+      padding: 0 2.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      grid-template-columns: minmax(320px, 1fr) minmax(320px, 1fr);
+      align-items: center;
+      gap: 4rem;
+    }
+  }
+
+  .about-text {
+    width: 100%;
+    max-width: 640px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .my-history-title {
+      width: fit-content;
+      margin: 0 auto 1rem;
+
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    }
+
+    .my-history-text {
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      line-height: 1.6;
+    }
+  }
+
+  .stage {
+    width: 100%;
+    min-height: 260px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    perspective: 800px;
+    perspective-origin: 50% 40%;
+    transform-style: preserve-3d;
+
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+      min-height: 340px;
+    }
+
+    @media (min-width: 1024px) {
+      min-height: 420px;
+    }
+  }
+
+  #shape {
+    position: relative;
+    width: var(--shape-size);
+    height: var(--shape-size);
+
+    transform-style: preserve-3d;
+    animation: spin 32s linear infinite;
+
+    margin: 0 auto;
+
+    &:hover {
+      animation-play-state: paused;
+    }
+
+    &.backfaces .plane {
+      backface-visibility: visible;
+    }
+  }
+
+  .plane {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid white;
+    border-radius: 0.75rem;
+
+    background-color: rgba(182, 182, 182, 0.95);
+    color: black;
+
+    text-align: center;
+    font-family: Times, sans-serif, Arial, Helvetica;
+
+    font-size: clamp(0.65rem, 1.5vw, 0.85rem);
+    padding: 0.25rem;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    backface-visibility: hidden;
+    transition: transform 2s, opacity 2s;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(-360deg);
+    }
+  }
+
+}
