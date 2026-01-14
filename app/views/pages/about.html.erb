@@ -1,0 +1,21 @@
+<section id="about">
+  <div class="container">
+    <div class="about-text">
+      <h3 class="my-history-title"><%= t(:about_history_title) %></h3>
+      <p class="my-history-text">
+        <%= t(:about_history_text) %> <br /><br />
+        <%= t(:about_history_text_2) %>
+      </p>
+    </div>
+    <div class="stage">
+      <div id="shape" class="ring backfaces">
+        <% angle = 360.0 / @languages.length %>
+        <% @languages.each_with_index do |lang, i| %>
+          <div class="plane" style="transform: rotateY(<%= angle * i %>deg) translateZ(var(--translate-z));">
+            <%= lang %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

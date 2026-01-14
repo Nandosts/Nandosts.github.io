@@ -1,0 +1,18 @@
+<section id="portfolio">
+  <div class="portfolio-container">
+    <span class="title"><%= t(:nav_portfolio) %></span>
+    <div class="portfolio-carousel">
+      <%= render partial: "shared/carousel", locals: { projects: Project.personal } %>
+    </div>
+
+    <span class="title">
+      <%= t(:portfolio_title_2) %>
+      <a class="struct-title" href="http://struct.unb.br" target="_blank" rel="noreferrer">
+        Struct (EJ)
+      </a>
+    </span>
+    <div class="portfolio-carousel">
+      <%= render partial: "shared/carousel", locals: { projects: Project.struct } %>
+    </div>
+  </div>
+</section>

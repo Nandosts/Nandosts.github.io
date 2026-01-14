@@ -1,0 +1,43 @@
+<section id="contact-me">
+  <div class="contact-me-container" data-controller="contact">
+    <%= form_with url: "https://formsubmit.co/ajax/fernando.jsts@gmail.com", 
+                  method: :post,
+                  html: { 
+                    data: { 
+                      contact_target: "form",
+                      action: "submit->contact#submit",
+                      success_text: t(:form_success_text),
+                      error_text: t(:form_error_text)
+                    }
+                  },
+                  class: "contact-me-card" do |f| %>
+      <h3 class="contact-title"><%= t(:form_title) %></h3>
+      
+      <div id="contact-message" data-contact-target="message"></div>
+
+      <%# Honeypot to prevent spam %>
+      <input type="text" name="_honey" style="display:none">
+      <%# Disable captcha for smoother AJAX experience %>
+      <input type="hidden" name="_captcha" value="false">
+
+      <div class="field-group">
+        <%= f.label :email, "Email" %>
+        <%= f.email_field :email, name: "email", required: true, class: "input-dark", placeholder: "seu@email.com" %>
+      </div>
+      
+      <div class="field-group">
+        <%= f.label :name, t(:form_field_2) %>
+        <%= f.text_field :name, name: "name", required: true, class: "input-dark", placeholder: "Seu Nome" %>
+      </div>
+      
+      <div class="field-group">
+        <%= f.label :message, t(:form_field_3_title) %>
+        <%= f.text_area :message, name: "message", placeholder: t(:form_field_3_placeholder), required: true, class: "textarea-dark" %>
+      </div>
+
+      <div class="button-container">
+        <%= f.submit t(:form_submit), data: { contact_target: "button" }, class: "submit-button" %>
+      </div>
+    <% end %>
+  </div>
+</section>
