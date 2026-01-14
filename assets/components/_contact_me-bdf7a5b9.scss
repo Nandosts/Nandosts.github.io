@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "../variables/index.scss" as v;
 
 #contact-me {
   min-height: 100vh;
@@ -104,6 +105,14 @@
               &:hover {
                   background-color: color.adjust(#2E8B57, $lightness: 10%);
               }
+          }
+          
+          @media only screen and (max-width: v.$tablet-devices) {
+            justify-content: center;
+
+            .submit-button {
+              width: 100%;
+            }
           }
       }
     }

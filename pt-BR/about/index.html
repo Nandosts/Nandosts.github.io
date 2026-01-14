@@ -27,12 +27,12 @@
     <meta name="twitter:image" content="https://i.imgur.com/SqX0Vw4.png" />
 
     <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="PAnezXSQZVSSqcoew2adE_ZXqb9-Qy5exjYca9Iid-2rNFTIqznKhkeYs9lTAbz5Muc_rgTtf0yXNV15kD62BA" />
+<meta name="csrf-token" content="ojO9pwRvDBzWoGmwSbBp65ggwPY252GTbTqwJs0HO-8KhdUpVkcrnkRAM4MQeO5mY_J2TSLLfamT7LSWb6G9RA" />
     
 
     <link rel="icon" type="image/png" href="/icon.png" />
 
-    <link rel="stylesheet" href="/assets/application-53d6eeac.css" data-turbo-track="reload" />
+    <link rel="stylesheet" href="/assets/application-61871638.css" data-turbo-track="reload" />
     <script type="importmap" data-turbo-track="reload">{
   "imports": {
     "application": "/assets/application-bfcdf840.js",
@@ -43,7 +43,8 @@
     "controllers/carousel_controller": "/assets/controllers/carousel_controller-1b9c03bf.js",
     "controllers/contact_controller": "/assets/controllers/contact_controller-11db2391.js",
     "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
-    "controllers": "/assets/controllers/index-ee64e1f1.js"
+    "controllers": "/assets/controllers/index-ee64e1f1.js",
+    "controllers/sidemenu_controller": "/assets/controllers/sidemenu_controller-a56f7cce.js"
   }
 }</script>
 <link rel="modulepreload" href="/assets/application-bfcdf840.js">
@@ -55,6 +56,7 @@
 <link rel="modulepreload" href="/assets/controllers/contact_controller-11db2391.js">
 <link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
 <link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<link rel="modulepreload" href="/assets/controllers/sidemenu_controller-a56f7cce.js">
 <script type="module">import "application"</script>
   </head>
 
@@ -62,30 +64,45 @@
     <main>
       <div class="nav-container">
   <div class="nav-content">
+    <a href="/pt-BR" class="logo">
+      <img alt="logo" width="30" src="/assets/logo-5bac0993.svg" />
+    </a>
     <div class="nav-links">
-      <a href="/pt-BR">Início</a>
+      <a class="" href="/pt-BR">Início</a>
       <a href="/pt-BR#portfolio">Portfólio</a>
-      <a href="/pt-BR/about">Sobre mim</a>
+      <a class="" href="/pt-BR/about">Sobre mim</a>
     </div>
 
     <div class="end-buttons">
       <a class="contact-btn" href="/pt-BR#contact-me">Entrar em contato</a>
       
-      <a class="locale-btn" href="/en/about">
+      <a class="locale-btn" data-turbo="false" href="/en/about">
           <img width="35" alt="Português" src="/assets/br-2cf83587.svg" />
 </a>    </div>
   </div>
   
-  <div class="sidemenu">
-    <details>
-      <summary><i class="icon-menu"></i></summary>
-      <ul>
-        <li><a href="/pt-BR">Início</a></li>
-        <li><a href="/pt-BR#portfolio">Portfólio</a></li>
-        <li><a href="/pt-BR/about">Sobre mim</a></li>
-        <li><a href="/pt-BR#contact-me">Entrar em contato</a></li>
+  <div class="sidemenu" data-controller="sidemenu">
+    <a href="/pt-BR" class="logo">
+      <img alt="logo" width="30" src="/assets/logo-5bac0993.svg" />
+    </a>
+    <button class="hamburger-button" data-action="click->sidemenu#toggle">
+      <i class="icon-menu"></i>
+    </button>
+    <div class="sidemenu-overlay" data-sidemenu-target="menu">
+      <button class="close-button" data-action="click->sidemenu#close">
+        &times;
+      </button>
+      <ul class="szot-menu-items">
+        <li><a data-action="click-&gt;sidemenu#close" href="/pt-BR">Início</a></li>
+        <li><a data-action="click-&gt;sidemenu#close" href="/pt-BR#portfolio">Portfólio</a></li>
+        <li><a data-action="click-&gt;sidemenu#close" href="/pt-BR/about">Sobre mim</a></li>
+        <li><a class="contact-btn" data-action="click-&gt;sidemenu#close" href="/pt-BR#contact-me">Entrar em contato</a></li>
+        <li>
+          <a class="locale-btn" data-turbo="false" data-action="click-&gt;sidemenu#close" href="/en/about">
+              <img width="35" alt="Português" src="/assets/br-2cf83587.svg" />
+</a>        </li>
       </ul>
-    </details>
+    </div>
   </div>
 </div>
       <section id="about">

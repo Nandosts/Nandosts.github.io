@@ -26,6 +26,7 @@
     justify-content: space-between;
     place-items: center;
     padding: 0 5%;
+    gap: 2rem;
     
     @media (min-width: 750px) {
         grid-template-columns: 1fr 1fr;
@@ -64,6 +65,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 750px) {
+      min-height: 300px;
+    }
   }
 
   #shape {
@@ -119,3 +124,4 @@
     }
   }
 }
+
