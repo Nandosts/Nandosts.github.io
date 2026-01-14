@@ -10,10 +10,16 @@
     <div class="end-buttons">
       <%= link_to t(:contact_button), root_path(anchor: "contact-me"), class: "contact-btn" %>
       
-      <%# Locale Switcher %>
-      <% current_locale = I18n.locale.to_s == "en" ? "pt-BR" : "en" %>
-      <%= link_to url_for(locale: current_locale), class: "locale-btn" do %>
-        <% if I18n.locale.to_s == "en" %>
+      <%# Locale Switcher - Modified for Static Export Support %>
+      <% is_en = I18n.locale.to_s == "en" %>
+      <% target_locale = is_en ? "pt-BR" : "en" %>
+      <% 
+        # For static export, we link to /en/path or /pt-BR/path
+        path_prefix = request.path == "/" ? "" : request.path
+        target_path = "/#{target_locale}#{path_prefix}"
+      %>
+      <%= link_to target_path, class: "locale-btn" do %>
+        <% if is_en %>
           <%= image_tag "us.svg", width: 35, alt: "English" %>
         <% else %>
           <%= image_tag "br.svg", width: 35, alt: "Português" %>

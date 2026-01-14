@@ -1,74 +1,50 @@
-# Usage: bin/rails runner script/export_static.rb
-require 'fileutils'
-require 'net/http'
+require "fileutils"
 
-# 1. Start the server in a separate process
-puts "Iniciando servidor temporário..."
-server_pid = spawn("bin/rails server -p 3001 -e development")
-
-# 2. Wait for server to be ready
-max_attempts = 30
-attempts = 0
-loop do
-  begin
-    Net::HTTP.get(URI("http://localhost:3001/up"))
-    break
-  rescue
-    attempts += 1
-    if attempts > max_attempts
-      puts "Erro: Servidor não iniciou a tempo."
-      Process.kill("TERM", server_pid)
-      exit 1
-    end
-    sleep 1
-  end
-end
-
-puts "Servidor pronto. Iniciando exportação..."
-
-# 3. Define paths to export
 export_dir = "public_static"
 FileUtils.rm_rf(export_dir)
 FileUtils.mkdir_p(export_dir)
 
-paths = ["/"]
-# Add project pages
-Project.all.each do |p|
-  paths << "/sites/#{p.id}"
-end
-paths << "/about"
+# Initialize app session
+app = ActionDispatch::Integration::Session.new(Rails.application)
+app.host = "localhost"
 
-# 4. Fetch and save each path
-paths.each do |path|
-  print "Exportando #{path}... "
-  uri = URI("http://localhost:3001#{path}")
-  response = Net::HTTP.get_response(uri)
-  
-  if response.is_a?(Net::HTTPSuccess)
-    # Determine file path
-    file_dir = File.join(export_dir, path)
-    FileUtils.mkdir_p(file_dir)
-    File.write(File.join(file_dir, "index.html"), response.body)
-    puts "OK"
-  else
-    puts "ERRO (#{response.code})"
+locales = [ "pt-BR", "en" ]
+base_paths = [ "/", "/about" ]
+Project.all.each { |p| base_paths << "/sites/#{p.id}" }
+
+locales.each do |locale|
+  puts "Exporting for locale: #{locale}..."
+  base_paths.each do |base_path|
+    # Format the path with the locale param
+    path = "#{base_path}?locale=#{locale}"
+    app.get(path)
+
+    if app.response.status == 200
+      # Create localized directory structure: public_static/en/about/index.html
+      folder_path = File.join(export_dir, locale, base_path)
+      FileUtils.mkdir_p(folder_path)
+      File.write(File.join(folder_path, "index.html"), app.response.body)
+
+      # For the default locale (pt-BR), also save at the root: public_static/about/index.html
+      if locale == "pt-BR"
+        root_folder = File.join(export_dir, base_path)
+        FileUtils.mkdir_p(root_folder)
+        File.write(File.join(root_folder, "index.html"), app.response.body)
+      end
+    else
+      puts "  Error exporting #{path}: #{app.response.status}"
+    end
   end
 end
 
-# 5. Copy assets
-puts "Copiando assets..."
-# We need to compile assets first if they are not there
-system("bin/rails assets:precompile")
+puts "Compiling assets..."
+system("bin/rails assets:precompile RAILS_ENV=production")
+
+puts "Copying assets..."
 FileUtils.cp_r("public/assets", export_dir) if Dir.exist?("public/assets")
-# Copy other public files (images, etc)
 Dir.glob("public/*").each do |file|
   next if file.include?("assets") || file.end_with?(".html")
   FileUtils.cp_r(file, export_dir)
 end
 
-# 6. Stop server
-puts "Finalizando servidor..."
-Process.kill("TERM", server_pid)
-
-puts "\nExportação concluída em: #{export_dir}"
-puts "Para testar localmente: npx serve #{export_dir}"
+puts "Export completed to #{export_dir}"
