@@ -41,7 +41,7 @@ pt-BR:
   ressaca-trainee: Site realizado como projeto final do meu trainee no semestre 2020/1
   vai-de-ferias: Plataforma web desenvolvida para um cliente a fim de permitir a garantia de  um planejamento de férias, com marcação de hotel, online.
   chat_ai: "Aplicação Ruby on Rails com integração a APIs da OpenAI (GPT e DALL-E) para chat inteligente e geração de imagens."
-  portfolio_new: "Aplicação frontend desenvolvida em Svelte, com suporte multilíngue e showcase de mais de 10 projetos."
+  portfolio_rails: "Portfólio reescrito em Ruby on Rails 8. Utiliza Hotwire (Turbo & Stimulus) para interatividade, SQLite em produção e Kamal para deploy com Docker."
   tictacruby_ai: "Jogo da Velha em Ruby com IA utilizando o algoritmo Minimax."
   next_project: "Próximo Projeto"
   previous_project: "Projeto Anterior"

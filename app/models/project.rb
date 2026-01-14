@@ -84,10 +84,10 @@ class Project
       ),
       new(
         id: "7",
-        name: "Portfolio (v1)",
-        description_key: "portfolio_new",
-        url: "https://github.com/Nandosts/Nandosts.github.io/tree/main/legacy_frontend",
-        technologies: ["Svelte", "TypeScript", "SCSS"],
+        name: "Portfolio (v2)",
+        description_key: "portfolio_rails",
+        url: "https://github.com/Nandosts/Nandosts.github.io",
+        technologies: [ "Ruby on Rails 8", "Hotwire", "Stimulus", "SQLite", "Kamal", "Docker" ],
         image_path: "empty-notebook.svg",
         notebook_image_path: "empty-notebook.svg",
         category: :personal

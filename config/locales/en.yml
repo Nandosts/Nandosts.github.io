@@ -41,7 +41,7 @@ en:
   ressaca-trainee: Site created as my trainee's final project in semester 2020/1
   vai-de-ferias: Web platform developed for a client in order to guarantee a vacation planning, with hotel booking, online.
   chat_ai: "Ruby on Rails application integrating OpenAI APIs (GPT and DALL-E) for intelligent chat and image generation."
-  portfolio_new: "Frontend portfolio built with Svelte, featuring multilingual support and a showcase of 10+ projects."
+  portfolio_rails: "Portfolio rewritten in Ruby on Rails 8. Uses Hotwire (Turbo & Stimulus) for interactivity, SQLite in production, and Kamal for deployment with Docker."
   tictacruby_ai: "Tic-Tac-Toe game in Ruby with an AI opponent using the Minimax algorithm."
   next_project: "Next Project"
   previous_project: "Previous Project"
