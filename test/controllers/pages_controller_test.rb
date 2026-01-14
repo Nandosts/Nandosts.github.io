@@ -10,7 +10,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     get about_url
     assert_response :success
   end
-  
+
   test "should get lorem" do
     get lorem_url
     assert_response :success
