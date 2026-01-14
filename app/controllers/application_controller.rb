@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options
-    { locale: I18n.locale }
+    if Rails.env.production?
+      { locale: I18n.locale }
+    else
+      {}
+    end
   end
 end

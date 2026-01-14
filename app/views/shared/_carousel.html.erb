@@ -2,7 +2,7 @@
   <div id="carousel-sites" data-carousel-target="container">
     <% projects.each do |site| %>
       <div class="carousel-item">
-        <%= link_to site_path(site.id), class: "carousel-link" do %>
+        <%= link_to site_path(id: site.id), class: "carousel-link" do %>
           <%= image_tag site.notebook_image_path, class: "opened", alt: site.name %>
           <%= image_tag "notebook-img.svg", class: "closed", alt: site.name %>
         <% end %>

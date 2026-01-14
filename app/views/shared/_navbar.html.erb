@@ -13,10 +13,15 @@
       <%# Locale Switcher - Modified for Static Export Support %>
       <% is_en = I18n.locale.to_s == "en" %>
       <% target_locale = is_en ? "pt-BR" : "en" %>
-      <% 
-        # For static export, we link to /en/path or /pt-BR/path
-        path_prefix = request.path == "/" ? "" : request.path
-        target_path = "/#{target_locale}#{path_prefix}"
+      <%
+        if Rails.env.production?
+          # For static export, we link to /en/path or /pt-BR/path
+          path_prefix = request.path == "/" ? "" : request.path
+          target_path = "/#{target_locale}#{path_prefix}"
+        else
+          # In development, use query parameter for locale
+          target_path = url_for(locale: target_locale)
+        end
       %>
       <%= link_to target_path, class: "locale-btn" do %>
         <% if is_en %>
