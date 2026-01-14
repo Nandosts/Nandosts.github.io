@@ -1,0 +1,154 @@
+<!-- BEGIN app/views/layouts/application.html.erb
+--><!DOCTYPE html>
+<html>
+  <head>
+    <title>Fernando Portfolio</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="sites, web, desenvolvimento, HTML, CSS, SCSS, JavaScript, Ruby on Rails" />
+    <meta name="author" content="Fernando Jorge Santos Melo" />
+    <meta name="theme-color" content="#2B3D41" />
+    <meta name="description" content="Site criado pelo desenvolvedor web e mobile Fernando Jorge, para representar trabalhos e estudos em carreira e vida acadêmica." />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Fernando Melo Portfolio" />
+    <meta property="og:site_name" content="Fernando Melo Social" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Portfolio de carreira Dev - Desenvolvedor Web e Mobile - Fernando Melo" />
+    <meta property="og:url" content="https://fernando-melo.social/" />
+    <meta property="og:image" content="https://i.imgur.com/SqX0Vw4.png" />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="https://fernando-melo.social/" />
+    <meta name="twitter:title" content="Fernando Melo Portfolio" />
+    <meta name="twitter:description" content="Portfolio de carreira Dev - Desenvolvedor Web e Mobile - Fernando Melo" />
+    <meta name="twitter:image" content="https://i.imgur.com/SqX0Vw4.png" />
+
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="O91eloPB8eWSMc2h9qHWJd_MkGYz5LWhzbrliLm4ceuxFD9SA2KbMRWlWwKAuO4aP-Kzdphmdezu_MemRQh6Yg" />
+    
+
+    <link rel="icon" type="image/png" href="/icon.png" />
+
+    <link rel="stylesheet" href="/assets/application-53d6eeac.css" data-turbo-track="reload" />
+    <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-bfcdf840.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-ad2c7b86.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/carousel_controller": "/assets/controllers/carousel_controller-1b9c03bf.js",
+    "controllers/contact_controller": "/assets/controllers/contact_controller-11db2391.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-bfcdf840.js">
+<link rel="modulepreload" href="/assets/turbo.min-ad2c7b86.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/carousel_controller-1b9c03bf.js">
+<link rel="modulepreload" href="/assets/controllers/contact_controller-11db2391.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<script type="module">import "application"</script>
+  </head>
+
+  <body>
+    <main>
+      <!-- BEGIN app/views/shared/_navbar.html.erb
+--><div class="nav-container">
+  <div class="nav-content">
+    <div class="nav-links">
+      <a href="/?locale=en">Home</a>
+      <a href="/?locale=en#portfolio">Portfolio</a>
+      <a href="/about?locale=en">About me</a>
+    </div>
+
+    <div class="end-buttons">
+      <a class="contact-btn" href="/?locale=en#contact-me">Contact me</a>
+      
+      <a class="locale-btn" href="/sites/202?locale=pt-BR">
+          <img width="35" alt="English" src="/assets/us-e7f7a35a.svg" />
+</a>    </div>
+  </div>
+  
+  <div class="sidemenu">
+    <details>
+      <summary><i class="icon-menu"></i></summary>
+      <ul>
+        <li><a href="/?locale=en">Home</a></li>
+        <li><a href="/?locale=en#portfolio">Portfolio</a></li>
+        <li><a href="/about?locale=en">About me</a></li>
+        <li><a href="/?locale=en#contact-me">Contact me</a></li>
+      </ul>
+    </details>
+  </div>
+</div><!-- END app/views/shared/_navbar.html.erb -->
+      <!-- BEGIN app/views/sites/show.html.erb
+--><section class="site-show-section">
+  <h2 class="site-name">
+    Mentoring
+  </h2>
+
+  <div class="site-header-container">
+    <a class="nav-button prev" title="Previous Project" href="/sites/201?locale=en">
+      &#10094;
+</a>
+    <div class="site-img-wrapper">
+        <img alt="Imagem do site" class="site-img" src="/assets/mentoring-fs/mentoring-fs-7b4e190f.svg" />
+    </div>
+
+    <a class="nav-button next" title="Next Project" href="/sites/203?locale=en">
+      &#10095;
+</a>  </div>
+  
+  <div class="site-details">
+    <div class="site-texts">
+      <p class="category-title">Technologies:</p>
+      <ul>
+          <li>Rails</li>
+          <li>Jquery</li>
+          <li>Scss</li>
+          <li>Javascript</li>
+      </ul>
+
+      <div class="about-site-text">
+        <p class="category-title">About the project:</p>
+        <span class="site-description">Student Mentoring Project Site in Nursing UnB, in order to create a collaborative environment for nursing students at UnB</span>
+      </div>
+    </div>
+    
+      <a class="site-button-link" href="https://mentoriaenfunb.com.br/" target="_blank" rel="noreferrer">
+        <button class="szot-button">Go to site</button>
+      </a>
+  </div>
+</section><!-- END app/views/sites/show.html.erb -->
+      <!-- BEGIN app/views/shared/_footer.html.erb
+--><footer class="footer-container">
+  <div class="footer-content">
+    <p class="copyrights">
+      © 2025 Fernando Jorge • All rights reserved
+    </p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/fernando-sm/" target="_blank" rel="noreferrer">
+        <i class="icon-linkedin"></i>
+      </a>
+      <a href="https://www.instagram.com/fernando.jsts/" target="_blank" rel="noreferrer">
+        <i class="icon-instagram"></i>
+      </a>
+      <a href="https://github.com/Nandosts" target="_blank" rel="noreferrer">
+        <i class="icon-github"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+<!-- END app/views/shared/_footer.html.erb -->
+    </main>
+  </body>
+</html><!-- END app/views/layouts/application.html.erb -->

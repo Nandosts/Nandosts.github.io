@@ -1,0 +1,27 @@
+.portfolio-container {
+  margin-top: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .title {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .struct-title {
+    color: #009bf2;
+    text-decoration: none;
+  }
+
+  .portfolio-carousel {
+    width: 100%;
+    padding: 2rem 0;
+  }
+}
