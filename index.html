@@ -1,0 +1,292 @@
+<!-- BEGIN app/views/layouts/application.html.erb
+--><!DOCTYPE html>
+<html>
+  <head>
+    <title>Fernando Portfolio</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="sites, web, desenvolvimento, HTML, CSS, SCSS, JavaScript, Ruby on Rails" />
+    <meta name="author" content="Fernando Jorge Santos Melo" />
+    <meta name="theme-color" content="#2B3D41" />
+    <meta name="description" content="Site criado pelo desenvolvedor web e mobile Fernando Jorge, para representar trabalhos e estudos em carreira e vida acadêmica." />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Fernando Melo Portfolio" />
+    <meta property="og:site_name" content="Fernando Melo Social" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Portfolio de carreira Dev - Desenvolvedor Web e Mobile - Fernando Melo" />
+    <meta property="og:url" content="https://fernando-melo.social/" />
+    <meta property="og:image" content="https://i.imgur.com/SqX0Vw4.png" />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content="https://fernando-melo.social/" />
+    <meta name="twitter:title" content="Fernando Melo Portfolio" />
+    <meta name="twitter:description" content="Portfolio de carreira Dev - Desenvolvedor Web e Mobile - Fernando Melo" />
+    <meta name="twitter:image" content="https://i.imgur.com/SqX0Vw4.png" />
+
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="loUQdFkuVSIqhAbkjeZWcR8f7xRpifaRyuANRN6gcnwcTHGw2Y0_9q0QkEf7_25O_zHMBMILNtzppi9qIhB59Q" />
+    
+
+    <link rel="icon" type="image/png" href="/icon.png" />
+
+    <link rel="stylesheet" href="/assets/application-53d6eeac.css" data-turbo-track="reload" />
+    <script type="importmap" data-turbo-track="reload">{
+  "imports": {
+    "application": "/assets/application-bfcdf840.js",
+    "@hotwired/turbo-rails": "/assets/turbo.min-ad2c7b86.js",
+    "@hotwired/stimulus": "/assets/stimulus.min-4b1e420e.js",
+    "@hotwired/stimulus-loading": "/assets/stimulus-loading-1fc53fe7.js",
+    "controllers/application": "/assets/controllers/application-3affb389.js",
+    "controllers/carousel_controller": "/assets/controllers/carousel_controller-1b9c03bf.js",
+    "controllers/contact_controller": "/assets/controllers/contact_controller-11db2391.js",
+    "controllers/hello_controller": "/assets/controllers/hello_controller-708796bd.js",
+    "controllers": "/assets/controllers/index-ee64e1f1.js"
+  }
+}</script>
+<link rel="modulepreload" href="/assets/application-bfcdf840.js">
+<link rel="modulepreload" href="/assets/turbo.min-ad2c7b86.js">
+<link rel="modulepreload" href="/assets/stimulus.min-4b1e420e.js">
+<link rel="modulepreload" href="/assets/stimulus-loading-1fc53fe7.js">
+<link rel="modulepreload" href="/assets/controllers/application-3affb389.js">
+<link rel="modulepreload" href="/assets/controllers/carousel_controller-1b9c03bf.js">
+<link rel="modulepreload" href="/assets/controllers/contact_controller-11db2391.js">
+<link rel="modulepreload" href="/assets/controllers/hello_controller-708796bd.js">
+<link rel="modulepreload" href="/assets/controllers/index-ee64e1f1.js">
+<script type="module">import "application"</script>
+  </head>
+
+  <body>
+    <main>
+      <!-- BEGIN app/views/shared/_navbar.html.erb
+--><div class="nav-container">
+  <div class="nav-content">
+    <div class="nav-links">
+      <a href="/?locale=en">Home</a>
+      <a href="/?locale=en#portfolio">Portfolio</a>
+      <a href="/about?locale=en">About me</a>
+    </div>
+
+    <div class="end-buttons">
+      <a class="contact-btn" href="/?locale=en#contact-me">Contact me</a>
+      
+      <a class="locale-btn" href="/?locale=pt-BR">
+          <img width="35" alt="English" src="/assets/us-e7f7a35a.svg" />
+</a>    </div>
+  </div>
+  
+  <div class="sidemenu">
+    <details>
+      <summary><i class="icon-menu"></i></summary>
+      <ul>
+        <li><a href="/?locale=en">Home</a></li>
+        <li><a href="/?locale=en#portfolio">Portfolio</a></li>
+        <li><a href="/about?locale=en">About me</a></li>
+        <li><a href="/?locale=en#contact-me">Contact me</a></li>
+      </ul>
+    </details>
+  </div>
+</div><!-- END app/views/shared/_navbar.html.erb -->
+      <!-- BEGIN app/views/pages/home.html.erb
+--><!-- BEGIN app/views/pages/_introduction.html.erb
+--><section id="introduction">
+  <div class="introduction-container">
+    <div class="introduction-text">
+      <h1>
+        Nice to meet you,<br />
+        my name is<br />
+        Fernando Jorge
+      </h1>
+      <p>
+        Full Stack Developer | Software Engineer. Graduated in Analysis and Systems Development (2025). <br />
+        Always looking for new knowledges. <br />
+        Software Developer with over 5 years of experience building scalable web systems and high-performance applications.
+      </p>
+      <a class="contact-button" href="#contact-me">Contact me</a>
+    </div>
+
+    <img alt="Foto de apresentação" class="img" src="/assets/introduction-image-30d9717e.svg" />
+  </div>
+</section>
+<!-- END app/views/pages/_introduction.html.erb -->
+<!-- BEGIN app/views/pages/_portfolio.html.erb
+--><section id="portfolio">
+  <div class="portfolio-container">
+    <span class="title">Portfolio</span>
+    <div class="portfolio-carousel">
+      <!-- BEGIN app/views/shared/_carousel.html.erb
+--><div id="carousel-container" data-controller="carousel">
+  <div id="carousel-sites" data-carousel-target="container">
+      <div class="carousel-item">
+        <a class="carousel-link" href="/sites/1?locale=en">
+          <img class="opened" alt="nlw-eSports-ignite" src="/assets/nlw-eSports/nlw-eSports-notebook-78fc55c3.svg" />
+          <img class="closed" alt="nlw-eSports-ignite" src="/assets/notebook-img-cc9c6135.svg" />
+</a>      </div>
+      <div class="carousel-item">
+        <a class="carousel-link" href="/sites/2?locale=en">
+          <img class="opened" alt="LABFAZ" src="/assets/labfaz/labfaz-notebook-2d53b010.svg" />
+          <img class="closed" alt="LABFAZ" src="/assets/notebook-img-cc9c6135.svg" />
+</a>      </div>
+      <div class="carousel-item">
+        <a class="carousel-link" href="/sites/3?locale=en">
+          <img class="opened" alt="VLGI Vida" src="/assets/vlgi-vida/vlgi-vida-notebook-57a08991.svg" />
+          <img class="closed" alt="VLGI Vida" src="/assets/notebook-img-cc9c6135.svg" />
+</a>      </div>
+      <div class="carousel-item">
+        <a class="carousel-link" href="/sites/4?locale=en">
+          <img class="opened" alt="Szot-UI" src="/assets/szot-ui/szot-ui-notebook-4fe54a5c.svg" />
+          <img class="closed" alt="Szot-UI" src="/assets/notebook-img-cc9c6135.svg" />
+</a>      </div>
+      <div class="carousel-item">
+        <a class="carousel-link" href="/sites/5?locale=en">
+          <img class="opened" alt="React-NLW-letmeask" src="/assets/letmeask/letmeask-notebook-a143f2ad.svg" />
+          <img class="closed" alt="React-NLW-letmeask" src="/assets/notebook-img-cc9c6135.svg" />
+</a>      </div>
+      <div class="carousel-item">
+        <a class="carousel-link" href="/sites/6?locale=en">
+          <img class="opened" alt="Space Tour" src="/assets/space-tour/space-tour-notebook-ed25c79c.svg" />
+          <img class="closed" alt="Space Tour" src="/assets/notebook-img-cc9c6135.svg" />
+</a>      </div>
+      <div class="carousel-item">
+        <a class="carousel-link" href="/sites/7?locale=en">
+          <img class="opened" alt="Portfolio (v1)" src="/assets/empty-notebook-c5ec275e.svg" />
+          <img class="closed" alt="Portfolio (v1)" src="/assets/notebook-img-cc9c6135.svg" />
+</a>      </div>
+      <div class="carousel-item">
+        <a class="carousel-link" href="/sites/8?locale=en">
+          <img class="opened" alt="Chat-AI" src="/assets/empty-notebook-c5ec275e.svg" />
+          <img class="closed" alt="Chat-AI" src="/assets/notebook-img-cc9c6135.svg" />
+</a>      </div>
+      <div class="carousel-item">
+        <a class="carousel-link" href="/sites/9?locale=en">
+          <img class="opened" alt="TicTacRuby AI" src="/assets/empty-notebook-c5ec275e.svg" />
+          <img class="closed" alt="TicTacRuby AI" src="/assets/notebook-img-cc9c6135.svg" />
+</a>      </div>
+  </div>
+  
+  <button class="carousel-control left" data-action="click->carousel#rotateLeft">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+  
+  <button class="carousel-control right" data-action="click->carousel#rotateRight">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
+</div><!-- END app/views/shared/_carousel.html.erb -->
+    </div>
+
+    <span class="title">
+      Participation&#39;s in
+      <a class="struct-title" href="http://struct.unb.br" target="_blank" rel="noreferrer">
+        Struct (EJ)
+      </a>
+    </span>
+    <div class="portfolio-carousel">
+      <!-- BEGIN app/views/shared/_carousel.html.erb
+--><div id="carousel-container" data-controller="carousel">
+  <div id="carousel-sites" data-carousel-target="container">
+      <div class="carousel-item">
+        <a class="carousel-link" href="/sites/201?locale=en">
+          <img class="opened" alt="CRP" src="/assets/crp/crp-notebook-2dee7cff.svg" />
+          <img class="closed" alt="CRP" src="/assets/notebook-img-cc9c6135.svg" />
+</a>      </div>
+      <div class="carousel-item">
+        <a class="carousel-link" href="/sites/202?locale=en">
+          <img class="opened" alt="Mentoring" src="/assets/mentoring-fs/mentoring-fs-notebook-ec4f6bc0.svg" />
+          <img class="closed" alt="Mentoring" src="/assets/notebook-img-cc9c6135.svg" />
+</a>      </div>
+      <div class="carousel-item">
+        <a class="carousel-link" href="/sites/203?locale=en">
+          <img class="opened" alt="Festival Brasil CNV" src="/assets/festival-cnv/festival-cnv-notebook-ce382c31.svg" />
+          <img class="closed" alt="Festival Brasil CNV" src="/assets/notebook-img-cc9c6135.svg" />
+</a>      </div>
+      <div class="carousel-item">
+        <a class="carousel-link" href="/sites/204?locale=en">
+          <img class="opened" alt="Ressaca Trainee (trainee Struct)" src="/assets/ressaca-trainee/ressaca-trainee-notebook-028d29d8.svg" />
+          <img class="closed" alt="Ressaca Trainee (trainee Struct)" src="/assets/notebook-img-cc9c6135.svg" />
+</a>      </div>
+      <div class="carousel-item">
+        <a class="carousel-link" href="/sites/205?locale=en">
+          <img class="opened" alt="Vai de férias" src="/assets/vai-de-ferias/vai-de-ferias-notebook-fdcbd2ed.svg" />
+          <img class="closed" alt="Vai de férias" src="/assets/notebook-img-cc9c6135.svg" />
+</a>      </div>
+  </div>
+  
+  <button class="carousel-control left" data-action="click->carousel#rotateLeft">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+  
+  <button class="carousel-control right" data-action="click->carousel#rotateRight">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
+</div><!-- END app/views/shared/_carousel.html.erb -->
+    </div>
+  </div>
+</section>
+<!-- END app/views/pages/_portfolio.html.erb -->
+<!-- BEGIN app/views/pages/_contact_me.html.erb
+--><section id="contact-me">
+  <div class="contact-me-container" data-controller="contact">
+    <form class="contact-me-card" data-contact-target="form" data-action="submit-&gt;contact#submit" data-success-text="Your email has been successfully sent to me, thank you very much for contacting me" data-error-text="An error occurred, I apologize for the inconvenience. I have other means of contact in the footer of the site if necessary" action="https://formsubmit.co/ajax/fernando.jsts@gmail.com" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="SAHkrGRUZpXm0n7OzV84kKP7WNMVPJDfNTsXREdCcymKZYwTFvE0_WH1dFpJgUaBPsOoF7D5W0WjUrGfFahZtw" />
+      <h3 class="contact-title">Contact Form</h3>
+      
+      <div id="contact-message" data-contact-target="message"></div>
+
+      <input type="text" name="_honey" style="display:none">
+      <input type="hidden" name="_captcha" value="false">
+
+      <div class="field-group">
+        <label for="email">Email</label>
+        <input name="email" required="required" class="input-dark" placeholder="seu@email.com" type="email" id="email" />
+      </div>
+      
+      <div class="field-group">
+        <label for="name">Name / Alternative Name</label>
+        <input name="name" required="required" class="input-dark" placeholder="Seu Nome" type="text" id="name" />
+      </div>
+      
+      <div class="field-group">
+        <label for="message">Message</label>
+        <textarea name="message" placeholder="Write some message" required="required" class="textarea-dark" id="message">
+</textarea>
+      </div>
+
+      <div class="button-container">
+        <input type="submit" name="commit" value="Send Email" data-contact-target="button" data-disable-with="Send Email" class="submit-button" />
+      </div>
+</form>  </div>
+</section>
+<!-- END app/views/pages/_contact_me.html.erb --><!-- END app/views/pages/home.html.erb -->
+      <!-- BEGIN app/views/shared/_footer.html.erb
+--><footer class="footer-container">
+  <div class="footer-content">
+    <p class="copyrights">
+      © 2025 Fernando Jorge • All rights reserved
+    </p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/fernando-sm/" target="_blank" rel="noreferrer">
+        <i class="icon-linkedin"></i>
+      </a>
+      <a href="https://www.instagram.com/fernando.jsts/" target="_blank" rel="noreferrer">
+        <i class="icon-instagram"></i>
+      </a>
+      <a href="https://github.com/Nandosts" target="_blank" rel="noreferrer">
+        <i class="icon-github"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+<!-- END app/views/shared/_footer.html.erb -->
+    </main>
+  </body>
+</html><!-- END app/views/layouts/application.html.erb -->
