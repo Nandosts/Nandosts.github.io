@@ -45,4 +45,27 @@ Dir.glob("public/*").each do |file|
   FileUtils.cp_r(file, export_dir)
 end
 
+# Gerar sitemap.xml para SEO
+puts "Gerando sitemap.xml..."
+urls_sitemap = []
+base_paths.each do |caminho_base|
+  caminho_limpo = caminho_base == "/" ? "" : caminho_base
+  urls_sitemap << "https://nandosts.github.io#{caminho_limpo}"
+  locales.each do |idioma|
+    urls_sitemap << "https://nandosts.github.io/#{idioma}#{caminho_limpo}"
+  end
+end
+urls_sitemap.uniq!
+
+conteudo_sitemap = <<~XML
+  <?xml version="1.0" encoding="UTF-8"?>
+  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  #{urls_sitemap.map { |url| "  <url>\n    <loc>#{url}</loc>\n    <changefreq>weekly</changefreq>\n    <priority>#{url == 'https://nandosts.github.io' ? '1.0' : '0.8'}</priority>\n  </url>" }.join("\n")}
+  </urlset>
+XML
+
+File.write(File.join(export_dir, "sitemap.xml"), conteudo_sitemap)
+File.write(File.join("public", "sitemap.xml"), conteudo_sitemap)
+
 puts "Export completed to #{export_dir}"
+
