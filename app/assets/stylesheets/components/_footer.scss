@@ -1,34 +1,39 @@
+@use "../variables/colors" as c;
+
 .footer-container {
-  color: white;
+  color: c.$cor-texto-secundario;
+  border-top: 1px solid c.$cor-borda-vidro;
 }
 
 .footer-content {
-  height: 4rem;
+  height: 4.5rem;
   display: flex;
   justify-content: space-between;
-  padding-inline: 5%;
+  padding-inline: 6%;
   align-items: center;
-  background: #2b3d41;
+  background: rgba(11, 15, 23, 0.9);
+  backdrop-filter: blur(12px);
+  max-width: 1280px;
+  margin: 0 auto;
+  font-size: 0.9rem;
 
   .footer-links {
     display: flex;
     justify-content: space-evenly;
-    gap: 1rem;
+    gap: 1.2rem;
 
     a {
-      color: white;
+      color: c.$cor-texto-secundario;
       text-decoration: none;
       display: inline-block;
-      padding: 10px;
+      padding: 6px 10px;
+      font-weight: 500;
+      transition: color 0.2s ease;
 
-      &::after {
-        content: "";
-        width: 0px;
-        height: 2px;
-        display: block;
-        background: white;
-        transition: 500ms;
+      &:hover {
+        color: c.$cor-texto-destaque;
       }
     }
   }
 }
+
