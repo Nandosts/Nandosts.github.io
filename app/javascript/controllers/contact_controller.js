@@ -3,37 +3,43 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["form", "message", "button"]
 
-  async submit(event) {
-    event.preventDefault()
+  async submit(evento) {
+    evento.preventDefault()
     
-    const form = this.formTarget
-    const formData = new FormData(form)
-    const button = this.buttonTarget
-    const originalButtonText = button.value
+    const formulario = this.formTarget
+    const dadosFormulario = new FormData(formulario)
+    const botao = this.buttonTarget
+    const textoOriginalBotao = botao.value
     
-    button.disabled = true
-    button.value = "..." 
+    botao.disabled = true
+    botao.value = "..." 
 
     try {
-      const response = await fetch(form.action, {
+      const resposta = await fetch(formulario.action, {
         method: "POST",
-        body: formData,
+        body: dadosFormulario,
         headers: {
           'Accept': 'application/json'
         }
       })
 
-      if (response.ok) {
-        this.messageTarget.innerHTML = `<div class="alert alert-success">${form.dataset.successText}</div>`
-        form.reset()
+      if (resposta.ok) {
+        const dados = await resposta.json()
+        if (dados.success === "true" || dados.success === true) {
+          this.messageTarget.innerHTML = `<div class="alert alert-success">${formulario.dataset.successText}</div>`
+          formulario.reset()
+        } else {
+          console.error("Erro do FormSubmit:", dados.message)
+          throw new Error(dados.message || "Falha no envio")
+        }
       } else {
-        throw new Error("Submission failed")
+        throw new Error("Falha na requisição")
       }
-    } catch (error) {
-      this.messageTarget.innerHTML = `<div class="alert alert-error">${form.dataset.errorText}</div>`
+    } catch (erro) {
+      this.messageTarget.innerHTML = `<div class="alert alert-error">${formulario.dataset.errorText}</div>`
     } finally {
-      button.disabled = false
-      button.value = originalButtonText
+      botao.disabled = false
+      botao.value = textoOriginalBotao
     }
   }
 }
