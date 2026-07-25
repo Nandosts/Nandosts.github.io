@@ -29,6 +29,31 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <!-- Dados Estruturados Schema.org (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Fernando Jorge Santos Melo",
+        "alternateName": "Fernando Melo",
+        "url": "<%= url_canonica_pagina %>",
+        "image": "https://i.imgur.com/SqX0Vw4.png",
+        "jobTitle": "Engenheiro de Software & Desenvolvedor Full Stack",
+        "sameAs": [
+          "https://github.com/Nandosts"
+        ],
+        "knowsAbout": [
+          "Ruby on Rails",
+          "Hotwire",
+          "JavaScript",
+          "PostgreSQL",
+          "MySQL",
+          "Docker",
+          "Engenharia de Software"
+        ]
+      }
+    </script>
+
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
