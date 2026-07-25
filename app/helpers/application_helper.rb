@@ -20,4 +20,3 @@ module ApplicationHelper
     "https://nandosts.github.io#{caminho_base}"
   end
 end
-

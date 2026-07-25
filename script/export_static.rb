@@ -68,4 +68,3 @@ File.write(File.join(export_dir, "sitemap.xml"), conteudo_sitemap)
 File.write(File.join("public", "sitemap.xml"), conteudo_sitemap)
 
 puts "Export completed to #{export_dir}"
-
