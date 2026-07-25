@@ -1,0 +1,137 @@
+@use "../variables/colors" as c;
+
+#carousel-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+#carousel-sites {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 24px 2%;
+  gap: 24px;
+  align-items: center;
+  scroll-behavior: smooth;
+
+  -webkit-mask: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 96%,
+    transparent 100%
+  );
+  mask: linear-gradient(
+    to right,
+    transparent 0%,
+    black 4%,
+    black 96%,
+    transparent 100%
+  );
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.carousel-item {
+  scroll-snap-align: center;
+  flex: 0 0 auto;
+  width: 290px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 16px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid c.$cor-borda-vidro;
+
+  .carousel-link {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+
+  .opened {
+    display: none;
+  }
+  .closed {
+    display: block;
+  }
+
+  &:hover {
+    .opened {
+      display: block;
+    }
+    .closed {
+      display: none;
+    }
+    transform: translateY(-8px) scale(1.03);
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(96, 165, 250, 0.4);
+    box-shadow:
+      0 15px 30px -5px rgba(0, 0, 0, 0.5),
+      c.$sombra-brilho;
+  }
+
+  @media (max-width: 768px) {
+    .opened {
+      display: block;
+    }
+    .closed {
+      display: none;
+    }
+  }
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(35, 58, 53, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+  &:hover {
+    background: rgba(46, 125, 105, 0.8);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 20px rgba(46, 125, 105, 0.4);
+  }
+
+  &.left {
+    left: -10px;
+  }
+
+  &.right {
+    right: -10px;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}

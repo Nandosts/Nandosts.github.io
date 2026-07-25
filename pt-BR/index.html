@@ -27,13 +27,18 @@
     <meta name="twitter:image" content="https://i.imgur.com/SqX0Vw4.png" />
 
     <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="4dQOKXa96svNUSL9J1Vfanm2EiP4Wcjy-t4atzDNYjQEfHDlRem9NE32E981jpWemfuAUNyxUbyK8CaF3v-OJA" />
+<meta name="csrf-token" content="Fl4K5b0rKss7cP7QBRCYvzQwmR_gOd_ND2-IAcacfrzkxtL9emvpYW5ZHKKPD9qSjZQ6shGDApG9yw6r3T-t0w" />
     
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="icon" type="image/svg+xml" href="/assets/logo-5bac0993.svg" />
     <link rel="alternate icon" type="image/png" href="/icon.png" />
 
-    <link rel="stylesheet" href="/assets/application-d3f52b71.css" data-turbo-track="reload" />
+    <link rel="stylesheet" href="/assets/application-a75bac81.css" data-turbo-track="reload" />
     <script type="importmap" data-turbo-track="reload">{
   "imports": {
     "application": "/assets/application-bfcdf840.js",
@@ -110,21 +115,37 @@
   <div class="introduction-container">
     <div class="introduction-text">
       <h1>
-        Muito prazer,<br />
-        meu nome é<br />
-        Fernando Jorge
+        <span class="sub-greeting">Muito prazer,</span><br />
+        <span class="sub-greeting">meu nome é</span><br />
+        <span class="highlight-name">Fernando Jorge</span>
       </h1>
-      <p>
+      
+      <p class="description">
         Desenvolvedor Full Stack | Engenheiro de Software. Graduado em Análise e Desenvolvimento de Sistemas (2025). <br />
         Transformando requisitos complexos em soluções robustas e de alto impacto. <br />
         Desenvolvedor de Software com mais de 5 anos de experiência no desenvolvimento de sistemas web escaláveis e aplicações de alta performance.
       </p>
-      <a class="contact-button" href="#contact-me">Entrar em contato</a>
+
+      <div class="tech-stack-badges">
+        <span class="tech-badge">Ruby on Rails 8</span>
+        <span class="tech-badge">Hotwire</span>
+        <span class="tech-badge">JavaScript</span>
+        <span class="tech-badge">MySQL & PostgreSQL</span>
+        <span class="tech-badge">Docker</span>
+      </div>
+
+      <div class="cta-container">
+        <a class="contact-button" href="#contact-me">Entrar em contato</a>
+        <a class="portfolio-button" href="#portfolio">Portfólio</a>
+      </div>
     </div>
 
-    <img alt="Foto de apresentação" class="img" src="/assets/introduction-image-e6bf2c11.png" />
+    <div class="image-wrapper">
+      <img alt="Foto de apresentação" class="img" src="/assets/introduction-image-e6bf2c11.png" />
+    </div>
   </div>
 </section>
+
 
 <section id="portfolio">
   <div class="portfolio-container">
@@ -247,7 +268,7 @@
 
 <section id="contact-me">
   <div class="contact-me-container" data-controller="contact">
-    <form class="contact-me-card" data-contact-target="form" data-action="submit-&gt;contact#submit" data-success-text="Seu email foi enviado com sucesso para mim, muito obrigado pelo contato" data-error-text="Ocorreu um erro, peço desculpas o inconveniente. Tenho outros meios de contato no footer do site caso seja necessário" action="https://formsubmit.co/ajax/fernando.jsts@gmail.com" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="AePF2ycVa9g1WlxwyGXnngK1hX-sejH5WkwPM1UuOfEq566VABbAuGdm6NgT8xwid7GrtKO24rvch2CiR_hqxg" />
+    <form class="contact-me-card" data-contact-target="form" data-action="submit-&gt;contact#submit" data-success-text="Seu email foi enviado com sucesso para mim, muito obrigado pelo contato" data-error-text="Ocorreu um erro, peço desculpas o inconveniente. Tenho outros meios de contato no footer do site caso seja necessário" action="https://formsubmit.co/ajax/fernando.jsts@gmail.com" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="OBRqbqejafihRZEgy50ypH1UlfADnUEnJsfp-4Z6GzYHaGGcHXNlElZFgMgXcfhUfU_M8YTkvI78c9mzC2aR6A" />
       <h3 class="contact-title">Formulário de contato</h3>
       
       <div id="contact-message" data-contact-target="message"></div>

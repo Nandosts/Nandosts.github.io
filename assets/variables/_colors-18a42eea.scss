@@ -1,0 +1,23 @@
+// Sistema de Cores e Gradientes (Verde Petróleo Escuro Vibrante)
+$cor-fundo-principal: #162421;
+$cor-fundo-secundaria: #233a35;
+$cor-fundo-cartao: rgba(35, 58, 53, 0.85);
+$cor-fundo-vidro: rgba(255, 255, 255, 0.05);
+$cor-borda-vidro: rgba(255, 255, 255, 0.12);
+
+$cor-texto-principal: #f3f4f6;
+$cor-texto-secundario: #a3b8b3;
+$cor-texto-destaque: #ffffff;
+
+$cor-primaria: #25705d;
+$cor-primaria-hover: #1b5446;
+$cor-secundaria: #34d399;
+$cor-destaque-neon: #6ee7b7;
+
+$gradiente-titulo: linear-gradient(135deg, #ffffff 0%, #a7f3d0 50%, #34d399 100%);
+$gradiente-botao: linear-gradient(135deg, #25705d 0%, #17483c 100%);
+$gradiente-fundo: radial-gradient(circle at 50% 0%, #2c4741 0%, #162421 80%);
+$sombra-cartao: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+$sombra-brilho: 0 0 25px rgba(110, 231, 183, 0.25);
+
+
