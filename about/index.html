@@ -1,34 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
-    <title>Fernando Portfolio</title>
+    <title>Sobre mim | Fernando Melo</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta charset="utf-8" />
-    <meta name="keywords" content="sites, web, desenvolvimento, HTML, CSS, SCSS, JavaScript, Ruby on Rails" />
+    <meta name="keywords" content="Fernando Melo, Desenvolvedor Web, Ruby on Rails, Software Engineer, Full Stack, Hotwire, JavaScript, PostgreSQL, React, Portfolio" />
     <meta name="author" content="Fernando Jorge Santos Melo" />
-    <meta name="theme-color" content="#2B3D41" />
-    <meta name="description" content="Site criado pelo desenvolvedor web e mobile Fernando Jorge, para representar trabalhos e estudos em carreira e vida acadêmica." />
+    <meta name="theme-color" content="#162421" />
+    <meta name="description" content="Com mais de 5 anos de experiência, atuo na construção de sistemas críticos e de alta disponibilidade. Minha expertise cobre todo o ciclo de vida do desenvolvimento, desde a arquitetura de banco de dados (MySQL/PostgreSQL) até a otimização de background jobs e integração de APIs complexas (Stripe, AWS). Meu foco é reduzir complexidade técnica enquanto maximizo valor para o negócio. Atualmente na Connectere Agrogestão, faço o desenvolvimento de features end-to-end em um monólito Rails de grande escala. Minha trajetória inclui passagens como Tech Lead Front-End na TM Tecnologia e Desenvolvedor Full Stack na VLGI. Formado em Análise e Desenvolvimento de Sistemas, mantenho-me atualizado com certificações internacionais (CS50x Harvard) e proficiência em inglês (C2)." />
+    <link rel="canonical" href="https://nandosts.github.io/about" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Fernando Melo Portfolio" />
-    <meta property="og:site_name" content="Fernando Melo Social" />
+    <meta property="og:title" content="Sobre mim | Fernando Melo" />
+    <meta property="og:site_name" content="Fernando Melo | Portfolio Dev" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="Portfolio de carreira Dev - Desenvolvedor Web e Mobile - Fernando Melo" />
-    <meta property="og:url" content="https://nandosts.github.io/" />
+    <meta property="og:description" content="Com mais de 5 anos de experiência, atuo na construção de sistemas críticos e de alta disponibilidade. Minha expertise cobre todo o ciclo de vida do desenvolvimento, desde a arquitetura de banco de dados (MySQL/PostgreSQL) até a otimização de background jobs e integração de APIs complexas (Stripe, AWS). Meu foco é reduzir complexidade técnica enquanto maximizo valor para o negócio. Atualmente na Connectere Agrogestão, faço o desenvolvimento de features end-to-end em um monólito Rails de grande escala. Minha trajetória inclui passagens como Tech Lead Front-End na TM Tecnologia e Desenvolvedor Full Stack na VLGI. Formado em Análise e Desenvolvimento de Sistemas, mantenho-me atualizado com certificações internacionais (CS50x Harvard) e proficiência em inglês (C2)." />
+    <meta property="og:url" content="https://nandosts.github.io/about" />
     <meta property="og:image" content="https://i.imgur.com/SqX0Vw4.png" />
-    <meta property="og:image:width" content="300" />
-    <meta property="og:image:height" content="300" />
+    <meta property="og:locale" content="pt_BR" />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:url" content="https://nandosts.github.io/" />
-    <meta name="twitter:title" content="Fernando Melo Portfolio" />
-    <meta name="twitter:description" content="Portfolio de carreira Dev - Desenvolvedor Web e Mobile - Fernando Melo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://nandosts.github.io/about" />
+    <meta name="twitter:title" content="Sobre mim | Fernando Melo" />
+    <meta name="twitter:description" content="Com mais de 5 anos de experiência, atuo na construção de sistemas críticos e de alta disponibilidade. Minha expertise cobre todo o ciclo de vida do desenvolvimento, desde a arquitetura de banco de dados (MySQL/PostgreSQL) até a otimização de background jobs e integração de APIs complexas (Stripe, AWS). Meu foco é reduzir complexidade técnica enquanto maximizo valor para o negócio. Atualmente na Connectere Agrogestão, faço o desenvolvimento de features end-to-end em um monólito Rails de grande escala. Minha trajetória inclui passagens como Tech Lead Front-End na TM Tecnologia e Desenvolvedor Full Stack na VLGI. Formado em Análise e Desenvolvimento de Sistemas, mantenho-me atualizado com certificações internacionais (CS50x Harvard) e proficiência em inglês (C2)." />
     <meta name="twitter:image" content="https://i.imgur.com/SqX0Vw4.png" />
 
     <meta name="csrf-param" content="authenticity_token" />
-<meta name="csrf-token" content="AIeYwllsvijabFQJfmr6OHA5coQHmBWV4DZplyxBC0ryH0Danix9go9Ftnv0dbgVyZ3RKfYiyMlSku89N-LYJQ" />
+<meta name="csrf-token" content="srTlxqD3YKm58Cj_6c6Pru-xyGjm7H_NeR-dSol3t0fdOBMuncQlXapq4y5EH-N7inwtJF59UoMGVcB1vAL9Jw" />
     
+
+    <!-- Dados Estruturados Schema.org (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Fernando Jorge Santos Melo",
+        "alternateName": "Fernando Melo",
+        "url": "https://nandosts.github.io/about",
+        "image": "https://i.imgur.com/SqX0Vw4.png",
+        "jobTitle": "Engenheiro de Software & Desenvolvedor Full Stack",
+        "sameAs": [
+          "https://github.com/Nandosts"
+        ],
+        "knowsAbout": [
+          "Ruby on Rails",
+          "Hotwire",
+          "JavaScript",
+          "PostgreSQL",
+          "MySQL",
+          "Docker",
+          "Engenharia de Software"
+        ]
+      }
+    </script>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -111,10 +136,11 @@
     </div>
   </div>
 </div>
-      <section id="about">
+      
+<section id="about">
   <div class="container">
     <div class="about-text">
-      <h3 class="my-history-title">Experiência Profissional</h3>
+      <h1 class="my-history-title">Experiência Profissional</h1>
       <p class="my-history-text">
         Com mais de 5 anos de experiência, atuo na construção de sistemas críticos e de alta disponibilidade. Minha expertise cobre todo o ciclo de vida do desenvolvimento, desde a arquitetura de banco de dados (MySQL/PostgreSQL) até a otimização de background jobs e integração de APIs complexas (Stripe, AWS). Meu foco é reduzir complexidade técnica enquanto maximizo valor para o negócio. <br /><br />
         Atualmente na Connectere Agrogestão, faço o desenvolvimento de features end-to-end em um monólito Rails de grande escala. Minha trajetória inclui passagens como Tech Lead Front-End na TM Tecnologia e Desenvolvedor Full Stack na VLGI. Formado em Análise e Desenvolvimento de Sistemas, mantenho-me atualizado com certificações internacionais (CS50x Harvard) e proficiência em inglês (C2).
