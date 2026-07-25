@@ -1,8 +1,19 @@
 @use "./fonts";
 @use "./defaults";
-@use "./variables";
+@use "./variables/colors" as *;
 @use "./mixins";
 
-body {
-  background: #2b3d41;
+html {
+  scroll-behavior: smooth;
 }
+
+body {
+  background: $cor-fundo-principal;
+  background-image: $gradiente-fundo;
+  background-attachment: fixed;
+  color: $cor-texto-principal;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
