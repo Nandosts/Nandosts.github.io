@@ -2,18 +2,34 @@
   <div class="introduction-container">
     <div class="introduction-text">
       <h1>
-        <%= t(:introduction_title_1) %><br />
-        <%= t(:introduction_title_2) %><br />
-        <%= t(:introduction_title_3) %>
+        <span class="sub-greeting"><%= t(:introduction_title_1) %></span><br />
+        <span class="sub-greeting"><%= t(:introduction_title_2) %></span><br />
+        <span class="highlight-name"><%= t(:introduction_title_3) %></span>
       </h1>
-      <p>
+      
+      <p class="description">
         <%= t(:introduction_text_1) %> <br />
         <%= t(:introduction_text_2) %> <br />
         <%= t(:introduction_text_3) %>
       </p>
-      <%= link_to t(:contact_button), "#contact-me", class: "contact-button" %>
+
+      <div class="tech-stack-badges">
+        <span class="tech-badge">Ruby on Rails 8</span>
+        <span class="tech-badge">Hotwire</span>
+        <span class="tech-badge">JavaScript</span>
+        <span class="tech-badge">MySQL & PostgreSQL</span>
+        <span class="tech-badge">Docker</span>
+      </div>
+
+      <div class="cta-container">
+        <%= link_to t(:contact_button), "#contact-me", class: "contact-button" %>
+        <%= link_to t(:nav_portfolio), "#portfolio", class: "portfolio-button" %>
+      </div>
     </div>
 
-    <%= image_tag "introduction-image.png", alt: "Foto de apresentação", class: "img" %>
+    <div class="image-wrapper">
+      <%= image_tag "introduction-image.png", alt: "Foto de apresentação", class: "img" %>
+    </div>
   </div>
 </section>
+
