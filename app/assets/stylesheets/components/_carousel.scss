@@ -101,7 +101,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(17, 24, 39, 0.7);
+  background: rgba(35, 58, 53, 0.75);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -117,10 +117,10 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 
   &:hover {
-    background: rgba(37, 99, 235, 0.8);
+    background: rgba(46, 125, 105, 0.8);
     border-color: rgba(255, 255, 255, 0.4);
     transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+    box-shadow: 0 6px 20px rgba(46, 125, 105, 0.4);
   }
 
   &.left {

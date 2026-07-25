@@ -19,7 +19,7 @@
   z-index: 9999 !important;
   border-bottom: 1px solid c.$cor-borda-vidro;
   width: 100%;
-  background: rgba(11, 15, 23, 0.8);
+  background: rgba(22, 36, 33, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
@@ -109,12 +109,12 @@
         font-weight: 600;
         font-size: 0.9rem;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        box-shadow: 0 4px 12px rgba(46, 125, 105, 0.3);
         
         &:hover {
           transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
-          background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+          box-shadow: 0 6px 20px rgba(46, 125, 105, 0.5);
+          background: linear-gradient(135deg, #38957e 0%, #236353 100%);
         }
       }
       
@@ -163,7 +163,7 @@
       right: -100%;
       width: 100%;
       height: 100vh;
-      background: rgba(11, 15, 23, 0.95);
+      background: rgba(22, 36, 33, 0.95);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);

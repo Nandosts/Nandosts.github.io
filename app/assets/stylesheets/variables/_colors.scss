@@ -1,21 +1,23 @@
-// Sistema de Cores e Gradientes
-$cor-fundo-principal: #0b0f17;
-$cor-fundo-secundaria: #111827;
-$cor-fundo-cartao: rgba(17, 24, 39, 0.75);
-$cor-fundo-vidro: rgba(255, 255, 255, 0.04);
-$cor-borda-vidro: rgba(255, 255, 255, 0.1);
+// Sistema de Cores e Gradientes (Verde Petróleo Escuro Vibrante)
+$cor-fundo-principal: #162421;
+$cor-fundo-secundaria: #233a35;
+$cor-fundo-cartao: rgba(35, 58, 53, 0.85);
+$cor-fundo-vidro: rgba(255, 255, 255, 0.05);
+$cor-borda-vidro: rgba(255, 255, 255, 0.12);
 
 $cor-texto-principal: #f3f4f6;
-$cor-texto-secundario: #9ca3af;
+$cor-texto-secundario: #a3b8b3;
 $cor-texto-destaque: #ffffff;
 
-$cor-primaria: #3b82f6;
-$cor-primaria-hover: #2563eb;
-$cor-secundaria: #10b981;
-$cor-destaque-neon: #60a5fa;
+$cor-primaria: #25705d;
+$cor-primaria-hover: #1b5446;
+$cor-secundaria: #34d399;
+$cor-destaque-neon: #6ee7b7;
 
-$gradiente-titulo: linear-gradient(135deg, #ffffff 0%, #93c5fd 50%, #3b82f6 100%);
-$gradiente-botao: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-$gradiente-fundo: radial-gradient(circle at 50% 0%, #1e293b 0%, #0b0f17 75%);
+$gradiente-titulo: linear-gradient(135deg, #ffffff 0%, #a7f3d0 50%, #34d399 100%);
+$gradiente-botao: linear-gradient(135deg, #25705d 0%, #17483c 100%);
+$gradiente-fundo: radial-gradient(circle at 50% 0%, #2c4741 0%, #162421 80%);
 $sombra-cartao: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
-$sombra-brilho: 0 0 25px rgba(59, 130, 246, 0.25);
+$sombra-brilho: 0 0 25px rgba(110, 231, 183, 0.25);
+
+
