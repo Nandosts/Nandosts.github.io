@@ -1,29 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%= I18n.locale %>">
   <head>
-    <title>Fernando Portfolio</title>
+    <title><%= titulo_pagina %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta charset="utf-8" />
-    <meta name="keywords" content="sites, web, desenvolvimento, HTML, CSS, SCSS, JavaScript, Ruby on Rails" />
+    <meta name="keywords" content="Fernando Melo, Desenvolvedor Web, Ruby on Rails, Software Engineer, Full Stack, Hotwire, JavaScript, PostgreSQL, React, Portfolio" />
     <meta name="author" content="Fernando Jorge Santos Melo" />
-    <meta name="theme-color" content="#2B3D41" />
-    <meta name="description" content="Site criado pelo desenvolvedor web e mobile Fernando Jorge, para representar trabalhos e estudos em carreira e vida acadêmica." />
+    <meta name="theme-color" content="#162421" />
+    <meta name="description" content="<%= descricao_meta_pagina %>" />
+    <link rel="canonical" href="<%= url_canonica_pagina %>" />
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Fernando Melo Portfolio" />
-    <meta property="og:site_name" content="Fernando Melo Social" />
+    <meta property="og:title" content="<%= titulo_pagina %>" />
+    <meta property="og:site_name" content="Fernando Melo | Portfolio Dev" />
     <meta property="og:type" content="website" />
-    <meta property="og:description" content="Portfolio de carreira Dev - Desenvolvedor Web e Mobile - Fernando Melo" />
-    <meta property="og:url" content="https://nandosts.github.io/" />
+    <meta property="og:description" content="<%= descricao_meta_pagina %>" />
+    <meta property="og:url" content="<%= url_canonica_pagina %>" />
     <meta property="og:image" content="https://i.imgur.com/SqX0Vw4.png" />
-    <meta property="og:image:width" content="300" />
-    <meta property="og:image:height" content="300" />
+    <meta property="og:locale" content="<%= I18n.locale.to_s == 'en' ? 'en_US' : 'pt_BR' %>" />
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:url" content="https://nandosts.github.io/" />
-    <meta name="twitter:title" content="Fernando Melo Portfolio" />
-    <meta name="twitter:description" content="Portfolio de carreira Dev - Desenvolvedor Web e Mobile - Fernando Melo" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="<%= url_canonica_pagina %>" />
+    <meta name="twitter:title" content="<%= titulo_pagina %>" />
+    <meta name="twitter:description" content="<%= descricao_meta_pagina %>" />
     <meta name="twitter:image" content="https://i.imgur.com/SqX0Vw4.png" />
 
     <%= csrf_meta_tags %>
